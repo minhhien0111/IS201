@@ -1,0 +1,476 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CTLOP">
+    <Key>
+      <PropertyRef Name="MaCTL" />
+    </Key>
+    <Property Name="MaCTL" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="MaHocSinh" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="MaLop" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DIEM">
+    <Key>
+      <PropertyRef Name="MaDiem" />
+    </Key>
+    <Property Name="MaDiem" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="MaKetQua" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="MaThanhPhan" Type="nvarchar" MaxLength="20" />
+    <Property Name="Diem" Type="float" />
+  </EntityType>
+  <EntityType Name="HOCKY">
+    <Key>
+      <PropertyRef Name="MaHocKy" />
+    </Key>
+    <Property Name="MaHocKy" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="HocKy" Type="nvarchar" MaxLength="20" />
+    <Property Name="TrongSo" Type="float" />
+    <Property Name="NamApDung" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="HOCSINH">
+    <Key>
+      <PropertyRef Name="MaHocSinh" />
+    </Key>
+    <Property Name="MaHocSinh" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="HoTen" Type="nvarchar" MaxLength="30" />
+    <Property Name="GioiTinh" Type="nvarchar" MaxLength="5" />
+    <Property Name="NgaySinh" Type="smalldatetime" />
+    <Property Name="DiaChi" Type="nvarchar" MaxLength="50" />
+    <Property Name="QueQuan" Type="nvarchar" MaxLength="50" />
+    <Property Name="DanToc" Type="nvarchar" MaxLength="20" />
+    <Property Name="TonGiao" Type="nvarchar" MaxLength="20" />
+    <Property Name="SDT" Type="nvarchar" MaxLength="10" />
+    <Property Name="Email" Type="nvarchar" MaxLength="40" />
+    <Property Name="HoTenCha" Type="nvarchar" MaxLength="30" />
+    <Property Name="NamSinh_Cha" Type="smallint" />
+    <Property Name="CCCD_Cha" Type="nvarchar" MaxLength="12" />
+    <Property Name="SDT_Cha" Type="nvarchar" MaxLength="10" />
+    <Property Name="NgheNghiep_Cha" Type="nvarchar" MaxLength="50" />
+    <Property Name="HoTenMe" Type="nvarchar" MaxLength="30" />
+    <Property Name="NamSinh_Me" Type="smallint" />
+    <Property Name="CCCD_Me" Type="nvarchar" MaxLength="12" />
+    <Property Name="SDT_Me" Type="nvarchar" MaxLength="10" />
+    <Property Name="NgheNghiep_Me" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="KETQUA_MONHOC_HOCSINH">
+    <Key>
+      <PropertyRef Name="MaKetQua" />
+    </Key>
+    <Property Name="MaKetQua" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="MaHocSinh" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="MaNamHoc" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="MaHocKy" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="MaMonHoc" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="DiemTB" Type="float" />
+    <Property Name="MaXepLoai" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="KHOI">
+    <Key>
+      <PropertyRef Name="MaKhoi" />
+    </Key>
+    <Property Name="MaKhoi" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="TenKhoi" Type="nvarchar" MaxLength="30" />
+    <Property Name="MaNamHoc" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LOP">
+    <Key>
+      <PropertyRef Name="MaLop" />
+    </Key>
+    <Property Name="MaLop" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="TenLop" Type="nvarchar" MaxLength="30" />
+    <Property Name="MaKhoi" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="SiSo" Type="tinyint" />
+    <Property Name="MaNamHoc" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MONHOC">
+    <Key>
+      <PropertyRef Name="MaMonHoc" />
+    </Key>
+    <Property Name="MaMonHoc" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="TenMonHoc" Type="nvarchar" MaxLength="50" />
+    <Property Name="NamApDung" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="NAMHOC">
+    <Key>
+      <PropertyRef Name="MaNamHoc" />
+    </Key>
+    <Property Name="MaNamHoc" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="NamHoc" Type="varchar" MaxLength="9" />
+  </EntityType>
+  <EntityType Name="PHANQUYEN">
+    <Key>
+      <PropertyRef Name="MaPhanQuyen" />
+    </Key>
+    <Property Name="MaPhanQuyen" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="VaiTro" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TAIKHOAN">
+    <Key>
+      <PropertyRef Name="MaTaiKhoan" />
+    </Key>
+    <Property Name="MaTaiKhoan" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="TenDangNhap" Type="nvarchar" MaxLength="60" />
+    <Property Name="MatKhau" Type="nvarchar" MaxLength="60" />
+    <Property Name="MaPhanQuyen" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="HoTen" Type="nvarchar" MaxLength="30" />
+    <Property Name="NgaySinh" Type="smalldatetime" />
+  </EntityType>
+  <EntityType Name="THAMSO">
+    <Key>
+      <PropertyRef Name="MaThamSo" />
+    </Key>
+    <Property Name="MaThamSo" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="TuoiToiThieu" Type="tinyint" />
+    <Property Name="TuoiToiDa" Type="tinyint" />
+    <Property Name="SiSoToiDa" Type="smallint" />
+    <Property Name="DiemToiDa" Type="float" />
+    <Property Name="DiemToiThieu" Type="float" />
+  </EntityType>
+  <EntityType Name="THANHPHAN">
+    <Key>
+      <PropertyRef Name="MaThanhPhan" />
+    </Key>
+    <Property Name="MaThanhPhan" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="TenThanhPhan" Type="nvarchar" MaxLength="30" />
+    <Property Name="TrongSo" Type="float" />
+    <Property Name="NamApDung" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="XEPLOAI">
+    <Key>
+      <PropertyRef Name="MaXepLoai" />
+    </Key>
+    <Property Name="MaXepLoai" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="TenXepLoai" Type="nvarchar" MaxLength="30" />
+    <Property Name="DiemToiThieu" Type="float" />
+    <Property Name="DiemToiDa" Type="float" />
+    <Property Name="DiemKhongChe" Type="float" />
+    <Property Name="NamApDung" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <Association Name="fk_ctl_hs">
+    <End Role="HOCSINH" Type="Self.HOCSINH" Multiplicity="1" />
+    <End Role="CTLOP" Type="Self.CTLOP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HOCSINH">
+        <PropertyRef Name="MaHocSinh" />
+      </Principal>
+      <Dependent Role="CTLOP">
+        <PropertyRef Name="MaHocSinh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ctl_ml">
+    <End Role="LOP" Type="Self.LOP" Multiplicity="1" />
+    <End Role="CTLOP" Type="Self.CTLOP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOP">
+        <PropertyRef Name="MaLop" />
+      </Principal>
+      <Dependent Role="CTLOP">
+        <PropertyRef Name="MaLop" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_diem_kq">
+    <End Role="KETQUA_MONHOC_HOCSINH" Type="Self.KETQUA_MONHOC_HOCSINH" Multiplicity="1" />
+    <End Role="DIEM" Type="Self.DIEM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KETQUA_MONHOC_HOCSINH">
+        <PropertyRef Name="MaKetQua" />
+      </Principal>
+      <Dependent Role="DIEM">
+        <PropertyRef Name="MaKetQua" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_diem_tp">
+    <End Role="THANHPHAN" Type="Self.THANHPHAN" Multiplicity="0..1" />
+    <End Role="DIEM" Type="Self.DIEM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="THANHPHAN">
+        <PropertyRef Name="MaThanhPhan" />
+      </Principal>
+      <Dependent Role="DIEM">
+        <PropertyRef Name="MaThanhPhan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_khoi_mnh">
+    <End Role="NAMHOC" Type="Self.NAMHOC" Multiplicity="1" />
+    <End Role="KHOI" Type="Self.KHOI" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NAMHOC">
+        <PropertyRef Name="MaNamHoc" />
+      </Principal>
+      <Dependent Role="KHOI">
+        <PropertyRef Name="MaNamHoc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_kq_hk">
+    <End Role="HOCKY" Type="Self.HOCKY" Multiplicity="1" />
+    <End Role="KETQUA_MONHOC_HOCSINH" Type="Self.KETQUA_MONHOC_HOCSINH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HOCKY">
+        <PropertyRef Name="MaHocKy" />
+      </Principal>
+      <Dependent Role="KETQUA_MONHOC_HOCSINH">
+        <PropertyRef Name="MaHocKy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_kq_hs">
+    <End Role="HOCSINH" Type="Self.HOCSINH" Multiplicity="1" />
+    <End Role="KETQUA_MONHOC_HOCSINH" Type="Self.KETQUA_MONHOC_HOCSINH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HOCSINH">
+        <PropertyRef Name="MaHocSinh" />
+      </Principal>
+      <Dependent Role="KETQUA_MONHOC_HOCSINH">
+        <PropertyRef Name="MaHocSinh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_kq_mh">
+    <End Role="MONHOC" Type="Self.MONHOC" Multiplicity="1" />
+    <End Role="KETQUA_MONHOC_HOCSINH" Type="Self.KETQUA_MONHOC_HOCSINH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MONHOC">
+        <PropertyRef Name="MaMonHoc" />
+      </Principal>
+      <Dependent Role="KETQUA_MONHOC_HOCSINH">
+        <PropertyRef Name="MaMonHoc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_kq_nh">
+    <End Role="NAMHOC" Type="Self.NAMHOC" Multiplicity="1" />
+    <End Role="KETQUA_MONHOC_HOCSINH" Type="Self.KETQUA_MONHOC_HOCSINH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NAMHOC">
+        <PropertyRef Name="MaNamHoc" />
+      </Principal>
+      <Dependent Role="KETQUA_MONHOC_HOCSINH">
+        <PropertyRef Name="MaNamHoc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_kq_xl">
+    <End Role="XEPLOAI" Type="Self.XEPLOAI" Multiplicity="0..1" />
+    <End Role="KETQUA_MONHOC_HOCSINH" Type="Self.KETQUA_MONHOC_HOCSINH" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="XEPLOAI">
+        <PropertyRef Name="MaXepLoai" />
+      </Principal>
+      <Dependent Role="KETQUA_MONHOC_HOCSINH">
+        <PropertyRef Name="MaXepLoai" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_lop_mk">
+    <End Role="KHOI" Type="Self.KHOI" Multiplicity="1" />
+    <End Role="LOP" Type="Self.LOP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHOI">
+        <PropertyRef Name="MaKhoi" />
+      </Principal>
+      <Dependent Role="LOP">
+        <PropertyRef Name="MaKhoi" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_lop_mnh">
+    <End Role="NAMHOC" Type="Self.NAMHOC" Multiplicity="1" />
+    <End Role="LOP" Type="Self.LOP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NAMHOC">
+        <PropertyRef Name="MaNamHoc" />
+      </Principal>
+      <Dependent Role="LOP">
+        <PropertyRef Name="MaNamHoc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tk_pq">
+    <End Role="PHANQUYEN" Type="Self.PHANQUYEN" Multiplicity="1" />
+    <End Role="TAIKHOAN" Type="Self.TAIKHOAN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PHANQUYEN">
+        <PropertyRef Name="MaPhanQuyen" />
+      </Principal>
+      <Dependent Role="TAIKHOAN">
+        <PropertyRef Name="MaPhanQuyen" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="HocKy_NamApDung" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="NamApDung" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="KhoiLop_NamApDung" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="NamApDung" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="MonHoc_NamApDung" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="NamApDung" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SuaThamSo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TuoiToiThieu" Type="tinyint" Mode="In" />
+    <Parameter Name="TuoiToiDa" Type="tinyint" Mode="In" />
+    <Parameter Name="SiSoToiDa" Type="smallint" Mode="In" />
+    <Parameter Name="DiemToiDa" Type="float" Mode="In" />
+    <Parameter Name="DiemToiThieu" Type="float" Mode="In" />
+  </Function>
+  <Function Name="ThanhPhan_NamApDung" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="NamApDung" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="ThemHocKy" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MaHocKy" Type="nvarchar" Mode="In" />
+    <Parameter Name="HocKy" Type="nvarchar" Mode="In" />
+    <Parameter Name="TrongSo" Type="float" Mode="In" />
+  </Function>
+  <Function Name="ThemHocSinh" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MaHocSinh" Type="nvarchar" Mode="In" />
+    <Parameter Name="HoTen" Type="nvarchar" Mode="In" />
+    <Parameter Name="GioiTinh" Type="nvarchar" Mode="In" />
+    <Parameter Name="NgaySinh" Type="smalldatetime" Mode="In" />
+    <Parameter Name="DiaChi" Type="nvarchar" Mode="In" />
+    <Parameter Name="QueQuan" Type="nvarchar" Mode="In" />
+    <Parameter Name="DanToc" Type="nvarchar" Mode="In" />
+    <Parameter Name="TonGiao" Type="nvarchar" Mode="In" />
+    <Parameter Name="SDT" Type="nvarchar" Mode="In" />
+    <Parameter Name="Email" Type="nvarchar" Mode="In" />
+    <Parameter Name="HoTenCha" Type="nvarchar" Mode="In" />
+    <Parameter Name="NamSinh_Cha" Type="smallint" Mode="In" />
+    <Parameter Name="CCCD_Cha" Type="nvarchar" Mode="In" />
+    <Parameter Name="SDT_Cha" Type="nvarchar" Mode="In" />
+    <Parameter Name="NgheNghiep_Cha" Type="nvarchar" Mode="In" />
+    <Parameter Name="HoTenMe" Type="nvarchar" Mode="In" />
+    <Parameter Name="NamSinh_Me" Type="smallint" Mode="In" />
+    <Parameter Name="CCCD_Me" Type="nvarchar" Mode="In" />
+    <Parameter Name="SDT_Me" Type="nvarchar" Mode="In" />
+    <Parameter Name="NgheNghiep_Me" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="ThemKhoi" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MaKhoi" Type="nvarchar" Mode="In" />
+    <Parameter Name="TenKhoi" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="ThemLop" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MaLop" Type="nvarchar" Mode="In" />
+    <Parameter Name="TenLop" Type="nvarchar" Mode="In" />
+    <Parameter Name="MaKhoi" Type="nvarchar" Mode="In" />
+    <Parameter Name="MaNamHoc" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="ThemMonHoc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MaMonHoc" Type="nvarchar" Mode="In" />
+    <Parameter Name="TenMonHoc" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="ThemNamHoc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MaNamHoc" Type="nvarchar" Mode="In" />
+    <Parameter Name="NamHoc" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="ThemTaiKhoan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MaTaiKhoan" Type="nvarchar" Mode="In" />
+    <Parameter Name="TenDangNhap" Type="nvarchar" Mode="In" />
+    <Parameter Name="MatKhau" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="ThemThanhPhan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MaThanhPhan" Type="nvarchar" Mode="In" />
+    <Parameter Name="TenThanhPhan" Type="nvarchar" Mode="In" />
+    <Parameter Name="TrongSo" Type="float" Mode="In" />
+  </Function>
+  <Function Name="ThemXepLoai" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MaXepLoai" Type="nvarchar" Mode="In" />
+    <Parameter Name="TenXepLoai" Type="nvarchar" Mode="In" />
+    <Parameter Name="DiemToiThieu" Type="float" Mode="In" />
+    <Parameter Name="DiemToiDa" Type="float" Mode="In" />
+    <Parameter Name="DiemKhongChe" Type="float" Mode="In" />
+  </Function>
+  <Function Name="TongKetHocKy" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MaHocKy" Type="nvarchar" Mode="In" />
+    <Parameter Name="MaNamHoc" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="TongKetMon_HocSinh" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MaNamHoc" Type="nvarchar" Mode="In" />
+    <Parameter Name="MaHocSinh" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="TongKetMonHocKy" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MaMonHoc" Type="nvarchar" Mode="In" />
+    <Parameter Name="MaHocKy" Type="nvarchar" Mode="In" />
+    <Parameter Name="MaNamHoc" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="TongKetMonNamHoc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MaMonHoc" Type="nvarchar" Mode="In" />
+    <Parameter Name="MaNamHoc" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="TongKetNamHoc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MaNamHoc" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="XepLoai_NamApDung" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="NamApDung" Type="nvarchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="dataModelStoreContainer">
+    <EntitySet Name="CTLOP" EntityType="Self.CTLOP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DIEM" EntityType="Self.DIEM" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HOCKY" EntityType="Self.HOCKY" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HOCSINH" EntityType="Self.HOCSINH" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KETQUA_MONHOC_HOCSINH" EntityType="Self.KETQUA_MONHOC_HOCSINH" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KHOI" EntityType="Self.KHOI" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LOP" EntityType="Self.LOP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MONHOC" EntityType="Self.MONHOC" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NAMHOC" EntityType="Self.NAMHOC" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PHANQUYEN" EntityType="Self.PHANQUYEN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TAIKHOAN" EntityType="Self.TAIKHOAN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="THAMSO" EntityType="Self.THAMSO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="THANHPHAN" EntityType="Self.THANHPHAN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="XEPLOAI" EntityType="Self.XEPLOAI" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="fk_ctl_hs" Association="Self.fk_ctl_hs">
+      <End Role="HOCSINH" EntitySet="HOCSINH" />
+      <End Role="CTLOP" EntitySet="CTLOP" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ctl_ml" Association="Self.fk_ctl_ml">
+      <End Role="LOP" EntitySet="LOP" />
+      <End Role="CTLOP" EntitySet="CTLOP" />
+    </AssociationSet>
+    <AssociationSet Name="fk_diem_kq" Association="Self.fk_diem_kq">
+      <End Role="KETQUA_MONHOC_HOCSINH" EntitySet="KETQUA_MONHOC_HOCSINH" />
+      <End Role="DIEM" EntitySet="DIEM" />
+    </AssociationSet>
+    <AssociationSet Name="fk_diem_tp" Association="Self.fk_diem_tp">
+      <End Role="THANHPHAN" EntitySet="THANHPHAN" />
+      <End Role="DIEM" EntitySet="DIEM" />
+    </AssociationSet>
+    <AssociationSet Name="fk_khoi_mnh" Association="Self.fk_khoi_mnh">
+      <End Role="NAMHOC" EntitySet="NAMHOC" />
+      <End Role="KHOI" EntitySet="KHOI" />
+    </AssociationSet>
+    <AssociationSet Name="fk_kq_hk" Association="Self.fk_kq_hk">
+      <End Role="HOCKY" EntitySet="HOCKY" />
+      <End Role="KETQUA_MONHOC_HOCSINH" EntitySet="KETQUA_MONHOC_HOCSINH" />
+    </AssociationSet>
+    <AssociationSet Name="fk_kq_hs" Association="Self.fk_kq_hs">
+      <End Role="HOCSINH" EntitySet="HOCSINH" />
+      <End Role="KETQUA_MONHOC_HOCSINH" EntitySet="KETQUA_MONHOC_HOCSINH" />
+    </AssociationSet>
+    <AssociationSet Name="fk_kq_mh" Association="Self.fk_kq_mh">
+      <End Role="MONHOC" EntitySet="MONHOC" />
+      <End Role="KETQUA_MONHOC_HOCSINH" EntitySet="KETQUA_MONHOC_HOCSINH" />
+    </AssociationSet>
+    <AssociationSet Name="fk_kq_nh" Association="Self.fk_kq_nh">
+      <End Role="NAMHOC" EntitySet="NAMHOC" />
+      <End Role="KETQUA_MONHOC_HOCSINH" EntitySet="KETQUA_MONHOC_HOCSINH" />
+    </AssociationSet>
+    <AssociationSet Name="fk_kq_xl" Association="Self.fk_kq_xl">
+      <End Role="XEPLOAI" EntitySet="XEPLOAI" />
+      <End Role="KETQUA_MONHOC_HOCSINH" EntitySet="KETQUA_MONHOC_HOCSINH" />
+    </AssociationSet>
+    <AssociationSet Name="fk_lop_mk" Association="Self.fk_lop_mk">
+      <End Role="KHOI" EntitySet="KHOI" />
+      <End Role="LOP" EntitySet="LOP" />
+    </AssociationSet>
+    <AssociationSet Name="fk_lop_mnh" Association="Self.fk_lop_mnh">
+      <End Role="NAMHOC" EntitySet="NAMHOC" />
+      <End Role="LOP" EntitySet="LOP" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tk_pq" Association="Self.fk_tk_pq">
+      <End Role="PHANQUYEN" EntitySet="PHANQUYEN" />
+      <End Role="TAIKHOAN" EntitySet="TAIKHOAN" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

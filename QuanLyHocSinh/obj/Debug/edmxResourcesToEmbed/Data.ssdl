@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CTLOP">
+    <Key>
+      <PropertyRef Name="MaHocSinh" />
+      <PropertyRef Name="MaLop" />
+    </Key>
+    <Property Name="MaHocSinh" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="MaLop" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DIEM">
+    <Key>
+      <PropertyRef Name="MaDiem" />
+    </Key>
+    <Property Name="MaDiem" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="MaMonHoc" Type="nvarchar" MaxLength="50" />
+    <Property Name="MaHocSinh" Type="nvarchar" MaxLength="50" />
+    <Property Name="NamHoc" Type="nvarchar" MaxLength="9" />
+    <Property Name="HocKy" Type="nvarchar" MaxLength="20" />
+    <Property Name="DiemTX" Type="float" />
+    <Property Name="DiemGK" Type="float" />
+    <Property Name="DiemCK" Type="float" />
+    <Property Name="DiemTB" Type="float" />
+    <Property Name="XepLoai" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="HOCSINH">
+    <Key>
+      <PropertyRef Name="MaHocSinh" />
+    </Key>
+    <Property Name="MaHocSinh" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="HoTen" Type="nvarchar" MaxLength="50" />
+    <Property Name="GioiTinh" Type="nvarchar" MaxLength="5" />
+    <Property Name="NgaySinh" Type="datetime" />
+    <Property Name="DiaChi" Type="nvarchar" MaxLength="50" />
+    <Property Name="QueQuan" Type="nvarchar" MaxLength="50" />
+    <Property Name="DanToc" Type="nvarchar" MaxLength="50" />
+    <Property Name="TonGiao" Type="nvarchar" MaxLength="50" />
+    <Property Name="SDT" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="KHOI">
+    <Key>
+      <PropertyRef Name="MaKhoi" />
+    </Key>
+    <Property Name="MaKhoi" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="TenKhoi" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="LOP">
+    <Key>
+      <PropertyRef Name="MaLop" />
+    </Key>
+    <Property Name="MaLop" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="TenLop" Type="nvarchar" MaxLength="50" />
+    <Property Name="MaKhoi" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SiSo" Type="tinyint" />
+    <Property Name="NamHoc" Type="nvarchar" MaxLength="9" />
+  </EntityType>
+  <EntityType Name="MONHOC">
+    <Key>
+      <PropertyRef Name="MaMonHoc" />
+    </Key>
+    <Property Name="MaMonHoc" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="TenMonHoc" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="fk_ctl_hs">
+    <End Role="HOCSINH" Type="Self.HOCSINH" Multiplicity="1" />
+    <End Role="CTLOP" Type="Self.CTLOP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HOCSINH">
+        <PropertyRef Name="MaHocSinh" />
+      </Principal>
+      <Dependent Role="CTLOP">
+        <PropertyRef Name="MaHocSinh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_ctl_ml">
+    <End Role="LOP" Type="Self.LOP" Multiplicity="1" />
+    <End Role="CTLOP" Type="Self.CTLOP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LOP">
+        <PropertyRef Name="MaLop" />
+      </Principal>
+      <Dependent Role="CTLOP">
+        <PropertyRef Name="MaLop" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_diem_hs">
+    <End Role="HOCSINH" Type="Self.HOCSINH" Multiplicity="0..1" />
+    <End Role="DIEM" Type="Self.DIEM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HOCSINH">
+        <PropertyRef Name="MaHocSinh" />
+      </Principal>
+      <Dependent Role="DIEM">
+        <PropertyRef Name="MaHocSinh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_diem_mmh">
+    <End Role="MONHOC" Type="Self.MONHOC" Multiplicity="0..1" />
+    <End Role="DIEM" Type="Self.DIEM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MONHOC">
+        <PropertyRef Name="MaMonHoc" />
+      </Principal>
+      <Dependent Role="DIEM">
+        <PropertyRef Name="MaMonHoc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_mk">
+    <End Role="KHOI" Type="Self.KHOI" Multiplicity="1" />
+    <End Role="LOP" Type="Self.LOP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KHOI">
+        <PropertyRef Name="MaKhoi" />
+      </Principal>
+      <Dependent Role="LOP">
+        <PropertyRef Name="MaKhoi" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DataModelStoreContainer">
+    <EntitySet Name="CTLOP" EntityType="Self.CTLOP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DIEM" EntityType="Self.DIEM" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HOCSINH" EntityType="Self.HOCSINH" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KHOI" EntityType="Self.KHOI" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LOP" EntityType="Self.LOP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MONHOC" EntityType="Self.MONHOC" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="fk_ctl_hs" Association="Self.fk_ctl_hs">
+      <End Role="HOCSINH" EntitySet="HOCSINH" />
+      <End Role="CTLOP" EntitySet="CTLOP" />
+    </AssociationSet>
+    <AssociationSet Name="fk_ctl_ml" Association="Self.fk_ctl_ml">
+      <End Role="LOP" EntitySet="LOP" />
+      <End Role="CTLOP" EntitySet="CTLOP" />
+    </AssociationSet>
+    <AssociationSet Name="fk_diem_hs" Association="Self.fk_diem_hs">
+      <End Role="HOCSINH" EntitySet="HOCSINH" />
+      <End Role="DIEM" EntitySet="DIEM" />
+    </AssociationSet>
+    <AssociationSet Name="fk_diem_mmh" Association="Self.fk_diem_mmh">
+      <End Role="MONHOC" EntitySet="MONHOC" />
+      <End Role="DIEM" EntitySet="DIEM" />
+    </AssociationSet>
+    <AssociationSet Name="fk_mk" Association="Self.fk_mk">
+      <End Role="KHOI" EntitySet="KHOI" />
+      <End Role="LOP" EntitySet="LOP" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,1332 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="dataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CTLOP">
+          <Key>
+            <PropertyRef Name="MaCTL" />
+          </Key>
+          <Property Name="MaCTL" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="MaHocSinh" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="MaLop" Type="nvarchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DIEM">
+          <Key>
+            <PropertyRef Name="MaDiem" />
+          </Key>
+          <Property Name="MaDiem" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="MaKetQua" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="MaThanhPhan" Type="nvarchar" MaxLength="20" />
+          <Property Name="Diem" Type="float" />
+        </EntityType>
+        <EntityType Name="HOCKY">
+          <Key>
+            <PropertyRef Name="MaHocKy" />
+          </Key>
+          <Property Name="MaHocKy" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="HocKy" Type="nvarchar" MaxLength="20" />
+          <Property Name="TrongSo" Type="float" />
+          <Property Name="NamApDung" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="HOCSINH">
+          <Key>
+            <PropertyRef Name="MaHocSinh" />
+          </Key>
+          <Property Name="MaHocSinh" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="HoTen" Type="nvarchar" MaxLength="30" />
+          <Property Name="GioiTinh" Type="nvarchar" MaxLength="5" />
+          <Property Name="NgaySinh" Type="smalldatetime" />
+          <Property Name="DiaChi" Type="nvarchar" MaxLength="50" />
+          <Property Name="QueQuan" Type="nvarchar" MaxLength="50" />
+          <Property Name="DanToc" Type="nvarchar" MaxLength="20" />
+          <Property Name="TonGiao" Type="nvarchar" MaxLength="20" />
+          <Property Name="SDT" Type="nvarchar" MaxLength="10" />
+          <Property Name="Email" Type="nvarchar" MaxLength="40" />
+          <Property Name="HoTenCha" Type="nvarchar" MaxLength="30" />
+          <Property Name="NamSinh_Cha" Type="smallint" />
+          <Property Name="CCCD_Cha" Type="nvarchar" MaxLength="12" />
+          <Property Name="SDT_Cha" Type="nvarchar" MaxLength="10" />
+          <Property Name="NgheNghiep_Cha" Type="nvarchar" MaxLength="50" />
+          <Property Name="HoTenMe" Type="nvarchar" MaxLength="30" />
+          <Property Name="NamSinh_Me" Type="smallint" />
+          <Property Name="CCCD_Me" Type="nvarchar" MaxLength="12" />
+          <Property Name="SDT_Me" Type="nvarchar" MaxLength="10" />
+          <Property Name="NgheNghiep_Me" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="KETQUA_MONHOC_HOCSINH">
+          <Key>
+            <PropertyRef Name="MaKetQua" />
+          </Key>
+          <Property Name="MaKetQua" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="MaHocSinh" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="MaNamHoc" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="MaHocKy" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="MaMonHoc" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="DiemTB" Type="float" />
+          <Property Name="MaXepLoai" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="KHOI">
+          <Key>
+            <PropertyRef Name="MaKhoi" />
+          </Key>
+          <Property Name="MaKhoi" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="TenKhoi" Type="nvarchar" MaxLength="30" />
+          <Property Name="MaNamHoc" Type="nvarchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LOP">
+          <Key>
+            <PropertyRef Name="MaLop" />
+          </Key>
+          <Property Name="MaLop" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="TenLop" Type="nvarchar" MaxLength="30" />
+          <Property Name="MaKhoi" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="SiSo" Type="tinyint" />
+          <Property Name="MaNamHoc" Type="nvarchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MONHOC">
+          <Key>
+            <PropertyRef Name="MaMonHoc" />
+          </Key>
+          <Property Name="MaMonHoc" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="TenMonHoc" Type="nvarchar" MaxLength="50" />
+          <Property Name="NamApDung" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="NAMHOC">
+          <Key>
+            <PropertyRef Name="MaNamHoc" />
+          </Key>
+          <Property Name="MaNamHoc" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="NamHoc" Type="varchar" MaxLength="9" />
+        </EntityType>
+        <EntityType Name="PHANQUYEN">
+          <Key>
+            <PropertyRef Name="MaPhanQuyen" />
+          </Key>
+          <Property Name="MaPhanQuyen" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="VaiTro" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TAIKHOAN">
+          <Key>
+            <PropertyRef Name="MaTaiKhoan" />
+          </Key>
+          <Property Name="MaTaiKhoan" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="TenDangNhap" Type="nvarchar" MaxLength="60" />
+          <Property Name="MatKhau" Type="nvarchar" MaxLength="60" />
+          <Property Name="MaPhanQuyen" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="HoTen" Type="nvarchar" MaxLength="30" />
+          <Property Name="NgaySinh" Type="smalldatetime" />
+        </EntityType>
+        <EntityType Name="THAMSO">
+          <Key>
+            <PropertyRef Name="MaThamSo" />
+          </Key>
+          <Property Name="MaThamSo" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="TuoiToiThieu" Type="tinyint" />
+          <Property Name="TuoiToiDa" Type="tinyint" />
+          <Property Name="SiSoToiDa" Type="smallint" />
+          <Property Name="DiemToiDa" Type="float" />
+          <Property Name="DiemToiThieu" Type="float" />
+        </EntityType>
+        <EntityType Name="THANHPHAN">
+          <Key>
+            <PropertyRef Name="MaThanhPhan" />
+          </Key>
+          <Property Name="MaThanhPhan" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="TenThanhPhan" Type="nvarchar" MaxLength="30" />
+          <Property Name="TrongSo" Type="float" />
+          <Property Name="NamApDung" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="XEPLOAI">
+          <Key>
+            <PropertyRef Name="MaXepLoai" />
+          </Key>
+          <Property Name="MaXepLoai" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="TenXepLoai" Type="nvarchar" MaxLength="30" />
+          <Property Name="DiemToiThieu" Type="float" />
+          <Property Name="DiemToiDa" Type="float" />
+          <Property Name="DiemKhongChe" Type="float" />
+          <Property Name="NamApDung" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <Association Name="fk_ctl_hs">
+          <End Role="HOCSINH" Type="Self.HOCSINH" Multiplicity="1" />
+          <End Role="CTLOP" Type="Self.CTLOP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HOCSINH">
+              <PropertyRef Name="MaHocSinh" />
+            </Principal>
+            <Dependent Role="CTLOP">
+              <PropertyRef Name="MaHocSinh" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_ctl_ml">
+          <End Role="LOP" Type="Self.LOP" Multiplicity="1" />
+          <End Role="CTLOP" Type="Self.CTLOP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOP">
+              <PropertyRef Name="MaLop" />
+            </Principal>
+            <Dependent Role="CTLOP">
+              <PropertyRef Name="MaLop" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_diem_kq">
+          <End Role="KETQUA_MONHOC_HOCSINH" Type="Self.KETQUA_MONHOC_HOCSINH" Multiplicity="1" />
+          <End Role="DIEM" Type="Self.DIEM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KETQUA_MONHOC_HOCSINH">
+              <PropertyRef Name="MaKetQua" />
+            </Principal>
+            <Dependent Role="DIEM">
+              <PropertyRef Name="MaKetQua" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_diem_tp">
+          <End Role="THANHPHAN" Type="Self.THANHPHAN" Multiplicity="0..1" />
+          <End Role="DIEM" Type="Self.DIEM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="THANHPHAN">
+              <PropertyRef Name="MaThanhPhan" />
+            </Principal>
+            <Dependent Role="DIEM">
+              <PropertyRef Name="MaThanhPhan" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_khoi_mnh">
+          <End Role="NAMHOC" Type="Self.NAMHOC" Multiplicity="1" />
+          <End Role="KHOI" Type="Self.KHOI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NAMHOC">
+              <PropertyRef Name="MaNamHoc" />
+            </Principal>
+            <Dependent Role="KHOI">
+              <PropertyRef Name="MaNamHoc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_kq_hk">
+          <End Role="HOCKY" Type="Self.HOCKY" Multiplicity="1" />
+          <End Role="KETQUA_MONHOC_HOCSINH" Type="Self.KETQUA_MONHOC_HOCSINH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HOCKY">
+              <PropertyRef Name="MaHocKy" />
+            </Principal>
+            <Dependent Role="KETQUA_MONHOC_HOCSINH">
+              <PropertyRef Name="MaHocKy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_kq_hs">
+          <End Role="HOCSINH" Type="Self.HOCSINH" Multiplicity="1" />
+          <End Role="KETQUA_MONHOC_HOCSINH" Type="Self.KETQUA_MONHOC_HOCSINH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HOCSINH">
+              <PropertyRef Name="MaHocSinh" />
+            </Principal>
+            <Dependent Role="KETQUA_MONHOC_HOCSINH">
+              <PropertyRef Name="MaHocSinh" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_kq_mh">
+          <End Role="MONHOC" Type="Self.MONHOC" Multiplicity="1" />
+          <End Role="KETQUA_MONHOC_HOCSINH" Type="Self.KETQUA_MONHOC_HOCSINH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MONHOC">
+              <PropertyRef Name="MaMonHoc" />
+            </Principal>
+            <Dependent Role="KETQUA_MONHOC_HOCSINH">
+              <PropertyRef Name="MaMonHoc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_kq_nh">
+          <End Role="NAMHOC" Type="Self.NAMHOC" Multiplicity="1" />
+          <End Role="KETQUA_MONHOC_HOCSINH" Type="Self.KETQUA_MONHOC_HOCSINH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NAMHOC">
+              <PropertyRef Name="MaNamHoc" />
+            </Principal>
+            <Dependent Role="KETQUA_MONHOC_HOCSINH">
+              <PropertyRef Name="MaNamHoc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_kq_xl">
+          <End Role="XEPLOAI" Type="Self.XEPLOAI" Multiplicity="0..1" />
+          <End Role="KETQUA_MONHOC_HOCSINH" Type="Self.KETQUA_MONHOC_HOCSINH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="XEPLOAI">
+              <PropertyRef Name="MaXepLoai" />
+            </Principal>
+            <Dependent Role="KETQUA_MONHOC_HOCSINH">
+              <PropertyRef Name="MaXepLoai" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_lop_mk">
+          <End Role="KHOI" Type="Self.KHOI" Multiplicity="1" />
+          <End Role="LOP" Type="Self.LOP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KHOI">
+              <PropertyRef Name="MaKhoi" />
+            </Principal>
+            <Dependent Role="LOP">
+              <PropertyRef Name="MaKhoi" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_lop_mnh">
+          <End Role="NAMHOC" Type="Self.NAMHOC" Multiplicity="1" />
+          <End Role="LOP" Type="Self.LOP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NAMHOC">
+              <PropertyRef Name="MaNamHoc" />
+            </Principal>
+            <Dependent Role="LOP">
+              <PropertyRef Name="MaNamHoc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_tk_pq">
+          <End Role="PHANQUYEN" Type="Self.PHANQUYEN" Multiplicity="1" />
+          <End Role="TAIKHOAN" Type="Self.TAIKHOAN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PHANQUYEN">
+              <PropertyRef Name="MaPhanQuyen" />
+            </Principal>
+            <Dependent Role="TAIKHOAN">
+              <PropertyRef Name="MaPhanQuyen" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="HocKy_NamApDung" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="NamApDung" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="KhoiLop_NamApDung" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="NamApDung" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="MonHoc_NamApDung" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="NamApDung" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="SuaThamSo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="TuoiToiThieu" Type="tinyint" Mode="In" />
+          <Parameter Name="TuoiToiDa" Type="tinyint" Mode="In" />
+          <Parameter Name="SiSoToiDa" Type="smallint" Mode="In" />
+          <Parameter Name="DiemToiDa" Type="float" Mode="In" />
+          <Parameter Name="DiemToiThieu" Type="float" Mode="In" />
+        </Function>
+        <Function Name="ThanhPhan_NamApDung" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="NamApDung" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="ThemHocKy" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MaHocKy" Type="nvarchar" Mode="In" />
+          <Parameter Name="HocKy" Type="nvarchar" Mode="In" />
+          <Parameter Name="TrongSo" Type="float" Mode="In" />
+        </Function>
+        <Function Name="ThemHocSinh" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MaHocSinh" Type="nvarchar" Mode="In" />
+          <Parameter Name="HoTen" Type="nvarchar" Mode="In" />
+          <Parameter Name="GioiTinh" Type="nvarchar" Mode="In" />
+          <Parameter Name="NgaySinh" Type="smalldatetime" Mode="In" />
+          <Parameter Name="DiaChi" Type="nvarchar" Mode="In" />
+          <Parameter Name="QueQuan" Type="nvarchar" Mode="In" />
+          <Parameter Name="DanToc" Type="nvarchar" Mode="In" />
+          <Parameter Name="TonGiao" Type="nvarchar" Mode="In" />
+          <Parameter Name="SDT" Type="nvarchar" Mode="In" />
+          <Parameter Name="Email" Type="nvarchar" Mode="In" />
+          <Parameter Name="HoTenCha" Type="nvarchar" Mode="In" />
+          <Parameter Name="NamSinh_Cha" Type="smallint" Mode="In" />
+          <Parameter Name="CCCD_Cha" Type="nvarchar" Mode="In" />
+          <Parameter Name="SDT_Cha" Type="nvarchar" Mode="In" />
+          <Parameter Name="NgheNghiep_Cha" Type="nvarchar" Mode="In" />
+          <Parameter Name="HoTenMe" Type="nvarchar" Mode="In" />
+          <Parameter Name="NamSinh_Me" Type="smallint" Mode="In" />
+          <Parameter Name="CCCD_Me" Type="nvarchar" Mode="In" />
+          <Parameter Name="SDT_Me" Type="nvarchar" Mode="In" />
+          <Parameter Name="NgheNghiep_Me" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="ThemKhoi" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MaKhoi" Type="nvarchar" Mode="In" />
+          <Parameter Name="TenKhoi" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="ThemLop" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MaLop" Type="nvarchar" Mode="In" />
+          <Parameter Name="TenLop" Type="nvarchar" Mode="In" />
+          <Parameter Name="MaKhoi" Type="nvarchar" Mode="In" />
+          <Parameter Name="MaNamHoc" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="ThemMonHoc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MaMonHoc" Type="nvarchar" Mode="In" />
+          <Parameter Name="TenMonHoc" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="ThemNamHoc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MaNamHoc" Type="nvarchar" Mode="In" />
+          <Parameter Name="NamHoc" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="ThemTaiKhoan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MaTaiKhoan" Type="nvarchar" Mode="In" />
+          <Parameter Name="TenDangNhap" Type="nvarchar" Mode="In" />
+          <Parameter Name="MatKhau" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="ThemThanhPhan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MaThanhPhan" Type="nvarchar" Mode="In" />
+          <Parameter Name="TenThanhPhan" Type="nvarchar" Mode="In" />
+          <Parameter Name="TrongSo" Type="float" Mode="In" />
+        </Function>
+        <Function Name="ThemXepLoai" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MaXepLoai" Type="nvarchar" Mode="In" />
+          <Parameter Name="TenXepLoai" Type="nvarchar" Mode="In" />
+          <Parameter Name="DiemToiThieu" Type="float" Mode="In" />
+          <Parameter Name="DiemToiDa" Type="float" Mode="In" />
+          <Parameter Name="DiemKhongChe" Type="float" Mode="In" />
+        </Function>
+        <Function Name="TongKetHocKy" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MaHocKy" Type="nvarchar" Mode="In" />
+          <Parameter Name="MaNamHoc" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="TongKetMon_HocSinh" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MaNamHoc" Type="nvarchar" Mode="In" />
+          <Parameter Name="MaHocSinh" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="TongKetMonHocKy" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MaMonHoc" Type="nvarchar" Mode="In" />
+          <Parameter Name="MaHocKy" Type="nvarchar" Mode="In" />
+          <Parameter Name="MaNamHoc" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="TongKetMonNamHoc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MaMonHoc" Type="nvarchar" Mode="In" />
+          <Parameter Name="MaNamHoc" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="TongKetNamHoc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MaNamHoc" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="XepLoai_NamApDung" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="NamApDung" Type="nvarchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="dataModelStoreContainer">
+          <EntitySet Name="CTLOP" EntityType="Self.CTLOP" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DIEM" EntityType="Self.DIEM" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HOCKY" EntityType="Self.HOCKY" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HOCSINH" EntityType="Self.HOCSINH" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KETQUA_MONHOC_HOCSINH" EntityType="Self.KETQUA_MONHOC_HOCSINH" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KHOI" EntityType="Self.KHOI" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LOP" EntityType="Self.LOP" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MONHOC" EntityType="Self.MONHOC" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NAMHOC" EntityType="Self.NAMHOC" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PHANQUYEN" EntityType="Self.PHANQUYEN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TAIKHOAN" EntityType="Self.TAIKHOAN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="THAMSO" EntityType="Self.THAMSO" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="THANHPHAN" EntityType="Self.THANHPHAN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="XEPLOAI" EntityType="Self.XEPLOAI" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="fk_ctl_hs" Association="Self.fk_ctl_hs">
+            <End Role="HOCSINH" EntitySet="HOCSINH" />
+            <End Role="CTLOP" EntitySet="CTLOP" />
+          </AssociationSet>
+          <AssociationSet Name="fk_ctl_ml" Association="Self.fk_ctl_ml">
+            <End Role="LOP" EntitySet="LOP" />
+            <End Role="CTLOP" EntitySet="CTLOP" />
+          </AssociationSet>
+          <AssociationSet Name="fk_diem_kq" Association="Self.fk_diem_kq">
+            <End Role="KETQUA_MONHOC_HOCSINH" EntitySet="KETQUA_MONHOC_HOCSINH" />
+            <End Role="DIEM" EntitySet="DIEM" />
+          </AssociationSet>
+          <AssociationSet Name="fk_diem_tp" Association="Self.fk_diem_tp">
+            <End Role="THANHPHAN" EntitySet="THANHPHAN" />
+            <End Role="DIEM" EntitySet="DIEM" />
+          </AssociationSet>
+          <AssociationSet Name="fk_khoi_mnh" Association="Self.fk_khoi_mnh">
+            <End Role="NAMHOC" EntitySet="NAMHOC" />
+            <End Role="KHOI" EntitySet="KHOI" />
+          </AssociationSet>
+          <AssociationSet Name="fk_kq_hk" Association="Self.fk_kq_hk">
+            <End Role="HOCKY" EntitySet="HOCKY" />
+            <End Role="KETQUA_MONHOC_HOCSINH" EntitySet="KETQUA_MONHOC_HOCSINH" />
+          </AssociationSet>
+          <AssociationSet Name="fk_kq_hs" Association="Self.fk_kq_hs">
+            <End Role="HOCSINH" EntitySet="HOCSINH" />
+            <End Role="KETQUA_MONHOC_HOCSINH" EntitySet="KETQUA_MONHOC_HOCSINH" />
+          </AssociationSet>
+          <AssociationSet Name="fk_kq_mh" Association="Self.fk_kq_mh">
+            <End Role="MONHOC" EntitySet="MONHOC" />
+            <End Role="KETQUA_MONHOC_HOCSINH" EntitySet="KETQUA_MONHOC_HOCSINH" />
+          </AssociationSet>
+          <AssociationSet Name="fk_kq_nh" Association="Self.fk_kq_nh">
+            <End Role="NAMHOC" EntitySet="NAMHOC" />
+            <End Role="KETQUA_MONHOC_HOCSINH" EntitySet="KETQUA_MONHOC_HOCSINH" />
+          </AssociationSet>
+          <AssociationSet Name="fk_kq_xl" Association="Self.fk_kq_xl">
+            <End Role="XEPLOAI" EntitySet="XEPLOAI" />
+            <End Role="KETQUA_MONHOC_HOCSINH" EntitySet="KETQUA_MONHOC_HOCSINH" />
+          </AssociationSet>
+          <AssociationSet Name="fk_lop_mk" Association="Self.fk_lop_mk">
+            <End Role="KHOI" EntitySet="KHOI" />
+            <End Role="LOP" EntitySet="LOP" />
+          </AssociationSet>
+          <AssociationSet Name="fk_lop_mnh" Association="Self.fk_lop_mnh">
+            <End Role="NAMHOC" EntitySet="NAMHOC" />
+            <End Role="LOP" EntitySet="LOP" />
+          </AssociationSet>
+          <AssociationSet Name="fk_tk_pq" Association="Self.fk_tk_pq">
+            <End Role="PHANQUYEN" EntitySet="PHANQUYEN" />
+            <End Role="TAIKHOAN" EntitySet="TAIKHOAN" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="dataModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="dataEntities" annotation:LazyLoadingEnabled="true">
+          <FunctionImport Name="ThemHocKy">
+            <Parameter Name="MaHocKy" Mode="In" Type="String" />
+            <Parameter Name="HocKy" Mode="In" Type="String" />
+            <Parameter Name="TrongSo" Mode="In" Type="Double" />
+          </FunctionImport>
+          <FunctionImport Name="TongKetMonHocKy" ReturnType="Collection(dataModel.TongKetMonHocKy_Result)">
+            <Parameter Name="MaMonHoc" Mode="In" Type="String" />
+            <Parameter Name="MaHocKy" Mode="In" Type="String" />
+            <Parameter Name="MaNamHoc" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="ThemHocSinh">
+            <Parameter Name="MaHocSinh" Mode="In" Type="String" />
+            <Parameter Name="HoTen" Mode="In" Type="String" />
+            <Parameter Name="GioiTinh" Mode="In" Type="String" />
+            <Parameter Name="NgaySinh" Mode="In" Type="DateTime" />
+            <Parameter Name="DiaChi" Mode="In" Type="String" />
+            <Parameter Name="QueQuan" Mode="In" Type="String" />
+            <Parameter Name="DanToc" Mode="In" Type="String" />
+            <Parameter Name="TonGiao" Mode="In" Type="String" />
+            <Parameter Name="SDT" Mode="In" Type="String" />
+            <Parameter Name="Email" Mode="In" Type="String" />
+            <Parameter Name="HoTenCha" Mode="In" Type="String" />
+            <Parameter Name="NamSinh_Cha" Mode="In" Type="Int16" />
+            <Parameter Name="CCCD_Cha" Mode="In" Type="String" />
+            <Parameter Name="SDT_Cha" Mode="In" Type="String" />
+            <Parameter Name="NgheNghiep_Cha" Mode="In" Type="String" />
+            <Parameter Name="HoTenMe" Mode="In" Type="String" />
+            <Parameter Name="NamSinh_Me" Mode="In" Type="Int16" />
+            <Parameter Name="CCCD_Me" Mode="In" Type="String" />
+            <Parameter Name="SDT_Me" Mode="In" Type="String" />
+            <Parameter Name="NgheNghiep_Me" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="ThemKhoi">
+            <Parameter Name="MaKhoi" Mode="In" Type="String" />
+            <Parameter Name="TenKhoi" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="ThemLop">
+            <Parameter Name="MaLop" Mode="In" Type="String" />
+            <Parameter Name="TenLop" Mode="In" Type="String" />
+            <Parameter Name="MaKhoi" Mode="In" Type="String" />
+            <Parameter Name="MaNamHoc" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="ThemMonHoc">
+            <Parameter Name="MaMonHoc" Mode="In" Type="String" />
+            <Parameter Name="TenMonHoc" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="ThemNamHoc">
+            <Parameter Name="MaNamHoc" Mode="In" Type="String" />
+            <Parameter Name="NamHoc" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="TongKetMonNamHoc" ReturnType="Collection(dataModel.TongKetMonNamHoc_Result)">
+            <Parameter Name="MaMonHoc" Mode="In" Type="String" />
+            <Parameter Name="MaNamHoc" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="TongKetHocKy" ReturnType="Collection(dataModel.TongKetHocKy_Result)">
+            <Parameter Name="MaHocKy" Mode="In" Type="String" />
+            <Parameter Name="MaNamHoc" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SuaThamSo">
+            <Parameter Name="TuoiToiThieu" Mode="In" Type="Byte" />
+            <Parameter Name="TuoiToiDa" Mode="In" Type="Byte" />
+            <Parameter Name="SiSoToiDa" Mode="In" Type="Int16" />
+            <Parameter Name="DiemToiDa" Mode="In" Type="Double" />
+            <Parameter Name="DiemToiThieu" Mode="In" Type="Double" />
+          </FunctionImport>
+          <FunctionImport Name="ThemTaiKhoan">
+            <Parameter Name="MaTaiKhoan" Mode="In" Type="String" />
+            <Parameter Name="TenDangNhap" Mode="In" Type="String" />
+            <Parameter Name="MatKhau" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="ThemThanhPhan">
+            <Parameter Name="MaThanhPhan" Mode="In" Type="String" />
+            <Parameter Name="TenThanhPhan" Mode="In" Type="String" />
+            <Parameter Name="TrongSo" Mode="In" Type="Double" />
+          </FunctionImport>
+          <FunctionImport Name="ThemXepLoai">
+            <Parameter Name="MaXepLoai" Mode="In" Type="String" />
+            <Parameter Name="TenXepLoai" Mode="In" Type="String" />
+            <Parameter Name="DiemToiThieu" Mode="In" Type="Double" />
+            <Parameter Name="DiemToiDa" Mode="In" Type="Double" />
+            <Parameter Name="DiemKhongChe" Mode="In" Type="Double" />
+          </FunctionImport>
+          <FunctionImport Name="TongKetMon_HocSinh" ReturnType="Collection(dataModel.TongKetMon_HocSinh_Result)">
+            <Parameter Name="MaNamHoc" Mode="In" Type="String" />
+            <Parameter Name="MaHocSinh" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="HocKy_NamApDung" ReturnType="Collection(dataModel.HocKy_NamApDung_Result)">
+          <Parameter Name="NamApDung" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="MonHoc_NamApDung" ReturnType="Collection(dataModel.MonHoc_NamApDung_Result)">
+          <Parameter Name="NamApDung" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="KhoiLop_NamApDung" ReturnType="Collection(dataModel.KhoiLop_NamApDung_Result)">
+          <Parameter Name="NamApDung" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="ThanhPhan_NamApDung" ReturnType="Collection(dataModel.ThanhPhan_NamApDung_Result)">
+          <Parameter Name="NamApDung" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="TongKetNamHoc" ReturnType="Collection(dataModel.TongKetNamHoc_Result)">
+          <Parameter Name="MaNamHoc" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="XepLoai_NamApDung" ReturnType="Collection(dataModel.XepLoai_NamApDung_Result)">
+          <Parameter Name="NamApDung" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="CTLOPs" EntityType="dataModel.CTLOP" />
+          <EntitySet Name="DIEMs" EntityType="dataModel.DIEM" />
+          <EntitySet Name="HOCKies" EntityType="dataModel.HOCKY" />
+          <EntitySet Name="HOCSINHs" EntityType="dataModel.HOCSINH" />
+          <EntitySet Name="KETQUA_MONHOC_HOCSINH" EntityType="dataModel.KETQUA_MONHOC_HOCSINH" />
+          <EntitySet Name="KHOIs" EntityType="dataModel.KHOI" />
+          <EntitySet Name="LOPs" EntityType="dataModel.LOP" />
+          <EntitySet Name="MONHOCs" EntityType="dataModel.MONHOC" />
+          <EntitySet Name="NAMHOCs" EntityType="dataModel.NAMHOC" />
+          <EntitySet Name="PHANQUYENs" EntityType="dataModel.PHANQUYEN" />
+          <EntitySet Name="TAIKHOANs" EntityType="dataModel.TAIKHOAN" />
+          <EntitySet Name="THAMSOes" EntityType="dataModel.THAMSO" />
+          <EntitySet Name="THANHPHANs" EntityType="dataModel.THANHPHAN" />
+          <EntitySet Name="XEPLOAIs" EntityType="dataModel.XEPLOAI" />
+          <AssociationSet Name="fk_ctl_hs" Association="dataModel.fk_ctl_hs">
+            <End Role="HOCSINH" EntitySet="HOCSINHs" />
+            <End Role="CTLOP" EntitySet="CTLOPs" />
+          </AssociationSet>
+          <AssociationSet Name="fk_ctl_ml" Association="dataModel.fk_ctl_ml">
+            <End Role="LOP" EntitySet="LOPs" />
+            <End Role="CTLOP" EntitySet="CTLOPs" />
+          </AssociationSet>
+          <AssociationSet Name="fk_diem_kq" Association="dataModel.fk_diem_kq">
+            <End Role="KETQUA_MONHOC_HOCSINH" EntitySet="KETQUA_MONHOC_HOCSINH" />
+            <End Role="DIEM" EntitySet="DIEMs" />
+          </AssociationSet>
+          <AssociationSet Name="fk_diem_tp" Association="dataModel.fk_diem_tp">
+            <End Role="THANHPHAN" EntitySet="THANHPHANs" />
+            <End Role="DIEM" EntitySet="DIEMs" />
+          </AssociationSet>
+          <AssociationSet Name="fk_kq_hk" Association="dataModel.fk_kq_hk">
+            <End Role="HOCKY" EntitySet="HOCKies" />
+            <End Role="KETQUA_MONHOC_HOCSINH" EntitySet="KETQUA_MONHOC_HOCSINH" />
+          </AssociationSet>
+          <AssociationSet Name="fk_kq_hs" Association="dataModel.fk_kq_hs">
+            <End Role="HOCSINH" EntitySet="HOCSINHs" />
+            <End Role="KETQUA_MONHOC_HOCSINH" EntitySet="KETQUA_MONHOC_HOCSINH" />
+          </AssociationSet>
+          <AssociationSet Name="fk_kq_mh" Association="dataModel.fk_kq_mh">
+            <End Role="MONHOC" EntitySet="MONHOCs" />
+            <End Role="KETQUA_MONHOC_HOCSINH" EntitySet="KETQUA_MONHOC_HOCSINH" />
+          </AssociationSet>
+          <AssociationSet Name="fk_kq_nh" Association="dataModel.fk_kq_nh">
+            <End Role="NAMHOC" EntitySet="NAMHOCs" />
+            <End Role="KETQUA_MONHOC_HOCSINH" EntitySet="KETQUA_MONHOC_HOCSINH" />
+          </AssociationSet>
+          <AssociationSet Name="fk_kq_xl" Association="dataModel.fk_kq_xl">
+            <End Role="XEPLOAI" EntitySet="XEPLOAIs" />
+            <End Role="KETQUA_MONHOC_HOCSINH" EntitySet="KETQUA_MONHOC_HOCSINH" />
+          </AssociationSet>
+          <AssociationSet Name="fk_khoi_mnh" Association="dataModel.fk_khoi_mnh">
+            <End Role="NAMHOC" EntitySet="NAMHOCs" />
+            <End Role="KHOI" EntitySet="KHOIs" />
+          </AssociationSet>
+          <AssociationSet Name="fk_lop_mk" Association="dataModel.fk_lop_mk">
+            <End Role="KHOI" EntitySet="KHOIs" />
+            <End Role="LOP" EntitySet="LOPs" />
+          </AssociationSet>
+          <AssociationSet Name="fk_lop_mnh" Association="dataModel.fk_lop_mnh">
+            <End Role="NAMHOC" EntitySet="NAMHOCs" />
+            <End Role="LOP" EntitySet="LOPs" />
+          </AssociationSet>
+          <AssociationSet Name="fk_tk_pq" Association="dataModel.fk_tk_pq">
+            <End Role="PHANQUYEN" EntitySet="PHANQUYENs" />
+            <End Role="TAIKHOAN" EntitySet="TAIKHOANs" />
+          </AssociationSet>
+          </EntityContainer>
+        <ComplexType Name="TongKetMonHocKy_Result">
+          <Property Type="String" Name="TenLop" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="MaXepLoai" Nullable="true" MaxLength="20" />
+          <Property Type="Int32" Name="SoLuong" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="TongKetMonNamHoc_Result">
+          <Property Type="String" Name="TenLop" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="MaHocSinh" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="HocKy" Nullable="false" MaxLength="20" />
+          <Property Type="Double" Name="DiemTB" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="TongKetHocKy_Result">
+          <Property Type="String" Name="TenLop" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="MaHocSinh" Nullable="false" MaxLength="10" />
+          <Property Type="Double" Name="DiemTB" Nullable="true" />
+          <Property Type="Double" Name="DiemKC" Nullable="true" />
+          <Property Type="Int32" Name="SoLuong" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="TongKetMon_HocSinh_Result">
+          <Property Type="String" Name="MaMonHoc" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="MaHocKy" Nullable="false" MaxLength="20" />
+          <Property Type="Double" Name="DiemTB" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="HocKy_NamApDung_Result">
+          <Property Type="String" Name="MaHocKy" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="HocKy" Nullable="true" MaxLength="20" />
+          <Property Type="Double" Name="TrongSo" Nullable="true" />
+          <Property Type="String" Name="NamApDung" Nullable="true" MaxLength="20" />
+        </ComplexType>
+        <ComplexType Name="MonHoc_NamApDung_Result">
+          <Property Type="String" Name="MaMonHoc" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="TenMonHoc" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="NamApDung" Nullable="true" MaxLength="20" />
+        </ComplexType>
+        <ComplexType Name="KhoiLop_NamApDung_Result">
+          <Property Type="String" Name="MaKhoi" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="TenKhoi" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="MaNamHoc" Nullable="false" MaxLength="20" />
+        </ComplexType>
+        <ComplexType Name="ThanhPhan_NamApDung_Result">
+          <Property Type="String" Name="MaThanhPhan" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="TenThanhPhan" Nullable="true" MaxLength="30" />
+          <Property Type="Double" Name="TrongSo" Nullable="true" />
+          <Property Type="String" Name="NamApDung" Nullable="true" MaxLength="20" />
+        </ComplexType>
+        <ComplexType Name="TongKetNamHoc_Result">
+          <Property Type="String" Name="TenLop" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="MaHocSinh" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="MaMonHoc" Nullable="false" MaxLength="20" />
+          <Property Type="Double" Name="DiemTB" Nullable="true" />
+          <Property Type="Int32" Name="SoLuongKy" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="XepLoai_NamApDung_Result">
+          <Property Type="String" Name="MaXepLoai" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="TenXepLoai" Nullable="true" MaxLength="30" />
+          <Property Type="Double" Name="DiemToiThieu" Nullable="true" />
+          <Property Type="Double" Name="DiemToiDa" Nullable="true" />
+          <Property Type="Double" Name="DiemKhongChe" Nullable="true" />
+          <Property Type="String" Name="NamApDung" Nullable="true" MaxLength="20" />
+        </ComplexType>
+        <EntityType Name="CTLOP">
+          <Key>
+            <PropertyRef Name="MaCTL" />
+          </Key>
+          <Property Name="MaCTL" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MaHocSinh" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="MaLop" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="HOCSINH" Relationship="dataModel.fk_ctl_hs" FromRole="CTLOP" ToRole="HOCSINH" />
+          <NavigationProperty Name="LOP" Relationship="dataModel.fk_ctl_ml" FromRole="CTLOP" ToRole="LOP" />
+        </EntityType>
+        <EntityType Name="DIEM">
+          <Key>
+            <PropertyRef Name="MaDiem" />
+          </Key>
+          <Property Name="MaDiem" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MaKetQua" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MaThanhPhan" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Diem1" Type="Double" />
+          <NavigationProperty Name="KETQUA_MONHOC_HOCSINH" Relationship="dataModel.fk_diem_kq" FromRole="DIEM" ToRole="KETQUA_MONHOC_HOCSINH" />
+          <NavigationProperty Name="THANHPHAN" Relationship="dataModel.fk_diem_tp" FromRole="DIEM" ToRole="THANHPHAN" />
+        </EntityType>
+        <EntityType Name="HOCKY">
+          <Key>
+            <PropertyRef Name="MaHocKy" />
+          </Key>
+          <Property Name="MaHocKy" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="HocKy1" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="TrongSo" Type="Double" />
+          <Property Name="NamApDung" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="KETQUA_MONHOC_HOCSINH" Relationship="dataModel.fk_kq_hk" FromRole="HOCKY" ToRole="KETQUA_MONHOC_HOCSINH" />
+        </EntityType>
+        <EntityType Name="HOCSINH">
+          <Key>
+            <PropertyRef Name="MaHocSinh" />
+          </Key>
+          <Property Name="MaHocSinh" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="HoTen" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="GioiTinh" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="NgaySinh" Type="DateTime" Precision="0" />
+          <Property Name="DiaChi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="QueQuan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DanToc" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="TonGiao" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="SDT" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="HoTenCha" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="NamSinh_Cha" Type="Int16" />
+          <Property Name="CCCD_Cha" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="SDT_Cha" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="NgheNghiep_Cha" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="HoTenMe" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="NamSinh_Me" Type="Int16" />
+          <Property Name="CCCD_Me" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="SDT_Me" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="NgheNghiep_Me" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CTLOPs" Relationship="dataModel.fk_ctl_hs" FromRole="HOCSINH" ToRole="CTLOP" />
+          <NavigationProperty Name="KETQUA_MONHOC_HOCSINH" Relationship="dataModel.fk_kq_hs" FromRole="HOCSINH" ToRole="KETQUA_MONHOC_HOCSINH" />
+        </EntityType>
+        <EntityType Name="KETQUA_MONHOC_HOCSINH">
+          <Key>
+            <PropertyRef Name="MaKetQua" />
+          </Key>
+          <Property Name="MaKetQua" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MaHocSinh" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="MaNamHoc" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MaHocKy" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MaMonHoc" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="DiemTB" Type="Double" />
+          <Property Name="MaXepLoai" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="DIEMs" Relationship="dataModel.fk_diem_kq" FromRole="KETQUA_MONHOC_HOCSINH" ToRole="DIEM" />
+          <NavigationProperty Name="HOCKY" Relationship="dataModel.fk_kq_hk" FromRole="KETQUA_MONHOC_HOCSINH" ToRole="HOCKY" />
+          <NavigationProperty Name="HOCSINH" Relationship="dataModel.fk_kq_hs" FromRole="KETQUA_MONHOC_HOCSINH" ToRole="HOCSINH" />
+          <NavigationProperty Name="MONHOC" Relationship="dataModel.fk_kq_mh" FromRole="KETQUA_MONHOC_HOCSINH" ToRole="MONHOC" />
+          <NavigationProperty Name="NAMHOC" Relationship="dataModel.fk_kq_nh" FromRole="KETQUA_MONHOC_HOCSINH" ToRole="NAMHOC" />
+          <NavigationProperty Name="XEPLOAI" Relationship="dataModel.fk_kq_xl" FromRole="KETQUA_MONHOC_HOCSINH" ToRole="XEPLOAI" />
+        </EntityType>
+        <EntityType Name="KHOI">
+          <Key>
+            <PropertyRef Name="MaKhoi" />
+          </Key>
+          <Property Name="MaKhoi" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="TenKhoi" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="MaNamHoc" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="NAMHOC" Relationship="dataModel.fk_khoi_mnh" FromRole="KHOI" ToRole="NAMHOC" />
+          <NavigationProperty Name="LOPs" Relationship="dataModel.fk_lop_mk" FromRole="KHOI" ToRole="LOP" />
+        </EntityType>
+        <EntityType Name="LOP">
+          <Key>
+            <PropertyRef Name="MaLop" />
+          </Key>
+          <Property Name="MaLop" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="TenLop" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="MaKhoi" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="SiSo" Type="Byte" />
+          <Property Name="MaNamHoc" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CTLOPs" Relationship="dataModel.fk_ctl_ml" FromRole="LOP" ToRole="CTLOP" />
+          <NavigationProperty Name="KHOI" Relationship="dataModel.fk_lop_mk" FromRole="LOP" ToRole="KHOI" />
+          <NavigationProperty Name="NAMHOC" Relationship="dataModel.fk_lop_mnh" FromRole="LOP" ToRole="NAMHOC" />
+        </EntityType>
+        <EntityType Name="MONHOC">
+          <Key>
+            <PropertyRef Name="MaMonHoc" />
+          </Key>
+          <Property Name="MaMonHoc" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="TenMonHoc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NamApDung" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="KETQUA_MONHOC_HOCSINH" Relationship="dataModel.fk_kq_mh" FromRole="MONHOC" ToRole="KETQUA_MONHOC_HOCSINH" />
+        </EntityType>
+        <EntityType Name="NAMHOC">
+          <Key>
+            <PropertyRef Name="MaNamHoc" />
+          </Key>
+          <Property Name="MaNamHoc" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="NamHoc1" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="KETQUA_MONHOC_HOCSINH" Relationship="dataModel.fk_kq_nh" FromRole="NAMHOC" ToRole="KETQUA_MONHOC_HOCSINH" />
+          <NavigationProperty Name="KHOIs" Relationship="dataModel.fk_khoi_mnh" FromRole="NAMHOC" ToRole="KHOI" />
+          <NavigationProperty Name="LOPs" Relationship="dataModel.fk_lop_mnh" FromRole="NAMHOC" ToRole="LOP" />
+        </EntityType>
+        <EntityType Name="PHANQUYEN">
+          <Key>
+            <PropertyRef Name="MaPhanQuyen" />
+          </Key>
+          <Property Name="MaPhanQuyen" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="VaiTro" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="TAIKHOANs" Relationship="dataModel.fk_tk_pq" FromRole="PHANQUYEN" ToRole="TAIKHOAN" />
+        </EntityType>
+        <EntityType Name="TAIKHOAN">
+          <Key>
+            <PropertyRef Name="MaTaiKhoan" />
+          </Key>
+          <Property Name="MaTaiKhoan" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="TenDangNhap" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="MatKhau" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+          <Property Name="MaPhanQuyen" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="HoTen" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="NgaySinh" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="PHANQUYEN" Relationship="dataModel.fk_tk_pq" FromRole="TAIKHOAN" ToRole="PHANQUYEN" />
+        </EntityType>
+        <EntityType Name="THAMSO">
+          <Key>
+            <PropertyRef Name="MaThamSo" />
+          </Key>
+          <Property Name="MaThamSo" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="TuoiToiThieu" Type="Byte" />
+          <Property Name="TuoiToiDa" Type="Byte" />
+          <Property Name="SiSoToiDa" Type="Int16" />
+          <Property Name="DiemToiDa" Type="Double" />
+          <Property Name="DiemToiThieu" Type="Double" />
+        </EntityType>
+        <EntityType Name="THANHPHAN">
+          <Key>
+            <PropertyRef Name="MaThanhPhan" />
+          </Key>
+          <Property Name="MaThanhPhan" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="TenThanhPhan" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="TrongSo" Type="Double" />
+          <Property Name="NamApDung" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="DIEMs" Relationship="dataModel.fk_diem_tp" FromRole="THANHPHAN" ToRole="DIEM" />
+        </EntityType>
+        <EntityType Name="XEPLOAI">
+          <Key>
+            <PropertyRef Name="MaXepLoai" />
+          </Key>
+          <Property Name="MaXepLoai" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="TenXepLoai" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="DiemToiThieu" Type="Double" />
+          <Property Name="DiemToiDa" Type="Double" />
+          <Property Name="DiemKhongChe" Type="Double" />
+          <Property Name="NamApDung" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="KETQUA_MONHOC_HOCSINH" Relationship="dataModel.fk_kq_xl" FromRole="XEPLOAI" ToRole="KETQUA_MONHOC_HOCSINH" />
+        </EntityType>
+        <Association Name="fk_ctl_hs">
+          <End Type="dataModel.HOCSINH" Role="HOCSINH" Multiplicity="1" />
+          <End Type="dataModel.CTLOP" Role="CTLOP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HOCSINH">
+              <PropertyRef Name="MaHocSinh" />
+            </Principal>
+            <Dependent Role="CTLOP">
+              <PropertyRef Name="MaHocSinh" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_ctl_ml">
+          <End Type="dataModel.LOP" Role="LOP" Multiplicity="1" />
+          <End Type="dataModel.CTLOP" Role="CTLOP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOP">
+              <PropertyRef Name="MaLop" />
+            </Principal>
+            <Dependent Role="CTLOP">
+              <PropertyRef Name="MaLop" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_diem_kq">
+          <End Type="dataModel.KETQUA_MONHOC_HOCSINH" Role="KETQUA_MONHOC_HOCSINH" Multiplicity="1" />
+          <End Type="dataModel.DIEM" Role="DIEM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KETQUA_MONHOC_HOCSINH">
+              <PropertyRef Name="MaKetQua" />
+            </Principal>
+            <Dependent Role="DIEM">
+              <PropertyRef Name="MaKetQua" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_diem_tp">
+          <End Type="dataModel.THANHPHAN" Role="THANHPHAN" Multiplicity="0..1" />
+          <End Type="dataModel.DIEM" Role="DIEM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="THANHPHAN">
+              <PropertyRef Name="MaThanhPhan" />
+            </Principal>
+            <Dependent Role="DIEM">
+              <PropertyRef Name="MaThanhPhan" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_kq_hk">
+          <End Type="dataModel.HOCKY" Role="HOCKY" Multiplicity="1" />
+          <End Type="dataModel.KETQUA_MONHOC_HOCSINH" Role="KETQUA_MONHOC_HOCSINH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HOCKY">
+              <PropertyRef Name="MaHocKy" />
+            </Principal>
+            <Dependent Role="KETQUA_MONHOC_HOCSINH">
+              <PropertyRef Name="MaHocKy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_kq_hs">
+          <End Type="dataModel.HOCSINH" Role="HOCSINH" Multiplicity="1" />
+          <End Type="dataModel.KETQUA_MONHOC_HOCSINH" Role="KETQUA_MONHOC_HOCSINH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HOCSINH">
+              <PropertyRef Name="MaHocSinh" />
+            </Principal>
+            <Dependent Role="KETQUA_MONHOC_HOCSINH">
+              <PropertyRef Name="MaHocSinh" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_kq_mh">
+          <End Type="dataModel.MONHOC" Role="MONHOC" Multiplicity="1" />
+          <End Type="dataModel.KETQUA_MONHOC_HOCSINH" Role="KETQUA_MONHOC_HOCSINH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MONHOC">
+              <PropertyRef Name="MaMonHoc" />
+            </Principal>
+            <Dependent Role="KETQUA_MONHOC_HOCSINH">
+              <PropertyRef Name="MaMonHoc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_kq_nh">
+          <End Type="dataModel.NAMHOC" Role="NAMHOC" Multiplicity="1" />
+          <End Type="dataModel.KETQUA_MONHOC_HOCSINH" Role="KETQUA_MONHOC_HOCSINH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NAMHOC">
+              <PropertyRef Name="MaNamHoc" />
+            </Principal>
+            <Dependent Role="KETQUA_MONHOC_HOCSINH">
+              <PropertyRef Name="MaNamHoc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_kq_xl">
+          <End Type="dataModel.XEPLOAI" Role="XEPLOAI" Multiplicity="0..1" />
+          <End Type="dataModel.KETQUA_MONHOC_HOCSINH" Role="KETQUA_MONHOC_HOCSINH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="XEPLOAI">
+              <PropertyRef Name="MaXepLoai" />
+            </Principal>
+            <Dependent Role="KETQUA_MONHOC_HOCSINH">
+              <PropertyRef Name="MaXepLoai" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_khoi_mnh">
+          <End Type="dataModel.NAMHOC" Role="NAMHOC" Multiplicity="1" />
+          <End Type="dataModel.KHOI" Role="KHOI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NAMHOC">
+              <PropertyRef Name="MaNamHoc" />
+            </Principal>
+            <Dependent Role="KHOI">
+              <PropertyRef Name="MaNamHoc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_lop_mk">
+          <End Type="dataModel.KHOI" Role="KHOI" Multiplicity="1" />
+          <End Type="dataModel.LOP" Role="LOP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KHOI">
+              <PropertyRef Name="MaKhoi" />
+            </Principal>
+            <Dependent Role="LOP">
+              <PropertyRef Name="MaKhoi" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_lop_mnh">
+          <End Type="dataModel.NAMHOC" Role="NAMHOC" Multiplicity="1" />
+          <End Type="dataModel.LOP" Role="LOP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NAMHOC">
+              <PropertyRef Name="MaNamHoc" />
+            </Principal>
+            <Dependent Role="LOP">
+              <PropertyRef Name="MaNamHoc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_tk_pq">
+          <End Type="dataModel.PHANQUYEN" Role="PHANQUYEN" Multiplicity="1" />
+          <End Type="dataModel.TAIKHOAN" Role="TAIKHOAN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PHANQUYEN">
+              <PropertyRef Name="MaPhanQuyen" />
+            </Principal>
+            <Dependent Role="TAIKHOAN">
+              <PropertyRef Name="MaPhanQuyen" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="dataModelStoreContainer" CdmEntityContainer="dataEntities">
+          <FunctionImportMapping FunctionImportName="TongKetMonHocKy" FunctionName="dataModel.Store.TongKetMonHocKy">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="dataModel.TongKetMonHocKy_Result">
+                <ScalarProperty Name="TenLop" ColumnName="TenLop" />
+                <ScalarProperty Name="MaXepLoai" ColumnName="MaXepLoai" />
+                <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="TongKetMonNamHoc" FunctionName="dataModel.Store.TongKetMonNamHoc">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="dataModel.TongKetMonNamHoc_Result">
+                <ScalarProperty Name="TenLop" ColumnName="TenLop" />
+                <ScalarProperty Name="MaHocSinh" ColumnName="MaHocSinh" />
+                <ScalarProperty Name="HocKy" ColumnName="HocKy" />
+                <ScalarProperty Name="DiemTB" ColumnName="DiemTB" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="TongKetHocKy" FunctionName="dataModel.Store.TongKetHocKy">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="dataModel.TongKetHocKy_Result">
+                <ScalarProperty Name="TenLop" ColumnName="TenLop" />
+                <ScalarProperty Name="MaHocSinh" ColumnName="MaHocSinh" />
+                <ScalarProperty Name="DiemTB" ColumnName="DiemTB" />
+                <ScalarProperty Name="DiemKC" ColumnName="DiemKC" />
+                <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="TongKetMon_HocSinh" FunctionName="dataModel.Store.TongKetMon_HocSinh">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="dataModel.TongKetMon_HocSinh_Result">
+                <ScalarProperty Name="MaMonHoc" ColumnName="MaMonHoc" />
+                <ScalarProperty Name="MaHocKy" ColumnName="MaHocKy" />
+                <ScalarProperty Name="DiemTB" ColumnName="DiemTB" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="HocKy_NamApDung" FunctionName="dataModel.Store.HocKy_NamApDung">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="dataModel.HocKy_NamApDung_Result">
+                <ScalarProperty Name="MaHocKy" ColumnName="MaHocKy" />
+                <ScalarProperty Name="HocKy" ColumnName="HocKy" />
+                <ScalarProperty Name="TrongSo" ColumnName="TrongSo" />
+                <ScalarProperty Name="NamApDung" ColumnName="NamApDung" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="MonHoc_NamApDung" FunctionName="dataModel.Store.MonHoc_NamApDung">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="dataModel.MonHoc_NamApDung_Result">
+                <ScalarProperty Name="MaMonHoc" ColumnName="MaMonHoc" />
+                <ScalarProperty Name="TenMonHoc" ColumnName="TenMonHoc" />
+                <ScalarProperty Name="NamApDung" ColumnName="NamApDung" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="KhoiLop_NamApDung" FunctionName="dataModel.Store.KhoiLop_NamApDung">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="dataModel.KhoiLop_NamApDung_Result">
+                <ScalarProperty Name="MaKhoi" ColumnName="MaKhoi" />
+                <ScalarProperty Name="TenKhoi" ColumnName="TenKhoi" />
+                <ScalarProperty Name="MaNamHoc" ColumnName="MaNamHoc" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="ThanhPhan_NamApDung" FunctionName="dataModel.Store.ThanhPhan_NamApDung">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="dataModel.ThanhPhan_NamApDung_Result">
+                <ScalarProperty Name="MaThanhPhan" ColumnName="MaThanhPhan" />
+                <ScalarProperty Name="TenThanhPhan" ColumnName="TenThanhPhan" />
+                <ScalarProperty Name="TrongSo" ColumnName="TrongSo" />
+                <ScalarProperty Name="NamApDung" ColumnName="NamApDung" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="TongKetNamHoc" FunctionName="dataModel.Store.TongKetNamHoc">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="dataModel.TongKetNamHoc_Result">
+                <ScalarProperty Name="TenLop" ColumnName="TenLop" />
+                <ScalarProperty Name="MaHocSinh" ColumnName="MaHocSinh" />
+                <ScalarProperty Name="MaMonHoc" ColumnName="MaMonHoc" />
+                <ScalarProperty Name="DiemTB" ColumnName="DiemTB" />
+                <ScalarProperty Name="SoLuongKy" ColumnName="SoLuongKy" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="XepLoai_NamApDung" FunctionName="dataModel.Store.XepLoai_NamApDung">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="dataModel.XepLoai_NamApDung_Result">
+                <ScalarProperty Name="MaXepLoai" ColumnName="MaXepLoai" />
+                <ScalarProperty Name="TenXepLoai" ColumnName="TenXepLoai" />
+                <ScalarProperty Name="DiemToiThieu" ColumnName="DiemToiThieu" />
+                <ScalarProperty Name="DiemToiDa" ColumnName="DiemToiDa" />
+                <ScalarProperty Name="DiemKhongChe" ColumnName="DiemKhongChe" />
+                <ScalarProperty Name="NamApDung" ColumnName="NamApDung" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="CTLOPs">
+            <EntityTypeMapping TypeName="dataModel.CTLOP">
+              <MappingFragment StoreEntitySet="CTLOP">
+                <ScalarProperty Name="MaLop" ColumnName="MaLop" />
+                <ScalarProperty Name="MaHocSinh" ColumnName="MaHocSinh" />
+                <ScalarProperty Name="MaCTL" ColumnName="MaCTL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DIEMs">
+            <EntityTypeMapping TypeName="dataModel.DIEM">
+              <MappingFragment StoreEntitySet="DIEM">
+                <ScalarProperty Name="Diem1" ColumnName="Diem" />
+                <ScalarProperty Name="MaThanhPhan" ColumnName="MaThanhPhan" />
+                <ScalarProperty Name="MaKetQua" ColumnName="MaKetQua" />
+                <ScalarProperty Name="MaDiem" ColumnName="MaDiem" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HOCKies">
+            <EntityTypeMapping TypeName="dataModel.HOCKY">
+              <MappingFragment StoreEntitySet="HOCKY">
+                <ScalarProperty Name="NamApDung" ColumnName="NamApDung" />
+                <ScalarProperty Name="TrongSo" ColumnName="TrongSo" />
+                <ScalarProperty Name="HocKy1" ColumnName="HocKy" />
+                <ScalarProperty Name="MaHocKy" ColumnName="MaHocKy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HOCSINHs">
+            <EntityTypeMapping TypeName="dataModel.HOCSINH">
+              <MappingFragment StoreEntitySet="HOCSINH">
+                <ScalarProperty Name="NgheNghiep_Me" ColumnName="NgheNghiep_Me" />
+                <ScalarProperty Name="SDT_Me" ColumnName="SDT_Me" />
+                <ScalarProperty Name="CCCD_Me" ColumnName="CCCD_Me" />
+                <ScalarProperty Name="NamSinh_Me" ColumnName="NamSinh_Me" />
+                <ScalarProperty Name="HoTenMe" ColumnName="HoTenMe" />
+                <ScalarProperty Name="NgheNghiep_Cha" ColumnName="NgheNghiep_Cha" />
+                <ScalarProperty Name="SDT_Cha" ColumnName="SDT_Cha" />
+                <ScalarProperty Name="CCCD_Cha" ColumnName="CCCD_Cha" />
+                <ScalarProperty Name="NamSinh_Cha" ColumnName="NamSinh_Cha" />
+                <ScalarProperty Name="HoTenCha" ColumnName="HoTenCha" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="SDT" ColumnName="SDT" />
+                <ScalarProperty Name="TonGiao" ColumnName="TonGiao" />
+                <ScalarProperty Name="DanToc" ColumnName="DanToc" />
+                <ScalarProperty Name="QueQuan" ColumnName="QueQuan" />
+                <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+                <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+                <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+                <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+                <ScalarProperty Name="MaHocSinh" ColumnName="MaHocSinh" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KETQUA_MONHOC_HOCSINH">
+            <EntityTypeMapping TypeName="dataModel.KETQUA_MONHOC_HOCSINH">
+              <MappingFragment StoreEntitySet="KETQUA_MONHOC_HOCSINH">
+                <ScalarProperty Name="MaXepLoai" ColumnName="MaXepLoai" />
+                <ScalarProperty Name="DiemTB" ColumnName="DiemTB" />
+                <ScalarProperty Name="MaMonHoc" ColumnName="MaMonHoc" />
+                <ScalarProperty Name="MaHocKy" ColumnName="MaHocKy" />
+                <ScalarProperty Name="MaNamHoc" ColumnName="MaNamHoc" />
+                <ScalarProperty Name="MaHocSinh" ColumnName="MaHocSinh" />
+                <ScalarProperty Name="MaKetQua" ColumnName="MaKetQua" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KHOIs">
+            <EntityTypeMapping TypeName="dataModel.KHOI">
+              <MappingFragment StoreEntitySet="KHOI">
+                <ScalarProperty Name="MaNamHoc" ColumnName="MaNamHoc" />
+                <ScalarProperty Name="TenKhoi" ColumnName="TenKhoi" />
+                <ScalarProperty Name="MaKhoi" ColumnName="MaKhoi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LOPs">
+            <EntityTypeMapping TypeName="dataModel.LOP">
+              <MappingFragment StoreEntitySet="LOP">
+                <ScalarProperty Name="MaNamHoc" ColumnName="MaNamHoc" />
+                <ScalarProperty Name="SiSo" ColumnName="SiSo" />
+                <ScalarProperty Name="MaKhoi" ColumnName="MaKhoi" />
+                <ScalarProperty Name="TenLop" ColumnName="TenLop" />
+                <ScalarProperty Name="MaLop" ColumnName="MaLop" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MONHOCs">
+            <EntityTypeMapping TypeName="dataModel.MONHOC">
+              <MappingFragment StoreEntitySet="MONHOC">
+                <ScalarProperty Name="NamApDung" ColumnName="NamApDung" />
+                <ScalarProperty Name="TenMonHoc" ColumnName="TenMonHoc" />
+                <ScalarProperty Name="MaMonHoc" ColumnName="MaMonHoc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NAMHOCs">
+            <EntityTypeMapping TypeName="dataModel.NAMHOC">
+              <MappingFragment StoreEntitySet="NAMHOC">
+                <ScalarProperty Name="NamHoc1" ColumnName="NamHoc" />
+                <ScalarProperty Name="MaNamHoc" ColumnName="MaNamHoc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PHANQUYENs">
+            <EntityTypeMapping TypeName="dataModel.PHANQUYEN">
+              <MappingFragment StoreEntitySet="PHANQUYEN">
+                <ScalarProperty Name="VaiTro" ColumnName="VaiTro" />
+                <ScalarProperty Name="MaPhanQuyen" ColumnName="MaPhanQuyen" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TAIKHOANs">
+            <EntityTypeMapping TypeName="dataModel.TAIKHOAN">
+              <MappingFragment StoreEntitySet="TAIKHOAN">
+                <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+                <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+                <ScalarProperty Name="MaPhanQuyen" ColumnName="MaPhanQuyen" />
+                <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
+                <ScalarProperty Name="TenDangNhap" ColumnName="TenDangNhap" />
+                <ScalarProperty Name="MaTaiKhoan" ColumnName="MaTaiKhoan" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="THAMSOes">
+            <EntityTypeMapping TypeName="dataModel.THAMSO">
+              <MappingFragment StoreEntitySet="THAMSO">
+                <ScalarProperty Name="DiemToiThieu" ColumnName="DiemToiThieu" />
+                <ScalarProperty Name="DiemToiDa" ColumnName="DiemToiDa" />
+                <ScalarProperty Name="SiSoToiDa" ColumnName="SiSoToiDa" />
+                <ScalarProperty Name="TuoiToiDa" ColumnName="TuoiToiDa" />
+                <ScalarProperty Name="TuoiToiThieu" ColumnName="TuoiToiThieu" />
+                <ScalarProperty Name="MaThamSo" ColumnName="MaThamSo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="THANHPHANs">
+            <EntityTypeMapping TypeName="dataModel.THANHPHAN">
+              <MappingFragment StoreEntitySet="THANHPHAN">
+                <ScalarProperty Name="NamApDung" ColumnName="NamApDung" />
+                <ScalarProperty Name="TrongSo" ColumnName="TrongSo" />
+                <ScalarProperty Name="TenThanhPhan" ColumnName="TenThanhPhan" />
+                <ScalarProperty Name="MaThanhPhan" ColumnName="MaThanhPhan" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="XEPLOAIs">
+            <EntityTypeMapping TypeName="dataModel.XEPLOAI">
+              <MappingFragment StoreEntitySet="XEPLOAI">
+                <ScalarProperty Name="NamApDung" ColumnName="NamApDung" />
+                <ScalarProperty Name="DiemKhongChe" ColumnName="DiemKhongChe" />
+                <ScalarProperty Name="DiemToiDa" ColumnName="DiemToiDa" />
+                <ScalarProperty Name="DiemToiThieu" ColumnName="DiemToiThieu" />
+                <ScalarProperty Name="TenXepLoai" ColumnName="TenXepLoai" />
+                <ScalarProperty Name="MaXepLoai" ColumnName="MaXepLoai" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="23b122e6f68a4cc091e2db11b74229c0" Name="Diagram1" ZoomLevel="85">
+        <EntityTypeShape EntityType="dataModel.CTLOP" Width="1.5" PointX="7.5" PointY="6.875" />
+        <EntityTypeShape EntityType="dataModel.DIEM" Width="1.5" PointX="5.25" PointY="3.625" />
+        <EntityTypeShape EntityType="dataModel.HOCKY" Width="1.5" PointX="0.75" PointY="19.875" />
+        <EntityTypeShape EntityType="dataModel.HOCSINH" Width="1.5" PointX="0.75" PointY="10.875" />
+        <EntityTypeShape EntityType="dataModel.KETQUA_MONHOC_HOCSINH" Width="1.5" PointX="3" PointY="4" />
+        <EntityTypeShape EntityType="dataModel.KHOI" Width="1.5" PointX="3" PointY="9" />
+        <EntityTypeShape EntityType="dataModel.LOP" Width="1.5" PointX="5.25" PointY="6.625" />
+        <EntityTypeShape EntityType="dataModel.MONHOC" Width="1.5" PointX="0.75" PointY="8.25" />
+        <EntityTypeShape EntityType="dataModel.NAMHOC" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="dataModel.PHANQUYEN" Width="1.5" PointX="7.75" PointY="2.5" />
+        <EntityTypeShape EntityType="dataModel.TAIKHOAN" Width="1.5" PointX="10" PointY="2.125" />
+        <EntityTypeShape EntityType="dataModel.THAMSO" Width="1.5" PointX="5.75" PointY="9.875" />
+        <EntityTypeShape EntityType="dataModel.THANHPHAN" Width="1.5" PointX="3" PointY="0.75" />
+        <EntityTypeShape EntityType="dataModel.XEPLOAI" Width="1.5" PointX="0.75" PointY="16.875" />
+        <AssociationConnector Association="dataModel.fk_ctl_hs" />
+        <AssociationConnector Association="dataModel.fk_ctl_ml" />
+        <AssociationConnector Association="dataModel.fk_diem_kq" />
+        <AssociationConnector Association="dataModel.fk_diem_tp" />
+        <AssociationConnector Association="dataModel.fk_kq_hk" />
+        <AssociationConnector Association="dataModel.fk_kq_hs" />
+        <AssociationConnector Association="dataModel.fk_kq_mh" />
+        <AssociationConnector Association="dataModel.fk_kq_nh" />
+        <AssociationConnector Association="dataModel.fk_kq_xl" />
+        <AssociationConnector Association="dataModel.fk_khoi_mnh" />
+        <AssociationConnector Association="dataModel.fk_lop_mk" />
+        <AssociationConnector Association="dataModel.fk_lop_mnh" />
+        <AssociationConnector Association="dataModel.fk_tk_pq" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

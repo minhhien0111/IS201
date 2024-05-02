@@ -1,0 +1,247 @@
+D:\HK4\SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\QuanLyHocSinh.exe.config
+D:\HK4\SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\QuanLyHocSinh.exe
+D:\HK4\SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\QuanLyHocSinh.pdb
+D:\HK4\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.csproj.AssemblyReference.cache
+D:\HK4\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.Properties.Resources.resources
+D:\HK4\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.csproj.GenerateResource.cache
+D:\HK4\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.csproj.CoreCompileInputs.cache
+D:\HK4\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.exe
+D:\HK4\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.pdb
+D:\HK4\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.BaoCaoTongKet.resources
+D:\HK4\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.TrangChu.resources
+D:\HK4\SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\EntityFramework.dll
+D:\HK4\SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\EntityFramework.SqlServer.dll
+D:\HK4\SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\EntityFramework.xml
+D:\HK4\SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\EntityFramework.SqlServer.xml
+D:\HK4\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.csproj.CopyComplete
+D:\SE104\SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\QuanLyHocSinh.exe.config
+D:\SE104\SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\QuanLyHocSinh.exe
+D:\SE104\SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\QuanLyHocSinh.pdb
+D:\SE104\SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\EntityFramework.dll
+D:\SE104\SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\EntityFramework.SqlServer.dll
+D:\SE104\SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\EntityFramework.xml
+D:\SE104\SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\EntityFramework.SqlServer.xml
+D:\SE104\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.csproj.AssemblyReference.cache
+D:\SE104\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.csproj.SuggestedBindingRedirects.cache
+D:\SE104\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.BaoCaoTongKet.resources
+D:\SE104\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.Properties.Resources.resources
+D:\SE104\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.TrangChu.resources
+D:\SE104\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.csproj.GenerateResource.cache
+D:\SE104\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.csproj.CoreCompileInputs.cache
+D:\SE104\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.csproj.CopyComplete
+D:\SE104\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.exe
+D:\SE104\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.pdb
+D:\SE104\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.LapBangDiemMonHoc.resources
+D:\SE104\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.LapBangDiemMonHocCuaLopNamHoc.resources
+D:\SE104\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.TiepNhanHocSinh.resources
+D:\HK4\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.LapBangDiemMonHocCuaLopNamHoc.resources
+D:\HK4\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.LapBangDiemMonHoc.resources
+D:\HK4\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.TiepNhanHocSinh.resources
+D:\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.csproj.AssemblyReference.cache
+D:\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.csproj.SuggestedBindingRedirects.cache
+D:\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.BaoCaoTongKet.resources
+D:\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.LapBangDiemMonHocCuaLopNamHoc.resources
+D:\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.LapBangDiemMonHoc.resources
+D:\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.Properties.Resources.resources
+D:\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.TiepNhanHocSinh.resources
+D:\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.TrangChu.resources
+D:\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.csproj.GenerateResource.cache
+D:\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.csproj.CoreCompileInputs.cache
+D:\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.exe
+D:\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.pdb
+D:\SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\QuanLyHocSinh.exe.config
+D:\SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\QuanLyHocSinh.exe
+D:\SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\QuanLyHocSinh.pdb
+D:\SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\EntityFramework.dll
+D:\SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\EntityFramework.SqlServer.dll
+D:\SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\EntityFramework.xml
+D:\SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\EntityFramework.SqlServer.xml
+D:\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.csproj.CopyComplete
+D:\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.TraCuuHocSinh.resources
+C:\Users\TechCare\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.csproj.AssemblyReference.cache
+C:\Users\TechCare\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.csproj.SuggestedBindingRedirects.cache
+C:\Users\TechCare\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.BaoCaoTongKet.resources
+C:\Users\TechCare\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.LapDanhSachLop.resources
+C:\Users\TechCare\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.LapBangDiemMonHoc.resources
+C:\Users\TechCare\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.Properties.Resources.resources
+C:\Users\TechCare\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.TiepNhanHocSinh.resources
+C:\Users\TechCare\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.TraCuuHocSinh.resources
+C:\Users\TechCare\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.TrangChu.resources
+C:\Users\TechCare\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.csproj.GenerateResource.cache
+C:\Users\TechCare\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.csproj.CoreCompileInputs.cache
+C:\Users\TechCare\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.exe
+C:\Users\TechCare\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.pdb
+C:\Users\TechCare\SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\QuanLyHocSinh.exe.config
+C:\Users\TechCare\SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\QuanLyHocSinh.exe
+C:\Users\TechCare\SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\QuanLyHocSinh.pdb
+C:\Users\TechCare\SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\EntityFramework.dll
+C:\Users\TechCare\SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\TechCare\SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\EntityFramework.xml
+C:\Users\TechCare\SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\TechCare\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.csproj.CopyComplete
+G:\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.csproj.AssemblyReference.cache
+G:\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.csproj.SuggestedBindingRedirects.cache
+G:\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.BangDiemMonHocCuaLopTrongNam.resources
+G:\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.BaoCaoTongKet.resources
+G:\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.DangNhap.resources
+G:\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.LapDanhSachLop.resources
+G:\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.LapBangDiemMonHoc.resources
+G:\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.Properties.Resources.resources
+G:\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.TiepNhanHocSinh.resources
+G:\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.TraCuuHocSinh.resources
+G:\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.TrangCaNhan.resources
+G:\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.TrangChu.resources
+G:\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.csproj.GenerateResource.cache
+G:\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.exe
+G:\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.pdb
+D:\Coding\Assignments\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.csproj.AssemblyReference.cache
+D:\Coding\Assignments\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.csproj.SuggestedBindingRedirects.cache
+D:\Coding\Assignments\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.BangDiemHocSinh.resources
+D:\Coding\Assignments\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.BangDiemMonHocCuaLopTrongNam.resources
+D:\Coding\Assignments\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.BaoCaoTongKet.resources
+D:\Coding\Assignments\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.DangNhap.resources
+D:\Coding\Assignments\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.DoiMatKhau.resources
+D:\Coding\Assignments\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.LapDanhSachLop.resources
+D:\Coding\Assignments\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.LapBangDiemMonHoc.resources
+D:\Coding\Assignments\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.Properties.Resources.resources
+D:\Coding\Assignments\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.TiepNhanHocSinh.resources
+D:\Coding\Assignments\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.TraCuuHocSinh.resources
+D:\Coding\Assignments\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.TrangCaNhan.resources
+D:\Coding\Assignments\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.TrangChu.resources
+D:\Coding\Assignments\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.csproj.GenerateResource.cache
+D:\Coding\Assignments\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.csproj.CoreCompileInputs.cache
+D:\Coding\Assignments\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.exe
+D:\Coding\Assignments\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.pdb
+D:\Coding\Assignments\SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\QuanLyHocSinh.exe.config
+D:\Coding\Assignments\SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\QuanLyHocSinh.exe
+D:\Coding\Assignments\SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\QuanLyHocSinh.pdb
+D:\Coding\Assignments\SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\EntityFramework.dll
+D:\Coding\Assignments\SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\EntityFramework.SqlServer.dll
+D:\Coding\Assignments\SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\Guna.UI2.dll
+D:\Coding\Assignments\SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\EntityFramework.xml
+D:\Coding\Assignments\SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\EntityFramework.SqlServer.xml
+D:\Coding\Assignments\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.csproj.CopyComplete
+C:\Users\TechCare\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.BangDiemHocSinh.resources
+C:\Users\TechCare\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.BangDiemMonHocCuaLopTrongNam.resources
+C:\Users\TechCare\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.BangDiemTongKetLop.resources
+C:\Users\TechCare\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.DangNhap.resources
+C:\Users\TechCare\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.DoiMatKhau.resources
+C:\Users\TechCare\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.QuanLyQuyDinh.resources
+C:\Users\TechCare\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.TrangCaNhan.resources
+C:\Users\TechCare\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.UC_XemThongTinHocSinh.resources
+C:\Users\TechCare\SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\Guna.UI2.dll
+D:\Coding\Assignments\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.BangDiemTongKetLop.resources
+D:\Coding\Assignments\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.QuanLyQuyDinh.resources
+D:\Coding\Assignments\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.UC_XemThongTinHocSinh.resources
+D:\Desktop\SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\QuanLyHocSinh.exe.config
+D:\Desktop\SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\QuanLyHocSinh.exe
+D:\Desktop\SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\QuanLyHocSinh.pdb
+D:\Desktop\SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\EntityFramework.dll
+D:\Desktop\SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\EntityFramework.SqlServer.dll
+D:\Desktop\SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\Guna.UI2.dll
+D:\Desktop\SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\EntityFramework.xml
+D:\Desktop\SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\EntityFramework.SqlServer.xml
+D:\Desktop\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.csproj.AssemblyReference.cache
+D:\Desktop\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.csproj.SuggestedBindingRedirects.cache
+D:\Desktop\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.BangDiemHocSinh.resources
+D:\Desktop\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.BangDiemMonHocCuaLopTrongNam.resources
+D:\Desktop\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.BangDiemTongKetLop.resources
+D:\Desktop\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.BaoCaoTongKet.resources
+D:\Desktop\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.DangNhap.resources
+D:\Desktop\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.DoiMatKhau.resources
+D:\Desktop\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.QuanLyQuyDinh.resources
+D:\Desktop\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.LapDanhSachLop.resources
+D:\Desktop\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.LapBangDiemMonHoc.resources
+D:\Desktop\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.Properties.Resources.resources
+D:\Desktop\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.TiepNhanHocSinh.resources
+D:\Desktop\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.TraCuuHocSinh.resources
+D:\Desktop\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.TrangCaNhan.resources
+D:\Desktop\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.TrangChu.resources
+D:\Desktop\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.UC_XemThongTinHocSinh.resources
+D:\Desktop\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.csproj.GenerateResource.cache
+D:\Desktop\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.csproj.CoreCompileInputs.cache
+D:\Desktop\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.csproj.CopyComplete
+D:\Desktop\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.exe
+D:\Desktop\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.pdb
+D:\Coding\Assignments\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.UC_ThemHocSinhMoi.resources
+D:\Coding\Assignments\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.TaoTaiKhoan.resources
+G:\SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\QuanLyHocSinh.exe.config
+G:\SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\QuanLyHocSinh.exe
+G:\SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\QuanLyHocSinh.pdb
+G:\SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\EntityFramework.dll
+G:\SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\EntityFramework.SqlServer.dll
+G:\SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\Guna.UI2.dll
+G:\SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\EntityFramework.xml
+G:\SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\EntityFramework.SqlServer.xml
+G:\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.BangDiemHocSinh.resources
+G:\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.BangDiemTongKetLop.resources
+G:\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.DoiMatKhau.resources
+G:\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.QuanLyQuyDinh.resources
+G:\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.TaoTaiKhoan.resources
+G:\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.UC_ThemHocSinhMoi.resources
+G:\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.UC_XemThongTinHocSinh.resources
+G:\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.csproj.CoreCompileInputs.cache
+G:\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.csproj.CopyComplete
+D:\CS114\SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\QuanLyHocSinh.exe.config
+D:\CS114\SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\QuanLyHocSinh.exe
+D:\CS114\SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\QuanLyHocSinh.pdb
+D:\CS114\SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\EntityFramework.dll
+D:\CS114\SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\EntityFramework.SqlServer.dll
+D:\CS114\SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\Guna.UI2.dll
+D:\CS114\SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\EntityFramework.xml
+D:\CS114\SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\EntityFramework.SqlServer.xml
+D:\CS114\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.csproj.AssemblyReference.cache
+D:\CS114\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.csproj.SuggestedBindingRedirects.cache
+D:\CS114\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.BangDiemHocSinh.resources
+D:\CS114\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.BangDiemMonHocCuaLopTrongNam.resources
+D:\CS114\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.BangDiemTongKetLop.resources
+D:\CS114\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.BaoCaoTongKet.resources
+D:\CS114\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.DangNhap.resources
+D:\CS114\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.DoiMatKhau.resources
+D:\CS114\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.QuanLyQuyDinh.resources
+D:\CS114\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.LapDanhSachLop.resources
+D:\CS114\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.LapBangDiemMonHoc.resources
+D:\CS114\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.Properties.Resources.resources
+D:\CS114\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.TaoTaiKhoan.resources
+D:\CS114\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.TiepNhanHocSinh.resources
+D:\CS114\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.TraCuuHocSinh.resources
+D:\CS114\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.TrangCaNhan.resources
+D:\CS114\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.TrangChu.resources
+D:\CS114\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.UC_ThemHocSinhMoi.resources
+D:\CS114\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.UC_XemThongTinHocSinh.resources
+D:\CS114\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.csproj.GenerateResource.cache
+D:\CS114\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.csproj.CoreCompileInputs.cache
+D:\CS114\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.csproj.CopyComplete
+D:\CS114\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.exe
+D:\CS114\SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.pdb
+D:\Đại học\HK2 năm 2\Nhập môn công nghệ phần mềm-SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\QuanLyHocSinh.exe.config
+D:\Đại học\HK2 năm 2\Nhập môn công nghệ phần mềm-SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\QuanLyHocSinh.exe
+D:\Đại học\HK2 năm 2\Nhập môn công nghệ phần mềm-SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\QuanLyHocSinh.pdb
+D:\Đại học\HK2 năm 2\Nhập môn công nghệ phần mềm-SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\EntityFramework.dll
+D:\Đại học\HK2 năm 2\Nhập môn công nghệ phần mềm-SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\EntityFramework.SqlServer.dll
+D:\Đại học\HK2 năm 2\Nhập môn công nghệ phần mềm-SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\Guna.UI2.dll
+D:\Đại học\HK2 năm 2\Nhập môn công nghệ phần mềm-SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\EntityFramework.xml
+D:\Đại học\HK2 năm 2\Nhập môn công nghệ phần mềm-SE104\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\EntityFramework.SqlServer.xml
+D:\Đại học\HK2 năm 2\Nhập môn công nghệ phần mềm-SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.csproj.AssemblyReference.cache
+D:\Đại học\HK2 năm 2\Nhập môn công nghệ phần mềm-SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.BangDiemHocSinh.resources
+D:\Đại học\HK2 năm 2\Nhập môn công nghệ phần mềm-SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.BangDiemMonHocCuaLopTrongNam.resources
+D:\Đại học\HK2 năm 2\Nhập môn công nghệ phần mềm-SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.BangDiemTongKetLop.resources
+D:\Đại học\HK2 năm 2\Nhập môn công nghệ phần mềm-SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.BaoCaoTongKet.resources
+D:\Đại học\HK2 năm 2\Nhập môn công nghệ phần mềm-SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.DangNhap.resources
+D:\Đại học\HK2 năm 2\Nhập môn công nghệ phần mềm-SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.DoiMatKhau.resources
+D:\Đại học\HK2 năm 2\Nhập môn công nghệ phần mềm-SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.QuanLyQuyDinh.resources
+D:\Đại học\HK2 năm 2\Nhập môn công nghệ phần mềm-SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.LapDanhSachLop.resources
+D:\Đại học\HK2 năm 2\Nhập môn công nghệ phần mềm-SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.LapBangDiemMonHoc.resources
+D:\Đại học\HK2 năm 2\Nhập môn công nghệ phần mềm-SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.Properties.Resources.resources
+D:\Đại học\HK2 năm 2\Nhập môn công nghệ phần mềm-SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.TaoTaiKhoan.resources
+D:\Đại học\HK2 năm 2\Nhập môn công nghệ phần mềm-SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.TiepNhanHocSinh.resources
+D:\Đại học\HK2 năm 2\Nhập môn công nghệ phần mềm-SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.TraCuuHocSinh.resources
+D:\Đại học\HK2 năm 2\Nhập môn công nghệ phần mềm-SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.TrangCaNhan.resources
+D:\Đại học\HK2 năm 2\Nhập môn công nghệ phần mềm-SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.TrangChu.resources
+D:\Đại học\HK2 năm 2\Nhập môn công nghệ phần mềm-SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.UC_ThemHocSinhMoi.resources
+D:\Đại học\HK2 năm 2\Nhập môn công nghệ phần mềm-SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.UC_XemThongTinHocSinh.resources
+D:\Đại học\HK2 năm 2\Nhập môn công nghệ phần mềm-SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.csproj.GenerateResource.cache
+D:\Đại học\HK2 năm 2\Nhập môn công nghệ phần mềm-SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.csproj.CoreCompileInputs.cache
+D:\Đại học\HK2 năm 2\Nhập môn công nghệ phần mềm-SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHo.CFAE9C16.Up2Date
+D:\Đại học\HK2 năm 2\Nhập môn công nghệ phần mềm-SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.exe
+D:\Đại học\HK2 năm 2\Nhập môn công nghệ phần mềm-SE104\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.pdb
