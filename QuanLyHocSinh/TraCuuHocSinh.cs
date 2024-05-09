@@ -12,6 +12,9 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Security.Cryptography;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 using System.Runtime.InteropServices;
+using System.Data.Entity.Migrations;
+using System.Net;
+using Microsoft.Office.Interop.Excel;
 
 namespace QuanLyHocSinh
 {
@@ -43,6 +46,12 @@ namespace QuanLyHocSinh
             cbClass.SelectedIndex = -1;
             cbFindStudenID_2.Hide();
             cbFindStudenID_2.SelectedIndex = -1;
+            if (Account.VaiTro == "Học sinh")
+            {
+                tbStudentID.Text = Account.MaTK;
+                tbStudentID.Enabled = false;
+                tbStudentID.Show();
+            }
             pnHuongDanTraCuu.Hide();
         }
         void ThongTinHS_byID (string id = "")
@@ -712,7 +721,7 @@ namespace QuanLyHocSinh
 
         private void Btn_Close_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            System.Windows.Forms.Application.Exit();
         }
 
         private void BtnProfileAccount_Click(object sender, EventArgs e)
@@ -744,6 +753,29 @@ namespace QuanLyHocSinh
         private void BtnCloseHuongDanTraCuu_Click(object sender, EventArgs e)
         {
             pnHuongDanTraCuu.Hide();
+        }
+
+        private void ButtonSaveInfo_Click(object sender, EventArgs e)
+        {
+            DialogResult choose = MessageBox.Show("Lưu thay đổi?", "Lưu", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            if (choose == DialogResult.OK)
+            {
+                dataEntities db = new dataEntities();
+                // Save Student Info code
+                var hocsinh = db.HOCSINHs.First(m => m.MaHocSinh == tbStudentID.Text);
+                hocsinh.SDT = tbSDT.Text;
+                hocsinh.Email = this.tbEmail.Text;
+
+                hocsinh.SDT_Cha = this.tbSDT_Cha.Text;
+                hocsinh.SDT_Me = this.tbSDT_Me.Text;
+
+                db.HOCSINHs.AddOrUpdate(hocsinh);
+                db.SaveChanges();
+                MessageBox.Show("Lưu thay đổi thành công",
+                                "Lưu thành công",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Information);
+            }
         }
     }
 }

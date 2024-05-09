@@ -24,14 +24,48 @@ namespace QuanLyHocSinh
             try
             {
                 dataEntities dtb = new dataEntities();
+                bool isStudent = false;
+                string tempUsernam = "";
+                foreach(var item in dtb.HOCSINHs)
+                {
+                    if(item.MaHocSinh == textBoxUsername.Text)
+                    {
+                        isStudent = true;
+                    }
+                }
                 foreach (var item in dtb.TAIKHOANs)
                 {
-                    if (item.TenDangNhap == textBoxUsername.Text && item.MatKhau == textBoxPassword.Text)
+                    if (isStudent && item.MaTaiKhoan == "HS"+textBoxUsername.Text && item.MatKhau == textBoxPassword.Text) 
                     {
                         Account.TenDangNhap = item.TenDangNhap.ToString();
                         Account.MatKhau = item.MatKhau.ToString();
                         Account.VaiTro = item.PHANQUYEN.VaiTro.ToString();
                         Account.HoTen = item.HoTen.ToString();
+                        if (Account.VaiTro == "Học sinh")
+                        {
+                            Account.MaTK = item.MaTaiKhoan.Substring(2);
+                        }
+                        else { Account.MaTK = item.MaTaiKhoan; }
+                        string temp = item.NgaySinh.ToString();
+                        Regex re = new Regex(@"[^ ]*");
+                        Match m = re.Match(temp);
+                        Account.NgaySinh = m.Groups[0].Value;
+                        TrangChu newform = new TrangChu();
+                        this.Hide();
+                        newform.ShowDialog();
+                        this.Close();
+                    }
+                    if (!isStudent && item.TenDangNhap == textBoxUsername.Text && item.MatKhau == textBoxPassword.Text)
+                    {
+                        Account.TenDangNhap = item.TenDangNhap.ToString();
+                        Account.MatKhau = item.MatKhau.ToString();
+                        Account.VaiTro = item.PHANQUYEN.VaiTro.ToString();
+                        Account.HoTen = item.HoTen.ToString();
+                        if (Account.VaiTro == "Học sinh")
+                        {
+                            Account.MaTK = item.MaTaiKhoan.Substring(2);
+                        }
+                        else { Account.MaTK = item.MaTaiKhoan;}
                         string temp = item.NgaySinh.ToString();
                         Regex re = new Regex(@"[^ ]*");
                         Match m = re.Match(temp);

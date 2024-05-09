@@ -13,6 +13,7 @@ namespace QuanLyHocSinh
         public static string VaiTro;
         public static string HoTen;
         public static string NgaySinh;
+        public static string MaTK;
 
     }
     static class Program

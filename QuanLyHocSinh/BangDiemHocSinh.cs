@@ -33,6 +33,13 @@ namespace QuanLyHocSinh
             NamHocCbb_hk.DataSource = ComboBoxYearSource.ToList();
             NamHocCbb_hk.DisplayMember = "NamHoc1";
             NamHocCbb_hk.ValueMember = "MaNamHoc";
+            if (Account.VaiTro == "Học sinh")
+            {
+                MHStextbox_hk.Text = Account.MaTK;
+                MHStextbox_hk.Enabled = false;
+                MHStextbox_nh.Text = Account.MaTK;
+                MHStextbox_nh.Enabled = false;
+            }
 
         }
         private void NamHocCbb_hk_SelectedValueChanged(object sender, EventArgs e)

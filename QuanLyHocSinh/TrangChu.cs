@@ -35,6 +35,11 @@ namespace QuanLyHocSinh
                 this.MenuQuanLyQuyDinh.Visible = true;
                 this.ToolStripMenuItemAccount.Visible = true;
             }
+            else if (Account.VaiTro == "Học sinh")
+            {
+                //this.MenuItemSubjectScore.Visible = true;
+                //this.MenuItemFinalReport.Visible = true;
+            }
             this.MenuItemSearch.Visible = true;
             dataEntities dtb = new dataEntities();
             var ComboBoxYearsSource = from obj in dtb.NAMHOCs

@@ -50,6 +50,8 @@
             this.lbInputGrade = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.pnFindInfoStudent = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
+            this.cbSchoolYear = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.cbFindStudenID_2 = new Guna.UI2.WinForms.Guna2ComboBox();
             this.tbFindEmail = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbFindPhoneNum = new Guna.UI2.WinForms.Guna2TextBox();
@@ -106,8 +108,7 @@
             this.pnHuongDanTraCuu = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             this.BtnClose_HuongDanTraCuu = new Guna.UI2.WinForms.Guna2ImageButton();
             this.BtnHuongDanTraCuu = new Guna.UI2.WinForms.Guna2ImageButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cbSchoolYear = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.ButtonSaveInfo = new Guna.UI2.WinForms.Guna2ImageButton();
             this.pnFindInfoStudent.SuspendLayout();
             this.pnDadofStudent_Info.SuspendLayout();
             this.pnMomOfStudent_Info.SuspendLayout();
@@ -342,6 +343,32 @@
             this.pnFindInfoStudent.Name = "pnFindInfoStudent";
             this.pnFindInfoStudent.Size = new System.Drawing.Size(1086, 182);
             this.pnFindInfoStudent.TabIndex = 16;
+            // 
+            // cbSchoolYear
+            // 
+            this.cbSchoolYear.BackColor = System.Drawing.Color.Transparent;
+            this.cbSchoolYear.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbSchoolYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbSchoolYear.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbSchoolYear.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbSchoolYear.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbSchoolYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbSchoolYear.ItemHeight = 30;
+            this.cbSchoolYear.Location = new System.Drawing.Point(672, 12);
+            this.cbSchoolYear.Name = "cbSchoolYear";
+            this.cbSchoolYear.Size = new System.Drawing.Size(194, 36);
+            this.cbSchoolYear.TabIndex = 10;
+            this.cbSchoolYear.SelectedIndexChanged += new System.EventHandler(this.cbSchoolYear_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.Location = new System.Drawing.Point(558, 21);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(86, 20);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Năm học: ";
             // 
             // cbFindStudenID_2
             // 
@@ -582,7 +609,6 @@
             this.tbSDT_Cha.Name = "tbSDT_Cha";
             this.tbSDT_Cha.PasswordChar = '\0';
             this.tbSDT_Cha.PlaceholderText = "";
-            this.tbSDT_Cha.ReadOnly = true;
             this.tbSDT_Cha.SelectedText = "";
             this.tbSDT_Cha.Size = new System.Drawing.Size(302, 33);
             this.tbSDT_Cha.TabIndex = 35;
@@ -710,7 +736,6 @@
             this.tbSDT_Me.Name = "tbSDT_Me";
             this.tbSDT_Me.PasswordChar = '\0';
             this.tbSDT_Me.PlaceholderText = "";
-            this.tbSDT_Me.ReadOnly = true;
             this.tbSDT_Me.SelectedText = "";
             this.tbSDT_Me.Size = new System.Drawing.Size(302, 33);
             this.tbSDT_Me.TabIndex = 36;
@@ -1120,7 +1145,6 @@
             this.tbSDT.Name = "tbSDT";
             this.tbSDT.PasswordChar = '\0';
             this.tbSDT.PlaceholderText = "";
-            this.tbSDT.ReadOnly = true;
             this.tbSDT.SelectedText = "";
             this.tbSDT.Size = new System.Drawing.Size(234, 29);
             this.tbSDT.TabIndex = 29;
@@ -1152,7 +1176,6 @@
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.PasswordChar = '\0';
             this.tbEmail.PlaceholderText = "";
-            this.tbEmail.ReadOnly = true;
             this.tbEmail.SelectedText = "";
             this.tbEmail.Size = new System.Drawing.Size(288, 29);
             this.tbEmail.TabIndex = 30;
@@ -1320,31 +1343,21 @@
             this.BtnHuongDanTraCuu.TabIndex = 39;
             this.BtnHuongDanTraCuu.Click += new System.EventHandler(this.BtnHuongDanTraCuu_Click);
             // 
-            // label1
+            // ButtonSaveInfo
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(558, 21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 20);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Năm học: ";
-            // 
-            // cbSchoolYear
-            // 
-            this.cbSchoolYear.BackColor = System.Drawing.Color.Transparent;
-            this.cbSchoolYear.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbSchoolYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbSchoolYear.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbSchoolYear.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbSchoolYear.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbSchoolYear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cbSchoolYear.ItemHeight = 30;
-            this.cbSchoolYear.Location = new System.Drawing.Point(672, 12);
-            this.cbSchoolYear.Name = "cbSchoolYear";
-            this.cbSchoolYear.Size = new System.Drawing.Size(194, 36);
-            this.cbSchoolYear.TabIndex = 10;
-            this.cbSchoolYear.SelectedIndexChanged += new System.EventHandler(this.cbSchoolYear_SelectedIndexChanged);
+            this.ButtonSaveInfo.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButtonSaveInfo.HoverState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButtonSaveInfo.Image = ((System.Drawing.Image)(resources.GetObject("ButtonSaveInfo.Image")));
+            this.ButtonSaveInfo.ImageOffset = new System.Drawing.Point(0, 0);
+            this.ButtonSaveInfo.ImageRotate = 0F;
+            this.ButtonSaveInfo.ImageSize = new System.Drawing.Size(60, 60);
+            this.ButtonSaveInfo.Location = new System.Drawing.Point(1271, 364);
+            this.ButtonSaveInfo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ButtonSaveInfo.Name = "ButtonSaveInfo";
+            this.ButtonSaveInfo.PressedState.ImageSize = new System.Drawing.Size(64, 64);
+            this.ButtonSaveInfo.Size = new System.Drawing.Size(54, 65);
+            this.ButtonSaveInfo.TabIndex = 68;
+            this.ButtonSaveInfo.Click += new System.EventHandler(this.ButtonSaveInfo_Click);
             // 
             // TraCuuHocSinh
             // 
@@ -1356,6 +1369,7 @@
             this.BackColor = System.Drawing.SystemColors.Window;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1352, 1094);
+            this.Controls.Add(this.ButtonSaveInfo);
             this.Controls.Add(this.BtnHuongDanTraCuu);
             this.Controls.Add(this.pnHuongDanTraCuu);
             this.Controls.Add(this.pnParentInfo);
@@ -1463,7 +1477,6 @@
         private Guna.UI2.WinForms.Guna2CustomGradientPanel pnStudent_info;
         private Guna.UI2.WinForms.Guna2ImageButton BtnFindInfoStu;
         private Guna.UI2.WinForms.Guna2ImageButton BtnRefresh;
-        private Guna.UI2.WinForms.Guna2ComboBox cbFindStudenID_2;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel pnParentInfo;
         private System.Windows.Forms.Label lbHuongDanTraCuu;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel pnHuongDanTraCuu;
@@ -1471,5 +1484,7 @@
         private Guna.UI2.WinForms.Guna2ImageButton BtnHuongDanTraCuu;
         private Guna.UI2.WinForms.Guna2ComboBox cbSchoolYear;
         private System.Windows.Forms.Label label1;
+        private Guna.UI2.WinForms.Guna2ComboBox cbFindStudenID_2;
+        private Guna.UI2.WinForms.Guna2ImageButton ButtonSaveInfo;
     }
 }
