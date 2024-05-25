@@ -1351,7 +1351,7 @@
             this.ButtonSaveInfo.ImageOffset = new System.Drawing.Point(0, 0);
             this.ButtonSaveInfo.ImageRotate = 0F;
             this.ButtonSaveInfo.ImageSize = new System.Drawing.Size(60, 60);
-            this.ButtonSaveInfo.Location = new System.Drawing.Point(1271, 364);
+            this.ButtonSaveInfo.Location = new System.Drawing.Point(1253, 292);
             this.ButtonSaveInfo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ButtonSaveInfo.Name = "ButtonSaveInfo";
             this.ButtonSaveInfo.PressedState.ImageSize = new System.Drawing.Size(64, 64);

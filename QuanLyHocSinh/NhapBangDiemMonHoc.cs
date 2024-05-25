@@ -94,19 +94,72 @@ namespace QuanLyHocSinh
         {
             ComboBoxSubject.Enabled = true;
         }
+        public void Get_Previous_Value()
+        {
+            if (list.Count() == 0) return;
+            var a = from obj in data.HOCSINHs where obj.MaHocSinh == ComboBoxID.Text select obj.HoTen;
+            TextBoxName.Text = a.ToList().SingleOrDefault();
+            var reSource1 = from scr in data.KETQUA_MONHOC_HOCSINH
+                            join cls in data.CTLOPs on scr.MaHocSinh equals cls.MaHocSinh
+                            join cls1 in data.XEPLOAIs on scr.MaXepLoai equals cls1.MaXepLoai
+                            where ComboBoxID.Text == scr.MaHocSinh && ComboBoxSubject.SelectedValue == scr.MaMonHoc && ComboBoxYear.SelectedValue == scr.MaNamHoc && ComboBoxSemester.SelectedValue == scr.MaHocKy && cls.MaLop == ComboBoxClass.SelectedValue
+                            select new { MaKQ = scr.MaKetQua, DiemTB = scr.DiemTB.ToString(), Xeploai = (cls1.TenXepLoai == "Không" ? string.Empty : cls1.TenXepLoai) };
+
+            if (reSource1.Count() != 0)
+            {
+                string maKQ = reSource1.ToList().SingleOrDefault().MaKQ;
+                var re = from scr in data.DIEMs
+                         where scr.MaKetQua == maKQ
+                         select new { scr.MaThanhPhan, scr.Diem1 };
+                foreach (var j in list)
+                {
+                    int check = 1;
+                    foreach (var i in re)
+                    {
+                        if (j.Name == i.MaThanhPhan)
+                        {
+                            j.Text = i.Diem1.ToString();
+                            check = 0;
+                        }
+                    }
+                    if (check == 1)
+                    {
+                        j.Text = null;
+                    }
+                }
+                TextBoxAverageScore.Text = reSource1.ToList().SingleOrDefault().DiemTB;
+                TextBoxClassify.Text = reSource1.ToList().SingleOrDefault().Xeploai.ToString();
+            }
+            else
+            {
+                foreach (var j in list)
+                {
+                    j.Text = null;
+                }
+                TextBoxAverageScore.Text = null;
+                TextBoxClassify.Text = null;
+            }
+        }
         private void textBoxScore_TextChanged(object sender, EventArgs e)
         {
             TextBox txb = (TextBox)sender;
+            bool isError = false;
             if (Double.TryParse(txb.Text, out double score))
             {
                 if (score < 0 || score > 10)
                 {
                     MessageBox.Show("Điểm phải là một số thực không bé hơn 0 và không lớn hơn 10", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    isError = true;
                 }
             }
             else if (txb.Text != string.Empty)
             {
                 MessageBox.Show("Điểm phải là một số thực không bé hơn 0 và không lớn hơn 10", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                isError = true;
+            }
+            if (isError)
+            {
+                Get_Previous_Value();
             }
         }
         List<TextBox> list = new List<TextBox>();

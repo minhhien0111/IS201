@@ -51,7 +51,19 @@ namespace QuanLyHocSinh
                 tbStudentID.Text = Account.MaTK;
                 tbStudentID.Enabled = false;
                 tbStudentID.Show();
+                pnFindInfoStudent.Visible = false;
+                BtnFindInfoStu.Visible = false;
+                BtnRefresh.Visible = false;
+                BtnRefresh.Enabled = false;
+                BtnFindInfoStu.Enabled = false;
+                pnParentInfo.Location = new System.Drawing.Point(pnStudent_info.Location.X, pnStudent_info.Location.Y + 100);
+                pnStudent_info.Location = new System.Drawing.Point(pnFindInfoStudent.Location.X, pnFindInfoStudent.Location.Y);
+                TraCuuHS();
             }
+            if (Account.VaiTro == "Giáo viên")
+            {
+                ButtonSaveInfo.Visible = false;
+            }    
             pnHuongDanTraCuu.Hide();
         }
         void ThongTinHS_byID (string id = "")

@@ -136,6 +136,22 @@ namespace QuanLyHocSinh
                                        select new {TenMonHoc = obj.TenMonHoc };
                         dgvDSMONHOC.DataSource = dsMonhoc.ToList();
                         dgvDSMONHOC.Show();
+
+                        var dsXeploai = from obj in dtb.XepLoai_NamApDung(MaNamHoc_moi)
+                                       select new { TenXepLoai = obj.TenXepLoai, DiemToiThieu = obj.DiemToiThieu, DiemToiDa = obj.DiemToiDa, DiemKhongChe = obj.DiemKhongChe };
+                        dgvXepLoai.DataSource = dsXeploai.ToList();
+                        dgvXepLoai.Show();
+
+                        //Danh sách điểm thành phần
+                        var dsDiemTP = from obj in dtb.ThanhPhan_NamApDung(MaNamHoc_moi)
+                                       select new { TenThanhPhan = obj.TenThanhPhan, TrongSo = obj.TrongSo };
+                        dgvDiemthanhphan.DataSource = dsDiemTP.ToList();
+                        dgvDiemthanhphan.Show();
+                        //Danh sách điểm học kỳ
+                        var dsDiemHK = from obj in dtb.HocKy_NamApDung(MaNamHoc_moi)
+                                       select new { HocKy1 = obj.HocKy, TrongSo = obj.TrongSo };
+                        dgvDiemHK.DataSource = dsDiemHK.ToList();
+                        dgvDiemHK.Show();
                         //Thêm các lớp của năm học mới.
                         string MaNamHoc_Truoc = dtb.NAMHOCs.AsEnumerable().LastOrDefault().MaNamHoc.ToString();
                         foreach (var i in dtb.KHOIs)

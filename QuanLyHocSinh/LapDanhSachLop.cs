@@ -125,6 +125,10 @@ namespace QuanLyHocSinh
                 dgvClassDetail.Hide();
             }           
         }
+        private void CapNhatMaGV(dataEntities db)
+        {
+            dataEntities newdb = new dataEntities();
+        }
 
         private void ThemHocSinhVaoLop()
         {
