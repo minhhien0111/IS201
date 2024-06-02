@@ -29,5 +29,6 @@ namespace QuanLyHocSinh
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<KETQUA_MONHOC_HOCSINH> KETQUA_MONHOC_HOCSINH { get; set; }
+        public virtual NAMHOC NAMHOC { get; set; }
     }
 }

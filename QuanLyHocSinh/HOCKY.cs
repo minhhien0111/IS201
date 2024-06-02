@@ -18,6 +18,7 @@ namespace QuanLyHocSinh
         public HOCKY()
         {
             this.KETQUA_MONHOC_HOCSINH = new HashSet<KETQUA_MONHOC_HOCSINH>();
+            this.CTHKs = new HashSet<CTHK>();
         }
     
         public string MaHocKy { get; set; }
@@ -27,5 +28,8 @@ namespace QuanLyHocSinh
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<KETQUA_MONHOC_HOCSINH> KETQUA_MONHOC_HOCSINH { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CTHK> CTHKs { get; set; }
+        public virtual NAMHOC NAMHOC { get; set; }
     }
 }

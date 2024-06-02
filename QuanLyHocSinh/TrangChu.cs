@@ -27,6 +27,7 @@ namespace QuanLyHocSinh
             {
                 this.MenuItemSubjectScore.Visible = true;
                 this.MenuItemFinalReport.Visible = true;
+                this.MenuConductClassify.Visible = true;
             }
             else if (Account.VaiTro == "Người quản lý")
             {
@@ -228,6 +229,24 @@ namespace QuanLyHocSinh
             TaoTaiKhoan newform = new TaoTaiKhoan();
             this.Hide();
             newform.ShowDialog();
+            this.Show();
+        }
+
+        private void MenuConductClassify_Click_1(object sender, EventArgs e)
+        {
+            XepLoaiHanhKiem newform = new XepLoaiHanhKiem();
+            this.Hide();
+            newform.ShowDialog();
+            initialize();
+            this.Show();
+        }
+
+        private void phânCôngGiảngDạyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PhanCongGiangDay newform = new PhanCongGiangDay();
+            this.Hide();
+            newform.ShowDialog();
+            initialize();
             this.Show();
         }
     }

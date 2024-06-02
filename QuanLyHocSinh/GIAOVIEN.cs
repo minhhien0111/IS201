@@ -12,23 +12,23 @@ namespace QuanLyHocSinh
     using System;
     using System.Collections.Generic;
     
-    public partial class KHOI
+    public partial class GIAOVIEN
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public KHOI()
+        public GIAOVIEN()
         {
-            this.LOPs = new HashSet<LOP>();
-            this.MONHOCs = new HashSet<MONHOC>();
+            this.CTLOPGVs = new HashSet<CTLOPGV>();
+            this.CTGIANGDAYs = new HashSet<CTGIANGDAY>();
         }
     
-        public string MaKhoi { get; set; }
-        public string TenKhoi { get; set; }
-        public string MaNamHoc { get; set; }
+        public string MaGiaoVien { get; set; }
+        public string HoTen { get; set; }
+        public string GioiTinh { get; set; }
+        public Nullable<System.DateTime> NgaySinh { get; set; }
     
-        public virtual NAMHOC NAMHOC { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<LOP> LOPs { get; set; }
+        public virtual ICollection<CTLOPGV> CTLOPGVs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<MONHOC> MONHOCs { get; set; }
+        public virtual ICollection<CTGIANGDAY> CTGIANGDAYs { get; set; }
     }
 }

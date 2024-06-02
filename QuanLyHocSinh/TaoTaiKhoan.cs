@@ -18,7 +18,7 @@ namespace QuanLyHocSinh
         {
             InitializeComponent();
             var dtb = new dataEntities();
-            var comboBoxSource = dtb.PHANQUYENs;
+            var comboBoxSource = dtb.PHANQUYENs.Where(x => x.MaPhanQuyen != "QL").Select(x => x);
             guna2ComboBox1.DataSource = comboBoxSource.ToList();
             guna2ComboBox1.ValueMember = "MaPhanQuyen";
             guna2ComboBox1.DisplayMember = "VaiTro";
@@ -28,11 +28,10 @@ namespace QuanLyHocSinh
         {
             label6.Hide();
             label7.Hide();
-            if (guna2TextBox1.Text == "" || guna2TextBox2.Text == "" || guna2TextBox3.Text == "" || guna2TextBox4.Text == "")
+            if (txbMaPQ.Text == "" || guna2TextBox3.Text == "" || guna2TextBox4.Text == "")
             {
                 label6.Show();
-                guna2TextBox1.Text = "";
-                guna2TextBox2.Text = "";
+                txbMaPQ.Text = "";
                 guna2TextBox3.Text = "";
                 guna2TextBox4.Text = "";
             }
@@ -41,6 +40,41 @@ namespace QuanLyHocSinh
                 var dtb = new dataEntities();
                 var check_source = dtb.TAIKHOANs.Select(r => r.TenDangNhap).ToList();
                 bool check = true;
+                var check_gv = dtb.GIAOVIENs.Where(x => x.MaGiaoVien == txbMaPQ.Text).Select(r => r).ToList();
+                var check_hs = dtb.HOCSINHs.Where(x => x.MaHocSinh == txbMaPQ.Text).Select(r => r).ToList();
+                string HoTen = "";
+                DateTime NgaySinh = DateTime.Now;
+                string temp_matk = "";
+                if (guna2ComboBox1.SelectedValue.ToString() == "GV")
+                {
+                    if (check_gv.Count == 0)
+                    {
+                        check = false;
+                        MessageBox.Show("Giáo viên không tồn tại", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        temp_matk = "GV";
+                        HoTen = check_gv.First().HoTen;
+                        NgaySinh = check_gv.First().NgaySinh ?? DateTime.Now;
+                    }
+                }
+                else
+                {
+                    HoTen = check_hs.First().HoTen;
+                    NgaySinh = check_hs.First().NgaySinh ?? DateTime.Now;
+                    if (check_hs.Count == 0)
+                    {
+                        check = false;
+                        MessageBox.Show("Học sinh không tồn tại", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        temp_matk = "HS";
+                        HoTen = check_hs.First().HoTen;
+                        NgaySinh = check_hs.First().NgaySinh ?? DateTime.Now;
+                    }
+                }    
                 foreach (var item in check_source)
                 {
                     if (guna2TextBox3.Text == item.ToString())
@@ -56,17 +90,19 @@ namespace QuanLyHocSinh
                     try
                     {
                         var account = new TAIKHOAN();
-                        account.HoTen = guna2TextBox1.Text;
+                        account.HoTen = HoTen;
                         CultureInfo provider = CultureInfo.InvariantCulture;
-                        account.NgaySinh = DateTime.ParseExact(guna2TextBox2.Text, "dd/MM/yyyy", provider);
+                        /*account.NgaySinh = DateTime.ParseExact(guna2TextBox2.Text, "dd/MM/yyyy", provider);*/
+                        account.NgaySinh = NgaySinh;
                         account.MaPhanQuyen = guna2ComboBox1.SelectedValue.ToString();
                         account.TenDangNhap = guna2TextBox3.Text;
                         account.MatKhau = guna2TextBox4.Text;
-                        var MaTK = dtb.TAIKHOANs.Where(r => r.MaPhanQuyen == account.MaPhanQuyen).OrderByDescending(r => r.MaTaiKhoan).Select(r => r.MaTaiKhoan).FirstOrDefault();
+                        /*var MaTK = dtb.TAIKHOANs.Where(r => r.MaPhanQuyen == account.MaPhanQuyen).OrderByDescending(r => r.MaTaiKhoan).Select(r => r.MaTaiKhoan).FirstOrDefault();
                         
                         int num = Convert.ToInt32(MaTK.Substring(2));
-                        num += 1;
-                        account.MaTaiKhoan = MaTK.Substring(0,2) + num.ToString();
+                        num += 1;*/
+                        string MaTK = temp_matk + txbMaPQ.Text;
+                        account.MaTaiKhoan = MaTK;
                         dtb.TAIKHOANs.Add(account);
                         dtb.SaveChanges();
                         MessageBox.Show("Tạo tài khoản thành công!");

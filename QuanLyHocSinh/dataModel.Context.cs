@@ -41,6 +41,11 @@ namespace QuanLyHocSinh
         public virtual DbSet<THAMSO> THAMSOes { get; set; }
         public virtual DbSet<THANHPHAN> THANHPHANs { get; set; }
         public virtual DbSet<XEPLOAI> XEPLOAIs { get; set; }
+        public virtual DbSet<CTLOPGV> CTLOPGVs { get; set; }
+        public virtual DbSet<GIAOVIEN> GIAOVIENs { get; set; }
+        public virtual DbSet<CTHK> CTHKs { get; set; }
+        public virtual DbSet<HANHKIEM> HANHKIEMs { get; set; }
+        public virtual DbSet<CTGIANGDAY> CTGIANGDAYs { get; set; }
     
         public virtual int ThemHocKy(string maHocKy, string hocKy, Nullable<double> trongSo)
         {

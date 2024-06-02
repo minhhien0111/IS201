@@ -36,6 +36,8 @@ namespace QuanLyHocSinh
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.MenuItemAddStudent = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemListCreate = new System.Windows.Forms.ToolStripMenuItem();
+            this.phânCôngGiảngDạyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lậpDanhSáchLớpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemSearch = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemFindStudent = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItemScoreBoard = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,6 +49,7 @@ namespace QuanLyHocSinh
             this.ToolStripMenuItemFinalReport = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuQuanLyQuyDinh = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolStripMenuItemAccount = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuConductClassify = new System.Windows.Forms.ToolStripMenuItem();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2ImageButtonClose1 = new Guna.UI2.WinForms.Guna2ImageButton();
             this.guna2ImageButtonMinimize1 = new Guna.UI2.WinForms.Guna2ImageButton();
@@ -81,11 +84,12 @@ namespace QuanLyHocSinh
             this.MenuItemSubjectScore,
             this.MenuItemFinalReport,
             this.MenuQuanLyQuyDinh,
-            this.ToolStripMenuItemAccount});
+            this.ToolStripMenuItemAccount,
+            this.MenuConductClassify});
             this.menuStrip1.Location = new System.Drawing.Point(0, 208);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1312, 50);
+            this.menuStrip1.Size = new System.Drawing.Size(1290, 50);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -103,13 +107,29 @@ namespace QuanLyHocSinh
             // MenuItemListCreate
             // 
             this.MenuItemListCreate.AutoSize = false;
+            this.MenuItemListCreate.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.phânCôngGiảngDạyToolStripMenuItem,
+            this.lậpDanhSáchLớpToolStripMenuItem});
             this.MenuItemListCreate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MenuItemListCreate.ForeColor = System.Drawing.Color.White;
             this.MenuItemListCreate.Name = "MenuItemListCreate";
             this.MenuItemListCreate.Size = new System.Drawing.Size(200, 50);
             this.MenuItemListCreate.Text = "Lập danh sách lớp";
             this.MenuItemListCreate.Visible = false;
-            this.MenuItemListCreate.Click += new System.EventHandler(this.MenuItemListCreate_Click);
+            // 
+            // phânCôngGiảngDạyToolStripMenuItem
+            // 
+            this.phânCôngGiảngDạyToolStripMenuItem.Name = "phânCôngGiảngDạyToolStripMenuItem";
+            this.phânCôngGiảngDạyToolStripMenuItem.Size = new System.Drawing.Size(296, 32);
+            this.phânCôngGiảngDạyToolStripMenuItem.Text = "Phân công giảng dạy";
+            this.phânCôngGiảngDạyToolStripMenuItem.Click += new System.EventHandler(this.phânCôngGiảngDạyToolStripMenuItem_Click);
+            // 
+            // lậpDanhSáchLớpToolStripMenuItem
+            // 
+            this.lậpDanhSáchLớpToolStripMenuItem.Name = "lậpDanhSáchLớpToolStripMenuItem";
+            this.lậpDanhSáchLớpToolStripMenuItem.Size = new System.Drawing.Size(296, 32);
+            this.lậpDanhSáchLớpToolStripMenuItem.Text = "Lập danh sách lớp";
+            this.lậpDanhSáchLớpToolStripMenuItem.Click += new System.EventHandler(this.MenuItemListCreate_Click);
             // 
             // MenuItemSearch
             // 
@@ -213,6 +233,17 @@ namespace QuanLyHocSinh
             this.ToolStripMenuItemAccount.Visible = false;
             this.ToolStripMenuItemAccount.Click += new System.EventHandler(this.taojToolStripMenuItem_Click);
             // 
+            // MenuConductClassify
+            // 
+            this.MenuConductClassify.AutoSize = false;
+            this.MenuConductClassify.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.MenuConductClassify.ForeColor = System.Drawing.Color.White;
+            this.MenuConductClassify.Name = "MenuConductClassify";
+            this.MenuConductClassify.Size = new System.Drawing.Size(200, 50);
+            this.MenuConductClassify.Text = "Xếp loại hạnh kiểm lớp";
+            this.MenuConductClassify.Visible = false;
+            this.MenuConductClassify.Click += new System.EventHandler(this.MenuConductClassify_Click_1);
+            // 
             // guna2Panel1
             // 
             this.guna2Panel1.BackColor = System.Drawing.SystemColors.Highlight;
@@ -222,7 +253,7 @@ namespace QuanLyHocSinh
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(1312, 53);
+            this.guna2Panel1.Size = new System.Drawing.Size(1290, 53);
             this.guna2Panel1.TabIndex = 17;
             this.guna2Panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.guna2Panel1_MouseDown);
             // 
@@ -234,7 +265,7 @@ namespace QuanLyHocSinh
             this.guna2ImageButtonClose1.ImageOffset = new System.Drawing.Point(0, 0);
             this.guna2ImageButtonClose1.ImageRotate = 0F;
             this.guna2ImageButtonClose1.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2ImageButtonClose1.Location = new System.Drawing.Point(1261, 6);
+            this.guna2ImageButtonClose1.Location = new System.Drawing.Point(1240, 6);
             this.guna2ImageButtonClose1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2ImageButtonClose1.Name = "guna2ImageButtonClose1";
             this.guna2ImageButtonClose1.PressedState.ImageSize = new System.Drawing.Size(64, 64);
@@ -251,7 +282,7 @@ namespace QuanLyHocSinh
             this.guna2ImageButtonMinimize1.ImageOffset = new System.Drawing.Point(0, 0);
             this.guna2ImageButtonMinimize1.ImageRotate = 0F;
             this.guna2ImageButtonMinimize1.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2ImageButtonMinimize1.Location = new System.Drawing.Point(1219, 6);
+            this.guna2ImageButtonMinimize1.Location = new System.Drawing.Point(1194, 6);
             this.guna2ImageButtonMinimize1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2ImageButtonMinimize1.Name = "guna2ImageButtonMinimize1";
             this.guna2ImageButtonMinimize1.PressedState.ImageSize = new System.Drawing.Size(64, 64);
@@ -450,7 +481,7 @@ namespace QuanLyHocSinh
             this.Background.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Background.Location = new System.Drawing.Point(0, 56);
             this.Background.Name = "Background";
-            this.Background.Size = new System.Drawing.Size(1312, 149);
+            this.Background.Size = new System.Drawing.Size(1290, 149);
             this.Background.TabIndex = 24;
             // 
             // TrangChu
@@ -458,7 +489,7 @@ namespace QuanLyHocSinh
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1312, 783);
+            this.ClientSize = new System.Drawing.Size(1290, 783);
             this.Controls.Add(this.Background);
             this.Controls.Add(this.guna2TextBoxUser);
             this.Controls.Add(this.guna2ImageButtonUser);
@@ -512,5 +543,8 @@ namespace QuanLyHocSinh
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBoxUser;
         private System.Windows.Forms.Panel Background;
         private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItemAccount;
+        private System.Windows.Forms.ToolStripMenuItem MenuConductClassify;
+        private System.Windows.Forms.ToolStripMenuItem phânCôngGiảngDạyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem lậpDanhSáchLớpToolStripMenuItem;
     }
 }

@@ -15,6 +15,7 @@ using System.Runtime.InteropServices;
 using System.Data.Entity.Migrations;
 using System.Net;
 using Microsoft.Office.Interop.Excel;
+using System.Data.Entity.Validation;
 
 namespace QuanLyHocSinh
 {
@@ -56,8 +57,10 @@ namespace QuanLyHocSinh
                 BtnRefresh.Visible = false;
                 BtnRefresh.Enabled = false;
                 BtnFindInfoStu.Enabled = false;
-                pnParentInfo.Location = new System.Drawing.Point(pnStudent_info.Location.X, pnStudent_info.Location.Y + 100);
+                pnParentInfo.Location = new System.Drawing.Point(pnStudent_info.Location.X + 25, pnStudent_info.Location.Y + 100);
                 pnStudent_info.Location = new System.Drawing.Point(pnFindInfoStudent.Location.X, pnFindInfoStudent.Location.Y);
+                ButtonSaveInfo.Location = new System.Drawing.Point(ButtonSaveInfo.Location.X + 15, ButtonSaveInfo.Location.Y + 100);
+                label31.Visible = false;
                 TraCuuHS();
             }
             if (Account.VaiTro == "Giáo viên")
@@ -77,15 +80,13 @@ namespace QuanLyHocSinh
             tbFindEmail.ReadOnly = true;
             tbFindPhoneNum.ReadOnly = true;
             cbFindStudenID_2.Enabled = false;
+            var nam = db.NAMHOCs.OrderByDescending(x => x.MaNamHoc).Select(x => new { MaNamhoc = x.MaNamHoc, Namhoc = x.NamHoc1});
             var result1 = from iter1 in db.HOCSINHs
-                          join iter2 in db.CTLOPs on iter1.MaHocSinh equals iter2.MaHocSinh
-                          join iter3 in db.LOPs on iter2.MaLop equals iter3.MaLop
                           where iter1.MaHocSinh == id
                           select new
                           {
                               name = iter1.HoTen,
                               idStudent = iter1.MaHocSinh,
-                              class_name = iter3.TenLop,
                               sex = iter1.GioiTinh,
                               dob = iter1.NgaySinh,
                               ethnic = iter1.DanToc,
@@ -107,13 +108,29 @@ namespace QuanLyHocSinh
                               job_mom = iter1.NgheNghiep_Me,
                               id_mom = iter1.CCCD_Me,
                           };
-
+            var result2 = from iter1 in db.HOCSINHs
+                          join iter2 in db.CTLOPs on iter1.MaHocSinh equals iter2.MaHocSinh
+                          join iter3 in db.LOPs on iter2.MaLop equals iter3.MaLop
+                          where iter1.MaHocSinh == id && iter3.MaNamHoc == nam.FirstOrDefault().MaNamhoc.ToString()
+                          select new
+                          {
+                              class_name = iter3.TenLop,
+                          };
             foreach (var item in result1)
             {
                 //Thông tin cá nhân của học sinh
                 tbMaSoHS.Text = item.idStudent;
                 tbHoTen.Text = item.name;
-                tbLop.Text = item.class_name;
+                try
+                {
+                    if (result2.Count() == 0)
+                        tbLop.Text = "Chưa được xếp lớp vào năm học hiện tại";
+                    else tbLop.Text = result2.First().class_name.ToString();
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
                 tbGioiTinh.Text = item.sex;
                 tbDiaChi.Text = item.address;
                 tbSDT.Text = item.phone_num;
@@ -774,19 +791,46 @@ namespace QuanLyHocSinh
             {
                 dataEntities db = new dataEntities();
                 // Save Student Info code
-                var hocsinh = db.HOCSINHs.First(m => m.MaHocSinh == tbStudentID.Text);
-                hocsinh.SDT = tbSDT.Text;
-                hocsinh.Email = this.tbEmail.Text;
-
-                hocsinh.SDT_Cha = this.tbSDT_Cha.Text;
-                hocsinh.SDT_Me = this.tbSDT_Me.Text;
-
-                db.HOCSINHs.AddOrUpdate(hocsinh);
-                db.SaveChanges();
-                MessageBox.Show("Lưu thay đổi thành công",
-                                "Lưu thành công",
+                if (tbSDT.Text.Length > 10 || tbSDT_Cha.Text.Length > 10 || tbSDT_Me.Text.Length > 10)
+                {
+                    MessageBox.Show("Số điện thoại phải dưới 10 chứ số",
+                                "Lưu không thành công",
                                 MessageBoxButtons.OK,
-                                MessageBoxIcon.Information);
+                                MessageBoxIcon.Error);
+                }
+                else
+                {
+                    var hocsinh = db.HOCSINHs.First(m => m.MaHocSinh == tbStudentID.Text);
+                    hocsinh.SDT = tbSDT.Text;
+                    hocsinh.Email = this.tbEmail.Text;
+
+                    hocsinh.SDT_Cha = this.tbSDT_Cha.Text;
+                    hocsinh.SDT_Me = this.tbSDT_Me.Text;
+
+                    db.HOCSINHs.AddOrUpdate(hocsinh);
+                    try
+                    {
+                        db.SaveChanges();
+                        MessageBox.Show("Lưu thay đổi thành công",
+                                    "Lưu thành công",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information);
+                    }
+                    catch (DbEntityValidationException e1)
+                    {
+                        foreach (var eve in e1.EntityValidationErrors)
+                        {
+                            Console.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
+                                eve.Entry.Entity.GetType().Name, eve.Entry.State);
+                            foreach (var ve in eve.ValidationErrors)
+                            {
+                                Console.WriteLine("- Property: \"{0}\", Error: \"{1}\"",
+                                    ve.PropertyName, ve.ErrorMessage);
+                            }
+                        }
+                        throw;
+                    }
+                }
             }
         }
     }

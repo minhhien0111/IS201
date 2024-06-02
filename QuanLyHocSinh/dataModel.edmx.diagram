@@ -32,6 +32,25 @@
         <AssociationConnector Association="dataModel.fk_lop_mk" />
         <AssociationConnector Association="dataModel.fk_lop_mnh" />
         <AssociationConnector Association="dataModel.fk_tk_pq" />
+        <EntityTypeShape EntityType="dataModel.CTLOPGV" Width="1.5" PointX="8.5" PointY="10" />
+        <EntityTypeShape EntityType="dataModel.GIAOVIEN" Width="1.5" PointX="6.25" PointY="13" />
+        <AssociationConnector Association="dataModel.FK__CTLOPGV__MaGVCN__308E3499" />
+        <AssociationConnector Association="dataModel.FK__CTLOPGV__MaLop__318258D2" />
+        <EntityTypeShape EntityType="dataModel.CTHK" Width="1.5" PointX="3" PointY="12" />
+        <EntityTypeShape EntityType="dataModel.HANHKIEM" Width="1.5" PointX="0.75" PointY="1.375" />
+        <AssociationConnector Association="dataModel.FK__CTHK__MaHanhKiem__39237A9A" />
+        <AssociationConnector Association="dataModel.FK__CTHK__MaHocKy__382F5661" />
+        <AssociationConnector Association="dataModel.FK__CTHK__MaHocSinh__36470DEF" />
+        <AssociationConnector Association="dataModel.FK__CTHK__MaNamHoc__373B3228" />
+        <EntityTypeShape EntityType="dataModel.CTGIANGDAY" Width="1.5" PointX="8.5" PointY="12.75" />
+        <AssociationConnector Association="dataModel.FK__CTGIANGDA__MaGia__467D75B8" />
+        <AssociationConnector Association="dataModel.FK__CTGIANGDA__MaLop__477199F1" />
+        <AssociationConnector Association="dataModel.FK__CTGIANGDA__MaMon__4865BE2A" />
+        <AssociationConnector Association="dataModel.FK_Khoi" />
+        <AssociationConnector Association="dataModel.FK_NamApDung_Hocky" />
+        <AssociationConnector Association="dataModel.FK_NamApDung" />
+        <AssociationConnector Association="dataModel.FK_NamApDung_Thanhphan" />
+        <AssociationConnector Association="dataModel.FK_NamApDung_Xeploai" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

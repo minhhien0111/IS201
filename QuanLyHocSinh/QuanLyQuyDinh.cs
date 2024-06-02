@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Net.NetworkInformation;
 using System.Runtime.InteropServices;
@@ -38,7 +39,7 @@ namespace QuanLyHocSinh
                            where obj.TenMonHoc != null && obj.NamApDung == dtb.NAMHOCs.OrderByDescending(r => r.MaNamHoc).Select(r => r.MaNamHoc).FirstOrDefault()
                            select new {TenMonHoc = obj.TenMonHoc };
             dgvDSMONHOC.DataSource = dsMonhoc.ToList();
-            dgvDSMONHOC.Show();
+            //dgvDSMONHOC.Show();
             //Danh sách điểm thành phần
             var dsDiemTP = from obj in dtb.THANHPHANs
                            where obj.TenThanhPhan != null && obj.NamApDung == dtb.NAMHOCs.OrderByDescending(r => r.MaNamHoc).Select(r => r.MaNamHoc).FirstOrDefault()
@@ -135,20 +136,23 @@ namespace QuanLyHocSinh
                         var dsMonhoc = from obj in dtb.MonHoc_NamApDung(MaNamHoc_moi)
                                        select new {TenMonHoc = obj.TenMonHoc };
                         dgvDSMONHOC.DataSource = dsMonhoc.ToList();
-                        dgvDSMONHOC.Show();
+                        //dgvDSMONHOC.Show();
 
                         var dsXeploai = from obj in dtb.XepLoai_NamApDung(MaNamHoc_moi)
-                                       select new { TenXepLoai = obj.TenXepLoai, DiemToiThieu = obj.DiemToiThieu, DiemToiDa = obj.DiemToiDa, DiemKhongChe = obj.DiemKhongChe };
+                                        where obj.TenXepLoai != "Không" && obj.TenXepLoai != null
+                                        select new { TenXepLoai = obj.TenXepLoai, DiemToiThieu = obj.DiemToiThieu, DiemToiDa = obj.DiemToiDa, DiemKhongChe = obj.DiemKhongChe };
                         dgvXepLoai.DataSource = dsXeploai.ToList();
                         dgvXepLoai.Show();
 
                         //Danh sách điểm thành phần
                         var dsDiemTP = from obj in dtb.ThanhPhan_NamApDung(MaNamHoc_moi)
+                                       where obj.TenThanhPhan != null
                                        select new { TenThanhPhan = obj.TenThanhPhan, TrongSo = obj.TrongSo };
                         dgvDiemthanhphan.DataSource = dsDiemTP.ToList();
                         dgvDiemthanhphan.Show();
                         //Danh sách điểm học kỳ
                         var dsDiemHK = from obj in dtb.HocKy_NamApDung(MaNamHoc_moi)
+                                       where obj.HocKy != null
                                        select new { HocKy1 = obj.HocKy, TrongSo = obj.TrongSo };
                         dgvDiemHK.DataSource = dsDiemHK.ToList();
                         dgvDiemHK.Show();
@@ -245,7 +249,7 @@ namespace QuanLyHocSinh
             string year = Namhoctextbox.Text;
             string tenlop = TenLoptextbox.Text;
             string malop = MaNamHoc_moi.Substring(2, 2) + TenLoptextbox.Text;
-            if(tenlop.Length != 4)
+            if(tenlop.Length == 0)
             {
                 MessageBox.Show("Tên lớp không hợp lệ!");
                 return;
@@ -305,7 +309,7 @@ namespace QuanLyHocSinh
         {
             string ten_lop = dgvDSLOP.CurrentRow.Cells[0].Value.ToString();
             string tenlop = TenLoptextbox.Text;
-            if (tenlop.Length != 4)
+            if (tenlop.Length == 0)
             {
                 MessageBox.Show("Tên lớp không hợp lệ!");
                 return;
@@ -320,6 +324,12 @@ namespace QuanLyHocSinh
                 }
                 if (check_tenlop)
                 {
+                    var makhoi = dtb.KhoiLop_NamApDung(MaNamHoc_moi).Where(r => r.TenKhoi == tenlop.Substring(0, 2)).FirstOrDefault();
+                    if (makhoi == null)
+                    {
+                        MessageBox.Show("Không tồn tại khối " + tenlop.Substring(0, 2));
+                        return;
+                    }
                     var std = dtb.LOPs.Where(r => r.TenLop == ten_lop && r.MaNamHoc==MaNamHoc_moi).First();
                     std.TenLop = TenLoptextbox.Text;
                     dtb.SaveChanges();
@@ -462,13 +472,29 @@ namespace QuanLyHocSinh
             var getMaNamHoc = dtb.NAMHOCs.Where(p => p.NamHoc1 == Namhoctextbox.Text).Select(p => p.MaNamHoc).SingleOrDefault();
             string MaNamHoc = getMaNamHoc.ToString();
             string subMaNamHoc = MaNamHoc.Substring(2, 2);
+            string[] words = tenmh.Split(' ');
             List<MONHOC> list_mh = new List<MONHOC>();
             if (tenmh.Length == 0)
             {
                 MessageBox.Show("Tên môn học không hợp lệ!");
                 return;
             }
-            string[] words = tenmh.Split(' ');
+            if (float.TryParse(words[words.Length - 1],NumberStyles.Float | NumberStyles.AllowThousands, CultureInfo.InvariantCulture, out _) == false)
+            {
+                MessageBox.Show("Tên môn học không hợp lệ! Bạn chưa thêm khối cho môn");
+                return;
+            }    
+            var makhoi = dtb.KhoiLop_NamApDung(MaNamHoc_moi).Where(r => r.TenKhoi == words[words.Length - 1]).FirstOrDefault();
+            if (makhoi == null)
+            {
+                MessageBox.Show("Không tồn tại khối " + words[words.Length - 1]);
+                return;
+            }
+            if (words[words.Length - 1] == "")
+            {
+                MessageBox.Show("Tên môn học không hợp lệ!");
+                return;
+            }    
             string mamh = "";
             if (words.Length > 2) 
             { 
@@ -495,6 +521,7 @@ namespace QuanLyHocSinh
                     new_item.TenMonHoc = tenmh;
                     new_item.MaMonHoc =  mamh;
                     new_item.NamApDung = MaNamHoc;
+                    new_item.MaKhoi = makhoi.MaKhoi;
                     list_mh.Add(new_item);
                     MessageBox.Show("Cập nhật danh sách môn học thành công!");
             }
@@ -517,7 +544,24 @@ namespace QuanLyHocSinh
             string ten_mh = dgvDSMONHOC.CurrentRow.Cells[0].Value.ToString();
             string tenmh = Tenmhtextbox.Text;
             List<MONHOC> list_mh = new List<MONHOC>();
+            string[] words = tenmh.Split(' ');
             if (tenmh.Length == 0)
+            {
+                MessageBox.Show("Tên môn học không hợp lệ!");
+                return;
+            }
+            if (float.TryParse(words[words.Length - 1], NumberStyles.Float | NumberStyles.AllowThousands, CultureInfo.InvariantCulture, out _) == false)
+            {
+                MessageBox.Show("Tên môn học không hợp lệ! Bạn chưa thêm khối cho môn");
+                return;
+            }
+            var makhoi = dtb.KhoiLop_NamApDung(MaNamHoc_moi).Where(r => r.TenKhoi == words[words.Length - 1]).FirstOrDefault();
+            if (makhoi == null)
+            {
+                MessageBox.Show("Không tồn tại khối " + words[words.Length - 1]);
+                return;
+            }
+            if (words[words.Length - 1] == "")
             {
                 MessageBox.Show("Tên môn học không hợp lệ!");
                 return;

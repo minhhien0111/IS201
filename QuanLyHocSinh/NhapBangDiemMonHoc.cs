@@ -32,7 +32,10 @@ namespace QuanLyHocSinh
             ComboBoxYear.DataSource = comBoxYear1.ToList();
             ComboBoxYear.DisplayMember = "NamHoc1";
             ComboBoxYear.ValueMember = "MaNamHoc";
-            var comboxClassSource = from obj in data.LOPs where obj.MaNamHoc == ComboBoxYear.SelectedValue select obj;
+            var t = Account.MaTK.Substring(2);
+            var comboxClassSource = from obj in data.LOPs
+                                    join obj2 in data.CTGIANGDAYs on obj.MaLop equals obj2.MaLop
+                                    where obj.MaNamHoc == ComboBoxYear.SelectedValue && obj2.MaGiaoVien == t select new {TenLop = obj.TenLop, MaLop = obj.MaLop, MaMonHoc = obj2.MaMonHoc };
             ComboBoxClass.DataSource = comboxClassSource.ToList();
             ComboBoxClass.DisplayMember = "TenLop";
             ComboBoxClass.ValueMember = "MaLop";
@@ -41,7 +44,8 @@ namespace QuanLyHocSinh
             ComboBoxSemester.DisplayMember = "HocKy";
             ComboBoxSemester.ValueMember = "MaHocKy";
             var ComboBoxSubjectsSource = from obj in data.MonHoc_NamApDung(ComboBoxYear.SelectedValue.ToString())
-                                         where obj.MaMonHoc.Substring(obj.MaMonHoc.Length - 2) == ComboBoxClass.Text.Substring(0, 2)
+                                         join obj2 in comboxClassSource on obj.MaMonHoc equals obj2.MaMonHoc
+                                         where obj.MaMonHoc.Substring(obj.MaMonHoc.Length - 2) == ComboBoxClass.Text.Substring(0, 2) && obj2.MaLop == ComboBoxClass.SelectedValue.ToString()
                                          select obj;
             ComboBoxSubject.DataSource = ComboBoxSubjectsSource.ToList();
             ComboBoxSubject.DisplayMember = "TenMonHoc";
@@ -65,8 +69,13 @@ namespace QuanLyHocSinh
         }
         private void comboBoxYear_SelectedValueChanged(object sender, EventArgs e)
         {
+            PanelInputScore.Hide();
             ComboBoxSubject.Enabled = false;
-            var comboxClassSource = from obj in data.LOPs.AsEnumerable() where obj.MaNamHoc == ComboBoxYear.SelectedValue.ToString() select obj;
+            var t = Account.MaTK.Substring(2);
+            var comboxClassSource = from obj in data.LOPs.AsEnumerable()
+                                    join obj2 in data.CTGIANGDAYs on obj.MaLop equals obj2.MaLop
+                                    where obj.MaNamHoc == ComboBoxYear.SelectedValue.ToString() && obj2.MaGiaoVien == t
+                                    select new { TenLop = obj.TenLop, MaLop = obj.MaLop, MaMonHoc = obj2.MaMonHoc };
             ComboBoxClass.DataSource = comboxClassSource.ToList();
             ComboBoxClass.DisplayMember = "TenLop";
             ComboBoxClass.ValueMember = "MaLop";
@@ -75,16 +84,18 @@ namespace QuanLyHocSinh
             ComboBoxSemester.DisplayMember = "HocKy";
             ComboBoxSemester.ValueMember = "MaHocKy";
             string class_text = ComboBoxClass.Text;
-            var ComboBoxSubjectsSource = from obj in data.MonHoc_NamApDung(ComboBoxYear.SelectedValue.ToString())
-                                         select obj;
-            ComboBoxSubject.DataSource = ComboBoxSubjectsSource.ToList();
-            ComboBoxSubject.DisplayMember = "TenMonHoc";
-            ComboBoxSubject.ValueMember = "MaMonHoc";
         }
         private void comboBoxClass_SelectedIndexChanged(object sender, EventArgs e)
         {
+            PanelInputScore.Hide();
+            var t = Account.MaTK.Substring(2);
+            var comboxClassSource = from obj in data.LOPs
+                                    join obj2 in data.CTGIANGDAYs on obj.MaLop equals obj2.MaLop
+                                    where obj.MaNamHoc == ComboBoxYear.SelectedValue && obj2.MaGiaoVien == t
+                                    select new { TenLop = obj.TenLop, MaLop = obj.MaLop, MaMonHoc = obj2.MaMonHoc };
             var ComboBoxSubjectsSource = from obj in data.MonHoc_NamApDung(ComboBoxYear.SelectedValue.ToString())
-                                         where obj.MaMonHoc.Substring(obj.MaMonHoc.Length - 2) == ComboBoxClass.Text.Substring(0, 2)
+                                         join obj2 in comboxClassSource on obj.MaMonHoc equals obj2.MaMonHoc
+                                         where obj.MaMonHoc.Substring(obj.MaMonHoc.Length - 2) == ComboBoxClass.Text.Substring(0, 2) && obj2.MaLop == ComboBoxClass.SelectedValue.ToString()
                                          select obj;
             ComboBoxSubject.DataSource = ComboBoxSubjectsSource.ToList();
             ComboBoxSubject.DisplayMember = "TenMonHoc";
@@ -803,6 +814,14 @@ namespace QuanLyHocSinh
                 this.Show();
         }
 
+        private void ComboBoxSemester_SelectedValueChanged(object sender, EventArgs e)
+        {
+            PanelInputScore.Hide();
+        }
 
+        private void ComboBoxSubject_SelectedValueChanged(object sender, EventArgs e)
+        {
+            PanelInputScore.Hide();
+        }
     }
 }

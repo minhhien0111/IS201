@@ -18,13 +18,19 @@ namespace QuanLyHocSinh
         public MONHOC()
         {
             this.KETQUA_MONHOC_HOCSINH = new HashSet<KETQUA_MONHOC_HOCSINH>();
+            this.CTGIANGDAYs = new HashSet<CTGIANGDAY>();
         }
     
         public string MaMonHoc { get; set; }
         public string TenMonHoc { get; set; }
         public string NamApDung { get; set; }
+        public string MaKhoi { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<KETQUA_MONHOC_HOCSINH> KETQUA_MONHOC_HOCSINH { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CTGIANGDAY> CTGIANGDAYs { get; set; }
+        public virtual KHOI KHOI { get; set; }
+        public virtual NAMHOC NAMHOC { get; set; }
     }
 }

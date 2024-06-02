@@ -50,6 +50,17 @@ namespace QuanLyHocSinh
             HocKyCbb.DisplayMember = "HocKy";
             HocKyCbb.ValueMember = "MaHocKy";
         }
+
+        public string get_NamApDung(string Nam)
+        {
+            dataEntities dtb = new dataEntities();
+            var temp = from t in dtb.HANHKIEMs
+                       where Nam.CompareTo(t.NamApDung) >= 0
+                       select t.NamApDung;
+            var NamApDung = temp.Distinct().OrderByDescending(r => r).First().ToString();
+            /*MessageBox.Show(NamApDung, "Thêm thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);*/
+            return NamApDung;
+        }
         string MaNamHoc(string namhoc)
         {
             dataEntities data = new dataEntities();
@@ -245,6 +256,21 @@ namespace QuanLyHocSinh
                         break;
                     }
                 }
+
+                // Hanh kiem
+                var hanhkiem = from cthk in dtb.CTHKs
+                               join hk in dtb.HANHKIEMs on cthk.MaHanhKiem equals hk.MaHanhKiem
+                               where cthk.MaHocSinh == MHStextbox_hk.Text && cthk.MaNamHoc == NamHocCbb_hk.SelectedValue && cthk.MaHocKy == HocKyCbb.SelectedValue
+                               select hk.TenHanhKiem;
+                if (hanhkiem.Count() == 0) 
+                {
+                    HanhKiemTextBox.Text = "Chưa đánh giá";
+                }
+                else
+                {
+                    HanhKiemTextBox.Text = hanhkiem.First().ToString();
+                }    
+
             }
         }
         void TraCuuDiemNamHoc()
@@ -349,8 +375,43 @@ namespace QuanLyHocSinh
                         break;
                     }
                 }
-                
-
+                // Hanh kiem
+                string namapdung = get_NamApDung(NamHocCbb_nh.SelectedValue.ToString());
+                var hocki_ = from t in dtb.HocKy_NamApDung(NamHocCbb_nh.SelectedValue.ToString()) select new { Mahk = t.MaHocKy };
+                hocki_ = hocki_.ToList();
+                var hanhkiem = from cthk in dtb.CTHKs
+                               join hk in dtb.HANHKIEMs on cthk.MaHanhKiem equals hk.MaHanhKiem
+                               where cthk.MaHocSinh == MHStextbox_nh.Text && cthk.MaNamHoc == NamHocCbb_nh.SelectedValue
+                               select new { MaCT = cthk.MaCTHK, MaHocSinh = cthk.MaHocSinh, MaNamHoc = cthk.MaNamHoc, MaHanhKiem = cthk.MaHanhKiem, Diem = hk.Diem, HanhKiem = hk.TenHanhKiem };
+                if (hanhkiem.Count() == 0)
+                    TextBoxHanhKiem_nh.Text = "Chưa đánh giá";
+                else if (hanhkiem.Count() != hocki_.Count())
+                {
+                    TextBoxHanhKiem_nh.Text = "Chưa đánh giá";
+                }
+                else
+                {
+                    var check_Null = hanhkiem.Where(x => x.HanhKiem == "Chưa đánh giá").Select(x => x);
+                    if (check_Null.Count() != 0)
+                    {
+                        TextBoxHanhKiem_nh.Text = "Chưa đánh giá";
+                    }
+                    else
+                    {
+                        var grpCTHK = hanhkiem.GroupBy(x => new { x.MaHocSinh, x.MaNamHoc }).Select(g => new
+                        {
+                            MaHS = g.Key.MaHocSinh,
+                            MaNamHoc = g.Key.MaNamHoc,
+                            TongDiem = (int)(g.Average(x => x.Diem)),
+                        });
+                        var grpCTHK_2 = from gCT in grpCTHK
+                                        join hk in dtb.HANHKIEMs on gCT.TongDiem equals hk.Diem
+                                        where hk.NamApDung == namapdung
+                                        select new { MaHS = gCT.MaHS, HanhKiem = hk.TenHanhKiem, Diem = hk.Diem };
+                        TextBoxHanhKiem_nh.Text = grpCTHK_2.First().HanhKiem.ToString();
+                    }
+                    /*                    MessageBox.Show(grpCTHK.First().TongDiem.ToString(), "Thêm thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);*/
+                }
             }
         }
 
@@ -435,8 +496,6 @@ namespace QuanLyHocSinh
             ReleaseCapture();
             SendMessage(Handle, 0x112, 0xf012, 0);
         }
-
-
     }
 }
 

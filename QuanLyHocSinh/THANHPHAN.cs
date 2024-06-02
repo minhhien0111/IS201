@@ -27,5 +27,6 @@ namespace QuanLyHocSinh
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DIEM> DIEMs { get; set; }
+        public virtual NAMHOC NAMHOC { get; set; }
     }
 }

@@ -20,6 +20,11 @@ namespace QuanLyHocSinh
             this.KETQUA_MONHOC_HOCSINH = new HashSet<KETQUA_MONHOC_HOCSINH>();
             this.KHOIs = new HashSet<KHOI>();
             this.LOPs = new HashSet<LOP>();
+            this.CTHKs = new HashSet<CTHK>();
+            this.HOCKies = new HashSet<HOCKY>();
+            this.MONHOCs = new HashSet<MONHOC>();
+            this.THANHPHANs = new HashSet<THANHPHAN>();
+            this.XEPLOAIs = new HashSet<XEPLOAI>();
         }
     
         public string MaNamHoc { get; set; }
@@ -31,5 +36,15 @@ namespace QuanLyHocSinh
         public virtual ICollection<KHOI> KHOIs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<LOP> LOPs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CTHK> CTHKs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<HOCKY> HOCKies { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<MONHOC> MONHOCs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<THANHPHAN> THANHPHANs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<XEPLOAI> XEPLOAIs { get; set; }
     }
 }

@@ -1,12 +1,16 @@
-﻿using System;
+﻿using Microsoft.Office.Interop.Excel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity.Migrations;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 using System.Windows.Forms;
 
 namespace QuanLyHocSinh
@@ -15,7 +19,7 @@ namespace QuanLyHocSinh
     {
         private TrangChu mainform { get; set; }
         private short sStdNum;
-        private DataTable dt;
+        private System.Data.DataTable dt;
         private int iNamHoc;
         private int iKhoi;
         private int iLop;
@@ -28,7 +32,7 @@ namespace QuanLyHocSinh
             this.dgvClassDetail.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvClassDetail.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
 
-            dt = new DataTable();
+            dt = new System.Data.DataTable();
             dt.Columns.Add("STT", typeof(byte)).ReadOnly = true;
             dt.Columns.Add("MSHS", typeof(String)).ReadOnly = true;
             dt.Columns.Add("Họ tên", typeof(String)).ReadOnly = true;
@@ -41,6 +45,7 @@ namespace QuanLyHocSinh
             CapNhatDanhSachNamHoc(db);
             CapNhatDanhSachKhoi(db);
             CapNhatDanhSachLop(db);
+            CapNhatMaGV();
             HienThiDanhSachHocSinh(db);
 
             this.cbSchoolYear.SelectedIndexChanged += new System.EventHandler(this.cbSchoolYear_SelectedIndexChanged);
@@ -125,9 +130,25 @@ namespace QuanLyHocSinh
                 dgvClassDetail.Hide();
             }           
         }
-        private void CapNhatMaGV(dataEntities db)
+        private void CapNhatMaGV()
         {
-            dataEntities newdb = new dataEntities();
+            dataEntities db = new dataEntities();
+            var stdIdNowDb = from ctgv in db.CTLOPGVs
+                             join l in db.LOPs on ctgv.MaLop equals l.MaLop
+                             join nh in db.NAMHOCs on l.MaNamHoc equals nh.MaNamHoc
+                             where nh.MaNamHoc == this.cbSchoolYear.SelectedValue.ToString()
+                             where l.MaLop == this.cbClass.SelectedValue.ToString()
+                             select new {MaGV =  ctgv.MaGVCN, MaLop = l.MaLop};
+            //tbInputTeacherID.Text = stdIdNowDb.First().MaGV;
+            if(stdIdNowDb.Count() != 0)
+            {
+                tbInputTeacherID.Text = stdIdNowDb.First().MaGV;
+            }
+            else
+            {
+                tbInputTeacherID.Text = "";
+            }
+             
         }
 
         private void ThemHocSinhVaoLop()
@@ -179,6 +200,10 @@ namespace QuanLyHocSinh
 
                                 HienThiDanhSachHocSinh(db);
                                 this.tbStdIdAdd.Text = "";
+                                var lop = db.LOPs.First(x => x.MaLop == this.cbClass.SelectedValue.ToString());
+                                lop.SiSo += 1;
+                                db.LOPs.AddOrUpdate(lop);
+                                db.SaveChanges();
                                 MessageBox.Show("Thêm học sinh vào lớp thành công", "Thêm thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                             else
@@ -333,7 +358,8 @@ namespace QuanLyHocSinh
         private void cbClass_SelectedIndexChanged(object sender, EventArgs e)
         {
             dataEntities db = new dataEntities();            
-            HienThiDanhSachHocSinh(db);                    
+            HienThiDanhSachHocSinh(db);
+            CapNhatMaGV();
         }
 
         private void Btn_Minimize_Click(object sender, EventArgs e)
@@ -343,7 +369,7 @@ namespace QuanLyHocSinh
 
         private void Btn_Close_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            System.Windows.Forms.Application.Exit();
         }
 
         private void btnHomeScreen_Click(object sender, EventArgs e)
@@ -376,6 +402,109 @@ namespace QuanLyHocSinh
         {
             ReleaseCapture();
             SendMessage(Handle, 0x112, 0xf012, 0);
+        }
+        private string getPreviousMaGVCN()
+        {
+            dataEntities db = new dataEntities();
+            var stdIdNowDb = from ctgv in db.CTLOPGVs
+                             join l in db.LOPs on ctgv.MaLop equals l.MaLop
+                             join nh in db.NAMHOCs on l.MaNamHoc equals nh.MaNamHoc
+                             where nh.MaNamHoc == this.cbSchoolYear.SelectedValue.ToString()
+                             where l.MaLop == this.cbClass.SelectedValue.ToString()
+                             select new { MaGV = ctgv.MaGVCN, MaLop = l.MaLop };
+            if (stdIdNowDb.Count() != 0)
+                return stdIdNowDb.First().MaGV.ToString();
+            else return "";
+        }
+        private void saveMaGV(object sender, EventArgs e)
+        {
+            string MaGVCNmoi = tbInputTeacherID.Text;
+            if (MaGVCNmoi.Length > 0)
+            {
+                dataEntities db = new dataEntities();
+                var stdIdNowDb = from ctgv in db.CTLOPGVs
+                                 join l in db.LOPs on ctgv.MaLop equals l.MaLop
+                                 where l.MaNamHoc == this.cbSchoolYear.SelectedValue.ToString() && ctgv.MaGVCN == MaGVCNmoi
+                                 select new { MaGV = ctgv.MaGVCN, MaLop = l.MaLop };
+                //tbInputTeacherID.Text = stdIdNowDb.First().MaGV;
+                if (stdIdNowDb.Count() != 0)
+                {
+                    MessageBox.Show("Giáo viên này đã có lớp chủ nhiệm", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    tbInputTeacherID.Text = getPreviousMaGVCN();
+                }
+                else
+                {
+                    var ctlop = from ctgv in db.CTLOPGVs
+                                where ctgv.MaLop == cbClass.SelectedValue.ToString()
+                                select new { MaCTLOPGV = ctgv.MaCTLGV, MaLop = ctgv.MaLop };
+                    if(ctlop.Count() > 0 )
+                    {
+                        CTLOPGV newCTLOP = new CTLOPGV();
+                        newCTLOP.MaCTLGV = ctlop.First().MaCTLOPGV;
+                        newCTLOP.MaGVCN = MaGVCNmoi;
+                        newCTLOP.MaLop = ctlop.First().MaLop;
+                        db.CTLOPGVs.AddOrUpdate(newCTLOP);
+                        db.SaveChanges();
+                        MessageBox.Show("Lưu thay đổi thành công",
+                                        "Lưu thành công",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        CTLOPGV newCTLOP = new CTLOPGV();
+                        var temp_ctlop = from ctgv in db.CTLOPGVs
+                                          select new { MaCTLOPGV = ctgv.MaCTLGV};
+                        String newMaCTLGV = db.CTLOPGVs.OrderByDescending(row => row.MaCTLGV).Select(row => row.MaCTLGV).FirstOrDefault();
+                        string temp2_kq = newMaCTLGV.ToString();
+                        int index_kq = Convert.ToInt32(temp2_kq);
+                        newCTLOP.MaCTLGV = (index_kq + 1).ToString();
+                        newCTLOP.MaGVCN = MaGVCNmoi;
+                        newCTLOP.MaLop = cbClass.SelectedValue.ToString();
+                        db.CTLOPGVs.Add(newCTLOP);
+                        db.SaveChanges();
+                        MessageBox.Show("Lưu thay đổi thành công",
+                                        "Lưu thành công",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Information);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng nhập mã giáo viên", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                tbInputTeacherID.Text = getPreviousMaGVCN();
+            }
+        }
+
+        private void btnDeleteGVCN_Click(object sender, EventArgs e)
+        {
+            tbInputTeacherID.Text = getPreviousMaGVCN();
+            if (tbInputTeacherID.Text.Length > 0)
+            {
+                dataEntities db = new dataEntities();
+                var stdIdNowDb = from ctgv in db.CTLOPGVs
+                                 join l in db.LOPs on ctgv.MaLop equals l.MaLop
+                                 where l.MaNamHoc == this.cbSchoolYear.SelectedValue.ToString() && l.MaLop == this.cbClass.SelectedValue.ToString()
+                                 select new {MaCTLGV = ctgv.MaCTLGV, MaGV = ctgv.MaGVCN, MaLop = l.MaLop };
+                //tbInputTeacherID.Text = stdIdNowDb.First().MaGV;
+                if (stdIdNowDb.Count() != 0)
+                {
+                    CTLOPGV temp = new CTLOPGV {MaCTLGV = stdIdNowDb.First().MaCTLGV, MaGVCN = stdIdNowDb.First().MaGV, MaLop = this.cbClass.SelectedValue.ToString() };
+                    db.CTLOPGVs.Attach(temp);
+                    db.CTLOPGVs.Remove(temp);
+                    db.SaveChanges();
+                    tbInputTeacherID.Text = "";
+                    MessageBox.Show("Xóa thành công",
+                                        "Xóa thành công",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Information);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Lớp hiện tại không có GVCN", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

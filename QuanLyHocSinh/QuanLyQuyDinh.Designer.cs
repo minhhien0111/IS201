@@ -138,6 +138,7 @@
             this.Namhoctextbox = new Guna.UI2.WinForms.Guna2TextBox();
             this.AddNamhoc_button = new Guna.UI2.WinForms.Guna2Button();
             this.label26 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
             this.guna2Panel1.SuspendLayout();
             this.PanelDsQuydinh.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDiemthanhphan)).BeginInit();
@@ -157,7 +158,7 @@
             this.guna2Panel1.Controls.Add(this.guna2ImageButtonMinimize1);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(1101, 53);
             this.guna2Panel1.TabIndex = 17;
@@ -183,7 +184,7 @@
             this.guna2ImageButtonClose1.ImageRotate = 0F;
             this.guna2ImageButtonClose1.ImageSize = new System.Drawing.Size(30, 30);
             this.guna2ImageButtonClose1.Location = new System.Drawing.Point(1051, 4);
-            this.guna2ImageButtonClose1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2ImageButtonClose1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2ImageButtonClose1.Name = "guna2ImageButtonClose1";
             this.guna2ImageButtonClose1.PressedState.ImageSize = new System.Drawing.Size(64, 64);
             this.guna2ImageButtonClose1.Size = new System.Drawing.Size(47, 43);
@@ -200,7 +201,7 @@
             this.guna2ImageButtonMinimize1.ImageRotate = 0F;
             this.guna2ImageButtonMinimize1.ImageSize = new System.Drawing.Size(30, 30);
             this.guna2ImageButtonMinimize1.Location = new System.Drawing.Point(1007, 5);
-            this.guna2ImageButtonMinimize1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2ImageButtonMinimize1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2ImageButtonMinimize1.Name = "guna2ImageButtonMinimize1";
             this.guna2ImageButtonMinimize1.PressedState.ImageSize = new System.Drawing.Size(64, 64);
             this.guna2ImageButtonMinimize1.Size = new System.Drawing.Size(47, 43);
@@ -216,7 +217,7 @@
             this.guna2ImageButtonHome.ImageRotate = 0F;
             this.guna2ImageButtonHome.ImageSize = new System.Drawing.Size(40, 40);
             this.guna2ImageButtonHome.Location = new System.Drawing.Point(0, 60);
-            this.guna2ImageButtonHome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.guna2ImageButtonHome.Margin = new System.Windows.Forms.Padding(4);
             this.guna2ImageButtonHome.Name = "guna2ImageButtonHome";
             this.guna2ImageButtonHome.PressedState.ImageSize = new System.Drawing.Size(64, 64);
             this.guna2ImageButtonHome.Size = new System.Drawing.Size(67, 62);
@@ -379,7 +380,7 @@
             this.updateTuoi_button.Image = ((System.Drawing.Image)(resources.GetObject("updateTuoi_button.Image")));
             this.updateTuoi_button.ImageSize = new System.Drawing.Size(40, 40);
             this.updateTuoi_button.Location = new System.Drawing.Point(985, 128);
-            this.updateTuoi_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.updateTuoi_button.Margin = new System.Windows.Forms.Padding(4);
             this.updateTuoi_button.Name = "updateTuoi_button";
             this.updateTuoi_button.Size = new System.Drawing.Size(69, 54);
             this.updateTuoi_button.TabIndex = 49;
@@ -387,6 +388,7 @@
             // 
             // PanelDsQuydinh
             // 
+            this.PanelDsQuydinh.Controls.Add(this.label33);
             this.PanelDsQuydinh.Controls.Add(this.label32);
             this.PanelDsQuydinh.Controls.Add(this.label31);
             this.PanelDsQuydinh.Controls.Add(this.label30);
@@ -447,7 +449,7 @@
             this.PanelDsQuydinh.Controls.Add(this.label16);
             this.PanelDsQuydinh.Controls.Add(this.dgvXepLoai);
             this.PanelDsQuydinh.Location = new System.Drawing.Point(23, 354);
-            this.PanelDsQuydinh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PanelDsQuydinh.Margin = new System.Windows.Forms.Padding(4);
             this.PanelDsQuydinh.Name = "PanelDsQuydinh";
             this.PanelDsQuydinh.Size = new System.Drawing.Size(1039, 1514);
             this.PanelDsQuydinh.TabIndex = 93;
@@ -589,7 +591,7 @@
             this.AddDiemTP_button.Image = ((System.Drawing.Image)(resources.GetObject("AddDiemTP_button.Image")));
             this.AddDiemTP_button.ImageSize = new System.Drawing.Size(40, 40);
             this.AddDiemTP_button.Location = new System.Drawing.Point(961, 741);
-            this.AddDiemTP_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AddDiemTP_button.Margin = new System.Windows.Forms.Padding(4);
             this.AddDiemTP_button.Name = "AddDiemTP_button";
             this.AddDiemTP_button.Size = new System.Drawing.Size(69, 54);
             this.AddDiemTP_button.TabIndex = 80;
@@ -607,7 +609,7 @@
             this.DeleteDiemTP_button.Image = ((System.Drawing.Image)(resources.GetObject("DeleteDiemTP_button.Image")));
             this.DeleteDiemTP_button.ImageSize = new System.Drawing.Size(40, 40);
             this.DeleteDiemTP_button.Location = new System.Drawing.Point(961, 864);
-            this.DeleteDiemTP_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DeleteDiemTP_button.Margin = new System.Windows.Forms.Padding(4);
             this.DeleteDiemTP_button.Name = "DeleteDiemTP_button";
             this.DeleteDiemTP_button.Size = new System.Drawing.Size(69, 54);
             this.DeleteDiemTP_button.TabIndex = 82;
@@ -625,7 +627,7 @@
             this.EditDiemTP_button.Image = ((System.Drawing.Image)(resources.GetObject("EditDiemTP_button.Image")));
             this.EditDiemTP_button.ImageSize = new System.Drawing.Size(40, 40);
             this.EditDiemTP_button.Location = new System.Drawing.Point(965, 802);
-            this.EditDiemTP_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EditDiemTP_button.Margin = new System.Windows.Forms.Padding(4);
             this.EditDiemTP_button.Name = "EditDiemTP_button";
             this.EditDiemTP_button.Size = new System.Drawing.Size(69, 54);
             this.EditDiemTP_button.TabIndex = 81;
@@ -693,7 +695,7 @@
             this.dgvDiemthanhphan.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvDiemthanhphan.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvDiemthanhphan.Location = new System.Drawing.Point(240, 752);
-            this.dgvDiemthanhphan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvDiemthanhphan.Margin = new System.Windows.Forms.Padding(4);
             this.dgvDiemthanhphan.Name = "dgvDiemthanhphan";
             this.dgvDiemthanhphan.ReadOnly = true;
             this.dgvDiemthanhphan.RowHeadersVisible = false;
@@ -764,7 +766,7 @@
             this.AddMonhoc_button.Image = ((System.Drawing.Image)(resources.GetObject("AddMonhoc_button.Image")));
             this.AddMonhoc_button.ImageSize = new System.Drawing.Size(40, 40);
             this.AddMonhoc_button.Location = new System.Drawing.Point(961, 498);
-            this.AddMonhoc_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AddMonhoc_button.Margin = new System.Windows.Forms.Padding(4);
             this.AddMonhoc_button.Name = "AddMonhoc_button";
             this.AddMonhoc_button.Size = new System.Drawing.Size(69, 54);
             this.AddMonhoc_button.TabIndex = 73;
@@ -782,7 +784,7 @@
             this.DeleteMonhoc_button.Image = ((System.Drawing.Image)(resources.GetObject("DeleteMonhoc_button.Image")));
             this.DeleteMonhoc_button.ImageSize = new System.Drawing.Size(40, 40);
             this.DeleteMonhoc_button.Location = new System.Drawing.Point(961, 622);
-            this.DeleteMonhoc_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DeleteMonhoc_button.Margin = new System.Windows.Forms.Padding(4);
             this.DeleteMonhoc_button.Name = "DeleteMonhoc_button";
             this.DeleteMonhoc_button.Size = new System.Drawing.Size(69, 54);
             this.DeleteMonhoc_button.TabIndex = 75;
@@ -800,6 +802,7 @@
             this.label8.Size = new System.Drawing.Size(148, 25);
             this.label8.TabIndex = 54;
             this.label8.Text = "Danh sách khối:";
+            this.label8.Visible = false;
             // 
             // dgvDSKHOI
             // 
@@ -828,7 +831,7 @@
             this.dgvDSKHOI.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvDSKHOI.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvDSKHOI.Location = new System.Drawing.Point(240, 80);
-            this.dgvDSKHOI.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvDSKHOI.Margin = new System.Windows.Forms.Padding(4);
             this.dgvDSKHOI.Name = "dgvDSKHOI";
             this.dgvDSKHOI.ReadOnly = true;
             this.dgvDSKHOI.RowHeadersVisible = false;
@@ -856,6 +859,7 @@
             this.dgvDSKHOI.ThemeStyle.RowsStyle.Height = 22;
             this.dgvDSKHOI.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvDSKHOI.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvDSKHOI.Visible = false;
             this.dgvDSKHOI.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSKHOI_CellClick);
             // 
             // dataGridViewTextBoxColumn2
@@ -899,6 +903,7 @@
             this.TenKhoitextbox.SelectedText = "";
             this.TenKhoitextbox.Size = new System.Drawing.Size(139, 30);
             this.TenKhoitextbox.TabIndex = 60;
+            this.TenKhoitextbox.Visible = false;
             // 
             // EditMonhoc_button
             // 
@@ -912,7 +917,7 @@
             this.EditMonhoc_button.Image = ((System.Drawing.Image)(resources.GetObject("EditMonhoc_button.Image")));
             this.EditMonhoc_button.ImageSize = new System.Drawing.Size(40, 40);
             this.EditMonhoc_button.Location = new System.Drawing.Point(965, 560);
-            this.EditMonhoc_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EditMonhoc_button.Margin = new System.Windows.Forms.Padding(4);
             this.EditMonhoc_button.Name = "EditMonhoc_button";
             this.EditMonhoc_button.Size = new System.Drawing.Size(69, 54);
             this.EditMonhoc_button.TabIndex = 74;
@@ -930,6 +935,7 @@
             this.label11.Size = new System.Drawing.Size(83, 25);
             this.label11.TabIndex = 61;
             this.label11.Text = "Tên khối";
+            this.label11.Visible = false;
             // 
             // TrongSoHKtextbox
             // 
@@ -964,10 +970,11 @@
             this.EditKhoi_button.Image = ((System.Drawing.Image)(resources.GetObject("EditKhoi_button.Image")));
             this.EditKhoi_button.ImageSize = new System.Drawing.Size(40, 40);
             this.EditKhoi_button.Location = new System.Drawing.Point(965, 126);
-            this.EditKhoi_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EditKhoi_button.Margin = new System.Windows.Forms.Padding(4);
             this.EditKhoi_button.Name = "EditKhoi_button";
             this.EditKhoi_button.Size = new System.Drawing.Size(69, 54);
             this.EditKhoi_button.TabIndex = 63;
+            this.EditKhoi_button.Visible = false;
             this.EditKhoi_button.Click += new System.EventHandler(this.EditKhoi_button_Click);
             // 
             // label13
@@ -995,10 +1002,11 @@
             this.DeleteKhoi_button.Image = ((System.Drawing.Image)(resources.GetObject("DeleteKhoi_button.Image")));
             this.DeleteKhoi_button.ImageSize = new System.Drawing.Size(40, 40);
             this.DeleteKhoi_button.Location = new System.Drawing.Point(961, 187);
-            this.DeleteKhoi_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DeleteKhoi_button.Margin = new System.Windows.Forms.Padding(4);
             this.DeleteKhoi_button.Name = "DeleteKhoi_button";
             this.DeleteKhoi_button.Size = new System.Drawing.Size(69, 54);
             this.DeleteKhoi_button.TabIndex = 64;
+            this.DeleteKhoi_button.Visible = false;
             this.DeleteKhoi_button.Click += new System.EventHandler(this.DeleteKhoi_button_Click);
             // 
             // AddHocky_button
@@ -1013,7 +1021,7 @@
             this.AddHocky_button.Image = ((System.Drawing.Image)(resources.GetObject("AddHocky_button.Image")));
             this.AddHocky_button.ImageSize = new System.Drawing.Size(40, 40);
             this.AddHocky_button.Location = new System.Drawing.Point(961, 1313);
-            this.AddHocky_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AddHocky_button.Margin = new System.Windows.Forms.Padding(4);
             this.AddHocky_button.Name = "AddHocky_button";
             this.AddHocky_button.Size = new System.Drawing.Size(69, 54);
             this.AddHocky_button.TabIndex = 88;
@@ -1031,10 +1039,11 @@
             this.AddKhoi_button.Image = ((System.Drawing.Image)(resources.GetObject("AddKhoi_button.Image")));
             this.AddKhoi_button.ImageSize = new System.Drawing.Size(40, 40);
             this.AddKhoi_button.Location = new System.Drawing.Point(961, 64);
-            this.AddKhoi_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AddKhoi_button.Margin = new System.Windows.Forms.Padding(4);
             this.AddKhoi_button.Name = "AddKhoi_button";
             this.AddKhoi_button.Size = new System.Drawing.Size(69, 54);
             this.AddKhoi_button.TabIndex = 62;
+            this.AddKhoi_button.Visible = false;
             this.AddKhoi_button.Click += new System.EventHandler(this.AddKhoi_button_Click);
             // 
             // Tenmhtextbox
@@ -1070,7 +1079,7 @@
             this.DeleteHocky_button.Image = ((System.Drawing.Image)(resources.GetObject("DeleteHocky_button.Image")));
             this.DeleteHocky_button.ImageSize = new System.Drawing.Size(40, 40);
             this.DeleteHocky_button.Location = new System.Drawing.Point(961, 1436);
-            this.DeleteHocky_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DeleteHocky_button.Margin = new System.Windows.Forms.Padding(4);
             this.DeleteHocky_button.Name = "DeleteHocky_button";
             this.DeleteHocky_button.Size = new System.Drawing.Size(69, 54);
             this.DeleteHocky_button.TabIndex = 90;
@@ -1101,7 +1110,7 @@
             this.EditHocky_button.Image = ((System.Drawing.Image)(resources.GetObject("EditHocky_button.Image")));
             this.EditHocky_button.ImageSize = new System.Drawing.Size(40, 40);
             this.EditHocky_button.Location = new System.Drawing.Point(965, 1375);
-            this.EditHocky_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EditHocky_button.Margin = new System.Windows.Forms.Padding(4);
             this.EditHocky_button.Name = "EditHocky_button";
             this.EditHocky_button.Size = new System.Drawing.Size(69, 54);
             this.EditHocky_button.TabIndex = 89;
@@ -1134,7 +1143,7 @@
             this.dgvDSMONHOC.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgvDSMONHOC.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvDSMONHOC.Location = new System.Drawing.Point(240, 511);
-            this.dgvDSMONHOC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvDSMONHOC.Margin = new System.Windows.Forms.Padding(4);
             this.dgvDSMONHOC.Name = "dgvDSMONHOC";
             this.dgvDSMONHOC.ReadOnly = true;
             this.dgvDSMONHOC.RowHeadersVisible = false;
@@ -1234,7 +1243,7 @@
             this.dgvDiemHK.DefaultCellStyle = dataGridViewCellStyle12;
             this.dgvDiemHK.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvDiemHK.Location = new System.Drawing.Point(240, 1313);
-            this.dgvDiemHK.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvDiemHK.Margin = new System.Windows.Forms.Padding(4);
             this.dgvDiemHK.Name = "dgvDiemHK";
             this.dgvDiemHK.ReadOnly = true;
             this.dgvDiemHK.RowHeadersVisible = false;
@@ -1407,7 +1416,7 @@
             this.DeleteLop_button.Image = ((System.Drawing.Image)(resources.GetObject("DeleteLop_button.Image")));
             this.DeleteLop_button.ImageSize = new System.Drawing.Size(40, 40);
             this.DeleteLop_button.Location = new System.Drawing.Point(961, 412);
-            this.DeleteLop_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DeleteLop_button.Margin = new System.Windows.Forms.Padding(4);
             this.DeleteLop_button.Name = "DeleteLop_button";
             this.DeleteLop_button.Size = new System.Drawing.Size(69, 54);
             this.DeleteLop_button.TabIndex = 57;
@@ -1438,7 +1447,7 @@
             this.EditLop_button.Image = ((System.Drawing.Image)(resources.GetObject("EditLop_button.Image")));
             this.EditLop_button.ImageSize = new System.Drawing.Size(40, 40);
             this.EditLop_button.Location = new System.Drawing.Point(965, 351);
-            this.EditLop_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EditLop_button.Margin = new System.Windows.Forms.Padding(4);
             this.EditLop_button.Name = "EditLop_button";
             this.EditLop_button.Size = new System.Drawing.Size(69, 54);
             this.EditLop_button.TabIndex = 56;
@@ -1477,7 +1486,7 @@
             this.AddLop_button.Image = ((System.Drawing.Image)(resources.GetObject("AddLop_button.Image")));
             this.AddLop_button.ImageSize = new System.Drawing.Size(40, 40);
             this.AddLop_button.Location = new System.Drawing.Point(961, 289);
-            this.AddLop_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AddLop_button.Margin = new System.Windows.Forms.Padding(4);
             this.AddLop_button.Name = "AddLop_button";
             this.AddLop_button.Size = new System.Drawing.Size(69, 54);
             this.AddLop_button.TabIndex = 55;
@@ -1495,7 +1504,7 @@
             this.AddXeploai_button.Image = ((System.Drawing.Image)(resources.GetObject("AddXeploai_button.Image")));
             this.AddXeploai_button.ImageSize = new System.Drawing.Size(40, 40);
             this.AddXeploai_button.Location = new System.Drawing.Point(965, 986);
-            this.AddXeploai_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AddXeploai_button.Margin = new System.Windows.Forms.Padding(4);
             this.AddXeploai_button.Name = "AddXeploai_button";
             this.AddXeploai_button.Size = new System.Drawing.Size(69, 54);
             this.AddXeploai_button.TabIndex = 73;
@@ -1513,7 +1522,7 @@
             this.DeleteXeploai_button.Image = ((System.Drawing.Image)(resources.GetObject("DeleteXeploai_button.Image")));
             this.DeleteXeploai_button.ImageSize = new System.Drawing.Size(40, 40);
             this.DeleteXeploai_button.Location = new System.Drawing.Point(965, 1124);
-            this.DeleteXeploai_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DeleteXeploai_button.Margin = new System.Windows.Forms.Padding(4);
             this.DeleteXeploai_button.Name = "DeleteXeploai_button";
             this.DeleteXeploai_button.Size = new System.Drawing.Size(69, 54);
             this.DeleteXeploai_button.TabIndex = 75;
@@ -1544,7 +1553,7 @@
             this.EditXeploai_button.Image = ((System.Drawing.Image)(resources.GetObject("EditXeploai_button.Image")));
             this.EditXeploai_button.ImageSize = new System.Drawing.Size(40, 40);
             this.EditXeploai_button.Location = new System.Drawing.Point(969, 1055);
-            this.EditXeploai_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EditXeploai_button.Margin = new System.Windows.Forms.Padding(4);
             this.EditXeploai_button.Name = "EditXeploai_button";
             this.EditXeploai_button.Size = new System.Drawing.Size(69, 54);
             this.EditXeploai_button.TabIndex = 74;
@@ -1590,7 +1599,7 @@
             this.dgvDSLOP.DefaultCellStyle = dataGridViewCellStyle15;
             this.dgvDSLOP.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvDSLOP.Location = new System.Drawing.Point(240, 303);
-            this.dgvDSLOP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvDSLOP.Margin = new System.Windows.Forms.Padding(4);
             this.dgvDSLOP.Name = "dgvDSLOP";
             this.dgvDSLOP.RowHeadersVisible = false;
             this.dgvDSLOP.RowHeadersWidth = 51;
@@ -1690,7 +1699,7 @@
             this.dgvXepLoai.DefaultCellStyle = dataGridViewCellStyle18;
             this.dgvXepLoai.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvXepLoai.Location = new System.Drawing.Point(40, 996);
-            this.dgvXepLoai.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvXepLoai.Margin = new System.Windows.Forms.Padding(4);
             this.dgvXepLoai.Name = "dgvXepLoai";
             this.dgvXepLoai.ReadOnly = true;
             this.dgvXepLoai.RowHeadersVisible = false;
@@ -1764,7 +1773,7 @@
             this.updateSiso_button.Image = ((System.Drawing.Image)(resources.GetObject("updateSiso_button.Image")));
             this.updateSiso_button.ImageSize = new System.Drawing.Size(40, 40);
             this.updateSiso_button.Location = new System.Drawing.Point(668, 194);
-            this.updateSiso_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.updateSiso_button.Margin = new System.Windows.Forms.Padding(4);
             this.updateSiso_button.Name = "updateSiso_button";
             this.updateSiso_button.Size = new System.Drawing.Size(69, 54);
             this.updateSiso_button.TabIndex = 94;
@@ -1816,7 +1825,7 @@
             this.AddNamhoc_button.Image = ((System.Drawing.Image)(resources.GetObject("AddNamhoc_button.Image")));
             this.AddNamhoc_button.ImageSize = new System.Drawing.Size(40, 40);
             this.AddNamhoc_button.Location = new System.Drawing.Point(543, 274);
-            this.AddNamhoc_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AddNamhoc_button.Margin = new System.Windows.Forms.Padding(4);
             this.AddNamhoc_button.Name = "AddNamhoc_button";
             this.AddNamhoc_button.Size = new System.Drawing.Size(69, 54);
             this.AddNamhoc_button.TabIndex = 97;
@@ -1834,6 +1843,19 @@
             this.label26.Size = new System.Drawing.Size(443, 23);
             this.label26.TabIndex = 96;
             this.label26.Text = "*Lưu ý: Năm học phải có dạng 20**-20**. Ví dụ: 2023-2024";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.BackColor = System.Drawing.Color.White;
+            this.label33.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.ForeColor = System.Drawing.Color.Black;
+            this.label33.Location = new System.Drawing.Point(604, 608);
+            this.label33.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(238, 23);
+            this.label33.TabIndex = 103;
+            this.label33.Text = "*Cú pháp: TenMonHoc KhoiLop";
             // 
             // QuanLyQuyDinh
             // 
@@ -1861,7 +1883,7 @@
             this.Controls.Add(this.guna2ImageButton2);
             this.Controls.Add(this.guna2Panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "QuanLyQuyDinh";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.TopMost = true;
@@ -1972,5 +1994,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label label33;
     }
 }

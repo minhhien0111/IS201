@@ -93,7 +93,16 @@
     <Compile Include="BaoCaoTongKet.Designer.cs">
       <DependentUpon>BaoCaoTongKet.cs</DependentUpon>
     </Compile>
+    <Compile Include="CTGIANGDAY.cs">
+      <DependentUpon>dataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CTHK.cs">
+      <DependentUpon>dataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="CTLOP.cs">
+      <DependentUpon>dataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CTLOPGV.cs">
       <DependentUpon>dataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DangNhap.cs">
@@ -131,6 +140,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DuLieu.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GIAOVIEN.cs">
+      <DependentUpon>dataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HANHKIEM.cs">
+      <DependentUpon>dataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="HocKy_NamApDung_Result.cs">
       <DependentUpon>dataModel.tt</DependentUpon>
     </Compile>
@@ -139,6 +160,12 @@
     </Compile>
     <Compile Include="MonHoc_NamApDung_Result.cs">
       <DependentUpon>dataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PhanCongGiangDay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhanCongGiangDay.Designer.cs">
+      <DependentUpon>PhanCongGiangDay.cs</DependentUpon>
     </Compile>
     <Compile Include="QuanLyQuyDinh.cs">
       <SubType>Form</SubType>
@@ -277,6 +304,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DoiMatKhau.resx">
       <DependentUpon>DoiMatKhau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhanCongGiangDay.resx">
+      <DependentUpon>PhanCongGiangDay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLyQuyDinh.resx">
       <DependentUpon>QuanLyQuyDinh.cs</DependentUpon>
