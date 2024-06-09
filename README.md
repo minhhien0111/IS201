@@ -4,15 +4,11 @@
   </a>
 </p>
 
-# Nhập môn công nghệ phần mềm - SE104.N21
+# Nhập môn công nghệ phần mềm - IS201.O21
 ## Nhóm 1
 | ID | Họ tên | Email |
 |------:|------------|----------|
 |21520229|Tăng Minh Hiển|21520229@gm.uit.edu.vn|
-|21520331|Châu Thiên Long|21520331@gm.uit.edu.vn|
-|21520334|Nguyễn Thái Thành Long|21520334@gm.uit.edu.vn|
-|21521416|Phạm Mạnh Tấn|21521416@gm.uit.edu.vn|
-|21522814|Phan Quốc Vỹ|21522814@gm.uit.edu.vn
 ## Phần mềm Quản lí học sinh
 - Yêu cầu phần mềm:
   + Visual Studio
