@@ -95,7 +95,7 @@ namespace QuanLyHocSinh
                                     select new { TenLop = obj.TenLop, MaLop = obj.MaLop, MaMonHoc = obj2.MaMonHoc };
             var ComboBoxSubjectsSource = from obj in data.MonHoc_NamApDung(ComboBoxYear.SelectedValue.ToString())
                                          join obj2 in comboxClassSource on obj.MaMonHoc equals obj2.MaMonHoc
-                                         where obj.MaMonHoc.Substring(obj.MaMonHoc.Length - 2) == ComboBoxClass.Text.Substring(0, 2) && obj2.MaLop == ComboBoxClass.SelectedValue.ToString()
+                                         where obj.TenMonHoc.Substring(obj.TenMonHoc.Length - 2) == ComboBoxClass.Text.Substring(0, 2) && obj2.MaLop == ComboBoxClass.SelectedValue.ToString()
                                          select obj;
             ComboBoxSubject.DataSource = ComboBoxSubjectsSource.ToList();
             ComboBoxSubject.DisplayMember = "TenMonHoc";
@@ -443,6 +443,11 @@ namespace QuanLyHocSinh
         }
         private void buttonSave_Click(object sender, EventArgs e)
         {
+            if (ComboBoxID.Text == string.Empty || ComboBoxSubject.Text == string.Empty || ComboBoxYear.Text == string.Empty || ComboBoxSemester.Text == string.Empty || ComboBoxClass.Text == string.Empty)
+            {
+                MessageBox.Show("Không đủ thông tin để lưu điểm");
+                return;
+            }    
             var reSource1 = from scr in data.KETQUA_MONHOC_HOCSINH
                             join cls in data.CTLOPs on scr.MaHocSinh equals cls.MaHocSinh
                             where ComboBoxID.Text == scr.MaHocSinh && ComboBoxSubject.SelectedValue == scr.MaMonHoc && ComboBoxYear.SelectedValue == scr.MaNamHoc && ComboBoxSemester.SelectedValue == scr.MaHocKy && cls.MaLop == ComboBoxClass.SelectedValue

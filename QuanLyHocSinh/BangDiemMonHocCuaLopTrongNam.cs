@@ -65,7 +65,7 @@ namespace QuanLyHocSinh
         {
             dataEntities data = new dataEntities();
             var ComboBoxSubjectsSource = from obj in data.MonHoc_NamApDung(ComboBoxYear.SelectedValue.ToString())
-                                         where obj.MaMonHoc.Substring(obj.MaMonHoc.Length - 2) == ComboBoxClass.Text.Substring(0, 2)
+                                         where obj.TenMonHoc.Substring(obj.TenMonHoc.Length - 2) == ComboBoxClass.Text.Substring(0, 2)
                                          select obj;
             ComboBoxSubject.DataSource = ComboBoxSubjectsSource.ToList();
             ComboBoxSubject.DisplayMember = "TenMonHoc";

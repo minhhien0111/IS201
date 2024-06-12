@@ -27,13 +27,15 @@ namespace QuanLyHocSinh
             NamHocCbb_hk.DataSource = ComboBoxYearSource.ToList();
             NamHocCbb_hk.DisplayMember = "NamHoc1";
             NamHocCbb_hk.ValueMember = "MaNamHoc";
+            PanelInputSemester.Hide();
         }
 
         private void NamHocCbb_hk_SelectedValueChanged(object sender, EventArgs e)
         {
             dataEntities data = new dataEntities();
             var ComboBoxSemesterSource = data.HocKy_NamApDung(NamHocCbb_hk.SelectedValue.ToString());
-            HocKyCbb.DataSource = ComboBoxSemesterSource.ToList();
+            var SemesterSource_temp = ComboBoxSemesterSource.ToList();
+            HocKyCbb.DataSource = SemesterSource_temp;
             HocKyCbb.DisplayMember = "HocKy";
             HocKyCbb.ValueMember = "MaHocKy";
             var t = Account.MaTK.Substring(2);
@@ -42,19 +44,18 @@ namespace QuanLyHocSinh
                                       join cls2 in data.CTLOPGVs on obj.MaLop equals cls2.MaLop
                                       where cls.NamHoc1 == NamHocCbb_hk.Text && cls2.MaGVCN == t
                                       select obj;
-            if (ComboBoxClassSource.Count() == 0)
+            if (ComboBoxClassSource.Count() == 0 || SemesterSource_temp.Count() == 0)
             {
                 TraCuuButton_hk.Visible = false;
-                TraCuuButton_nh.Visible = false;
             }
             else
             {
                 TraCuuButton_hk.Visible = true;
-                TraCuuButton_nh.Visible = true;
             }
             LopCbb_hk.DataSource = ComboBoxClassSource.ToList();
             LopCbb_hk.DisplayMember = "TenLop";
             LopCbb_hk.ValueMember = "MaLop";
+            PanelInputSemester.Hide();
         }
         public string get_NamApDung(string Nam)
         {
@@ -86,12 +87,10 @@ namespace QuanLyHocSinh
                                       select obj;
             if (ComboBoxClassSource.Count() == 0)
             {
-                TraCuuButton_hk.Visible = false;
                 TraCuuButton_nh.Visible = false;
             }
             else
             {
-                TraCuuButton_hk.Visible = true;
                 TraCuuButton_nh.Visible = true;
             }
             LopCbb_nh.DataSource = ComboBoxClassSource.ToList();
@@ -330,6 +329,7 @@ namespace QuanLyHocSinh
                          select obj.NamHoc1;
             labelName.Text = $"BẢNG THỐNG KÊ LỚP {LopCbb_hk.Text}";
             labelName.Show();
+            PanelInputSemester.Show();
         }
 
         private void TraCuuButton_hk_Click(object sender, EventArgs e)
@@ -348,6 +348,11 @@ namespace QuanLyHocSinh
         private void PictureBoxSave_Click(object sender, EventArgs e)
         {
             dataEntities dtb = new dataEntities();
+            if ((ComboBoxID.Text.ToString() == string.Empty) || (ComboBoxClassify.Text.ToString() == string.Empty) || (TextBoxName.Text.ToString() == string.Empty))
+            {
+                MessageBox.Show("Thông tin không đầy đủ", "Chỉnh sửa điểm hạnh kiểm không thành công", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             var cthk = from obj in dtb.CTHKs
                            where obj.MaHocSinh == ComboBoxID.Text && obj.MaHocKy == HocKyCbb.SelectedValue.ToString() && obj.MaNamHoc == NamHocCbb_hk.SelectedValue.ToString()
                            select obj;
@@ -384,6 +389,16 @@ namespace QuanLyHocSinh
                                 MessageBoxIcon.Information);
                 TongKetHocKy();
             }
+        }
+
+        private void HocKyCbb_SelectedValueChanged(object sender, EventArgs e)
+        {
+            PanelInputSemester.Hide();
+        }
+
+        private void LopCbb_hk_SelectedValueChanged(object sender, EventArgs e)
+        {
+            PanelInputSemester.Hide();
         }
     }
 }

@@ -84,6 +84,10 @@ namespace QuanLyHocSinh
                       join nh in dtb.NAMHOCs on kq.MaNamHoc equals nh.MaNamHoc
                       where kq.MaHocSinh == MaLop && nh.NamHoc1 == NH
                       select l.TenLop;
+            if (Lop.Count() == 0)
+            {
+                return "Chưa có lớp";
+            }    
             return Lop.First();
         }
         List<double?> Diem_TP(string MHS, string HK, string NH, string TP,string MH)
@@ -290,37 +294,45 @@ namespace QuanLyHocSinh
                                 join m in dtb.MONHOCs on c.MaMonHoc equals m.MaMonHoc
                                 where c.MaHocSinh == MHStextbox_nh.Text && g.MaHocKy == "1" && k.NamHoc1 == NamHocCbb_nh.Text
                                 select m.TenMonHoc;
+                var MonHoc = from c in dtb.KETQUA_MONHOC_HOCSINH
+                                join g in dtb.HOCKies on c.MaHocKy equals g.MaHocKy
+                                join k in dtb.NAMHOCs on c.MaNamHoc equals k.MaNamHoc
+                                join m in dtb.MONHOCs on c.MaMonHoc equals m.MaMonHoc
+                                where c.MaHocSinh == MHStextbox_nh.Text && k.NamHoc1 == NamHocCbb_nh.Text
+                                select new { TenMonHoc = m.TenMonHoc, MaMonHoc = m.MaMonHoc };
+                var MonHoc_ = MonHoc.Select(r => r).Distinct().ToList();
                 var MaNamHoc = from n in dtb.NAMHOCs
                                where n.NamHoc1 == NamHocCbb_nh.Text
                                select n.MaNamHoc;
                 double Tong_DiemTB = 0;
                 double Min_DiemTB = 10;
-                int so_mon_da_co_diem = MaMonHoc.Count();
+                int so_mon_da_co_diem = MonHoc_.Count();
                 var ds_hocky = dtb.HocKy_NamApDung(NamHocCbb_nh.SelectedValue.ToString()).Select(r => r.MaHocKy).ToList();
+                var ds_tenhocky = dtb.HocKy_NamApDung(NamHocCbb_nh.SelectedValue.ToString()).Select(r => r.HocKy).ToList();
                 DNHGridView.Rows.Clear();
                 DNHGridView.Columns.Clear();
                 DNHGridView.Columns.Add("STT", "STT");
                 DNHGridView.Columns.Add("Mã môn học", "Mã môn học");
                 DNHGridView.Columns.Add("Tên môn học", "Tên môn học");
-                for (int j = 0; j < ds_hocky.Count; j++)
+                for (int j = 0; j < ds_tenhocky.Count; j++)
                 {
-                    DNHGridView.Columns.Add("Điểm HK " + ds_hocky[j].ToString(), "Điểm HK " + ds_hocky[j].ToString());
+                    DNHGridView.Columns.Add("Điểm " + ds_tenhocky[j].ToString(), "Điểm " + ds_tenhocky[j].ToString());
                 }
                 DNHGridView.Columns.Add("Điểm TB", "Điểm TB cả năm");
-                for (int i = 0; i < MaMonHoc.Count(); i++)
+                for (int i = 0; i < MonHoc_.Count(); i++)
                 {
 
                     DataGridViewRow newRow = new DataGridViewRow();
                     newRow.CreateCells(DNHGridView);
                     newRow.Cells[0].Value = i + 1;
-                    newRow.Cells[1].Value = MaMonHoc.ToList()[i];
-                    newRow.Cells[2].Value = TenMonHoc.ToList()[i];
+                    newRow.Cells[1].Value = MonHoc_[i].MaMonHoc;
+                    newRow.Cells[2].Value = MonHoc_[i].TenMonHoc;
                     double tong_trong_so = 0;
                     double Tong_DiemTB_mon = 0;
 
                     for (int j = 3; j < ds_hocky.Count+3; j++)
                     {
-                        var DiemTBhk = dtb.TongKetMon_HocSinh(MaNamHoc.ToList()[0].ToString(), MHStextbox_nh.Text).Where(r => r.MaMonHoc == MaMonHoc.ToList()[i] && r.MaHocKy == ds_hocky[j-3]).Select(r=>r.DiemTB).ToList();
+                        var DiemTBhk = dtb.TongKetMon_HocSinh(MaNamHoc.ToList()[0].ToString(), MHStextbox_nh.Text).Where(r => r.MaMonHoc == MonHoc_[i].MaMonHoc && r.MaHocKy == ds_hocky[j-3]).Select(r=>r.DiemTB).ToList();
                         var trong_so_hk = dtb.HocKy_NamApDung(MaNamHoc.ToList()[0].ToString()).Where(r => r.MaHocKy == ds_hocky[j-3]).Select(r => r.TrongSo).ToList();
                         if (DiemTBhk.Count() == 1)
                         {
@@ -334,14 +346,15 @@ namespace QuanLyHocSinh
                             newRow.Cells[j].Value = null;
                         }
                     }
-                    double DiemTB_mon_namhoc = 0; 
-                    if (newRow.Cells[ds_hocky.Count + 2].Value != null && newRow.Cells[ds_hocky.Count + 1].Value != null)
+                    double DiemTB_mon_namhoc = 0;
+                    /*if (newRow.Cells[ds_hocky.Count + 2].Value != null && newRow.Cells[ds_hocky.Count + 1].Value != null)
                         DiemTB_mon_namhoc = Math.Round(Tong_DiemTB_mon / tong_trong_so, 2);
                     else if (newRow.Cells[ds_hocky.Count + 2].Value == null)
                         DiemTB_mon_namhoc = Convert.ToDouble(newRow.Cells[ds_hocky.Count + 1].Value);
                     else if (newRow.Cells[ds_hocky.Count + 1].Value == null)
                         DiemTB_mon_namhoc = Convert.ToDouble(newRow.Cells[ds_hocky.Count + 2].Value);
-                    else so_mon_da_co_diem -= 1;
+                    else so_mon_da_co_diem -= 1;*/
+                    DiemTB_mon_namhoc = Math.Round(Tong_DiemTB_mon / tong_trong_so, 2);
                     if (Min_DiemTB > DiemTB_mon_namhoc) Min_DiemTB = DiemTB_mon_namhoc;
 
                     newRow.Cells[ds_hocky.Count + 3].Value = DiemTB_mon_namhoc;

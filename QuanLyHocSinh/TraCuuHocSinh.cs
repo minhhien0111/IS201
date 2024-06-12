@@ -794,10 +794,17 @@ namespace QuanLyHocSinh
                 if (tbSDT.Text.Length > 10 || tbSDT_Cha.Text.Length > 10 || tbSDT_Me.Text.Length > 10)
                 {
                     MessageBox.Show("Số điện thoại phải dưới 10 chứ số",
-                                "Lưu không thành công",
+                                "Số điện thoại không thỏa yêu cầu",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Error);
                 }
+                else if (tbEmail.Text.Length > 40)
+                {
+                    MessageBox.Show("Email phải dưới 40 kí tự",
+                    "Email không thỏa yêu cầu",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                }    
                 else
                 {
                     var hocsinh = db.HOCSINHs.First(m => m.MaHocSinh == tbStudentID.Text);

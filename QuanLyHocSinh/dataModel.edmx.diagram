@@ -51,6 +51,7 @@
         <AssociationConnector Association="dataModel.FK_NamApDung" />
         <AssociationConnector Association="dataModel.FK_NamApDung_Thanhphan" />
         <AssociationConnector Association="dataModel.FK_NamApDung_Xeploai" />
+        <EntityTypeShape EntityType="dataModel.QUANLY" Width="1.5" PointX="10.375" PointY="5.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

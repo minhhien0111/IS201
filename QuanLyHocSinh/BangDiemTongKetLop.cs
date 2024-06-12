@@ -431,7 +431,8 @@ namespace QuanLyHocSinh
         {
             dataEntities data = new dataEntities();
             var ComboBoxSemesterSource = data.HocKy_NamApDung(NamHocCbb_hk.SelectedValue.ToString());
-            HocKyCbb.DataSource = ComboBoxSemesterSource.ToList();
+            var SemesterSource_temp = ComboBoxSemesterSource.ToList();
+            HocKyCbb.DataSource = SemesterSource_temp;
             HocKyCbb.DisplayMember = "HocKy";
             HocKyCbb.ValueMember = "MaHocKy";
             var ComboBoxClassSource = from obj in data.LOPs
@@ -441,6 +442,17 @@ namespace QuanLyHocSinh
             LopCbb_hk.DataSource = ComboBoxClassSource.ToList();
             LopCbb_hk.DisplayMember = "TenLop";
             LopCbb_hk.ValueMember = "MaLop";
+
+            if (ComboBoxClassSource.Count() == 0 || SemesterSource_temp.Count() == 0)
+            {
+                TraCuuButton_hk.Visible = false;
+                guna2ImageButton2.Visible = false;
+            }
+            else
+            {
+                TraCuuButton_hk.Visible = true;
+                guna2ImageButton2.Visible = true;
+            }
         }
 
         private void NamHocCbb_nh_SelectedValueChanged(object sender, EventArgs e)
@@ -453,6 +465,17 @@ namespace QuanLyHocSinh
             LopCbb_nh.DataSource = ComboBoxClassSource.ToList();
             LopCbb_nh.DisplayMember = "TenLop";
             LopCbb_nh.ValueMember = "MaLop";
+
+            if (ComboBoxClassSource.Count() == 0)
+            {
+                TraCuuButton_nh.Visible = false;
+                printButton_nh.Visible = false;
+            }
+            else
+            {
+                TraCuuButton_nh.Visible = true;
+                printButton_nh.Visible = true;
+            }
         }
 
 

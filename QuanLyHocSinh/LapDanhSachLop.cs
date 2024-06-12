@@ -68,7 +68,9 @@ namespace QuanLyHocSinh
             iNamHoc = list.Count();
             cbSchoolYear.DataSource = list;
             cbSchoolYear.DisplayMember = "NamHoc1";
-            cbSchoolYear.ValueMember = "MaNamHoc";            
+            cbSchoolYear.ValueMember = "MaNamHoc"; 
+            cbSchoolYear.SelectedValue = list[0].MaNamHoc;
+            cbSchoolYear.Enabled = false;
         }
 
         private void CapNhatDanhSachKhoi(dataEntities db)
@@ -265,6 +267,11 @@ namespace QuanLyHocSinh
                                 )
                                 .FirstOrDefault()
                         ) ;
+
+                        var lop = db.LOPs.First(x => x.MaLop == this.cbClass.SelectedValue.ToString());
+                        lop.SiSo -= 1;
+                        db.LOPs.AddOrUpdate(lop);
+
                         db.SaveChanges();
                                              
                         // Xoá học sinh khỏi lớp
@@ -380,12 +387,22 @@ namespace QuanLyHocSinh
 
         private void btnAddStdToClass_Click(object sender, EventArgs e)
         {
-            ThemHocSinhVaoLop();
+            if (cbSchoolYear.Text == string.Empty || cbGrade.Text == string.Empty || cbClass.Text == string.Empty)
+            {
+                MessageBox.Show("Thông tin không đầy đủ", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }    
+            else
+                ThemHocSinhVaoLop();
         }
 
         private void btnDelStdOutClass_Click(object sender, EventArgs e)
         {
-            XoaHocSinhKhoiLop();
+            if (cbSchoolYear.Text == string.Empty || cbGrade.Text == string.Empty || cbClass.Text == string.Empty)
+            {
+                MessageBox.Show("Thông tin không đầy đủ", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+                XoaHocSinhKhoiLop();
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -418,6 +435,11 @@ namespace QuanLyHocSinh
         }
         private void saveMaGV(object sender, EventArgs e)
         {
+            if (cbSchoolYear.Text == string.Empty || cbGrade.Text == string.Empty || cbClass.Text == string.Empty)
+            {
+                MessageBox.Show("Thông tin không đầy đủ", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             string MaGVCNmoi = tbInputTeacherID.Text;
             if (MaGVCNmoi.Length > 0)
             {
@@ -479,6 +501,11 @@ namespace QuanLyHocSinh
 
         private void btnDeleteGVCN_Click(object sender, EventArgs e)
         {
+            if (cbSchoolYear.Text == string.Empty || cbGrade.Text == string.Empty || cbClass.Text == string.Empty)
+            {
+                MessageBox.Show("Thông tin không đầy đủ", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             tbInputTeacherID.Text = getPreviousMaGVCN();
             if (tbInputTeacherID.Text.Length > 0)
             {

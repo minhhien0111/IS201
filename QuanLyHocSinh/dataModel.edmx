@@ -154,6 +154,15 @@
           <Property Name="MaPhanQuyen" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="VaiTro" Type="nvarchar" MaxLength="50" />
         </EntityType>
+        <EntityType Name="QUANLY">
+          <Key>
+            <PropertyRef Name="MaQuanLy" />
+          </Key>
+          <Property Name="MaQuanLy" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="HoTen" Type="nvarchar" MaxLength="30" />
+          <Property Name="GioiTinh" Type="nvarchar" MaxLength="5" />
+          <Property Name="NgaySinh" Type="smalldatetime" />
+        </EntityType>
         <EntityType Name="TAIKHOAN">
           <Key>
             <PropertyRef Name="MaTaiKhoan" />
@@ -640,6 +649,7 @@
           <EntitySet Name="MONHOC" EntityType="Self.MONHOC" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NAMHOC" EntityType="Self.NAMHOC" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PHANQUYEN" EntityType="Self.PHANQUYEN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="QUANLY" EntityType="Self.QUANLY" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TAIKHOAN" EntityType="Self.TAIKHOAN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="THAMSO" EntityType="Self.THAMSO" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="THANHPHAN" EntityType="Self.THANHPHAN" Schema="dbo" store:Type="Tables" />
@@ -989,6 +999,7 @@
             <End Role="NAMHOC" EntitySet="NAMHOCs" />
             <End Role="XEPLOAI" EntitySet="XEPLOAIs" />
           </AssociationSet>
+          <EntitySet Name="QUANLies" EntityType="dataModel.QUANLY" />
           </EntityContainer>
         <ComplexType Name="TongKetMonHocKy_Result">
           <Property Type="String" Name="TenLop" Nullable="true" MaxLength="30" />
@@ -1619,6 +1630,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="QUANLY">
+          <Key>
+            <PropertyRef Name="MaQuanLy" />
+          </Key>
+          <Property Name="MaQuanLy" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="HoTen" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="GioiTinh" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="NgaySinh" Type="DateTime" Precision="0" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1932,6 +1952,16 @@
                 <ScalarProperty Name="MaMonHoc" ColumnName="MaMonHoc" />
                 <ScalarProperty Name="MaGiaoVien" ColumnName="MaGiaoVien" />
                 <ScalarProperty Name="MaCTGD" ColumnName="MaCTGD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="QUANLies">
+            <EntityTypeMapping TypeName="dataModel.QUANLY">
+              <MappingFragment StoreEntitySet="QUANLY">
+                <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+                <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+                <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+                <ScalarProperty Name="MaQuanLy" ColumnName="MaQuanLy" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

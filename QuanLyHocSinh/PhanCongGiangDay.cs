@@ -59,6 +59,7 @@ namespace QuanLyHocSinh
         void PhanCong()
         {
             dataEntities dtb = new dataEntities();
+            ComboBoxSubject.DataSource = null;
             var ComboBoxTeacherSource = from obj in dtb.GIAOVIENs select obj;
             ComboBoxName.DataSource = ComboBoxTeacherSource.ToList();
             ComboBoxName.DisplayMember = "HoTen";
@@ -103,20 +104,19 @@ namespace QuanLyHocSinh
         private void ComboBoxClass_SelectedValueChanged(object sender, EventArgs e)
         {
             dataEntities dtb = new dataEntities();
-            if (ComboBoxClass.Text != string.Empty && ComboBoxClass.Text != "")
+            if (ComboBoxClass.Text != string.Empty || ComboBoxClass.Text != "")
             {
                 var ComboBoxSubjectsSource = from obj in dtb.MonHoc_NamApDung(NamHocCbb.SelectedValue.ToString())
-                                             where obj.MaMonHoc.Substring(obj.MaMonHoc.Length - 2) == ComboBoxClass.Text.Substring(0, 2)
+                                             where obj.TenMonHoc.Substring(obj.TenMonHoc.Length - 2) == ComboBoxClass.Text.Substring(0, 2)
                                              select obj;
                 ComboBoxSubject.DataSource = ComboBoxSubjectsSource.ToList();
                 ComboBoxSubject.DisplayMember = "TenMonHoc";
                 ComboBoxSubject.ValueMember = "MaMonHoc";
-                //MessageBox.Show(ComboBoxClass.Text, "Đã được phân công", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                
                 ComboBoxSubject.DataSource = null;
+                ComboBoxSubject.Items.Clear();
             }
         }
         private void ComboBoxName_SelectedValueChanged(object sender, EventArgs e)
@@ -131,6 +131,11 @@ namespace QuanLyHocSinh
         private void PictureBoxSave_Click(object sender, EventArgs e)
         {
             dataEntities dtb = new dataEntities();
+            if ((ComboBoxName.Text.ToString() == string.Empty) || (ComboBoxClass.Text.ToString() == string.Empty) || (ComboBoxName.Text.ToString() == string.Empty))
+            {
+                MessageBox.Show("Thông tin không đầy đủ", "Đã được phân công", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }    
             var check_1 = from obj in dtb.CTGIANGDAYs
                      where obj.MaGiaoVien == ComboBoxName.SelectedValue.ToString() && obj.MaLop == ComboBoxClass.SelectedValue.ToString()
                      select obj;
@@ -139,7 +144,7 @@ namespace QuanLyHocSinh
                           select obj;
             if (check_1.Count() != 0 ) 
             {
-                MessageBox.Show("Giáo viên đã được phân công cho lớp "+ ComboBoxClass.Text, "Đã được phân công", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Giáo viên đã được phân công cho lớp "+ ComboBoxClass.Text, "Đã được phân công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             else if (check_2.Count()!=0)
@@ -178,6 +183,11 @@ namespace QuanLyHocSinh
         private void pictureBoxDelete_Click(object sender, EventArgs e)
         {
             dataEntities dtb = new dataEntities();
+            if ((ComboBoxName.Text.ToString() == string.Empty) || (ComboBoxClass.Text.ToString() == string.Empty) || (ComboBoxName.Text.ToString() == string.Empty))
+            {
+                MessageBox.Show("Thông tin không đầy đủ", "Đã được phân công", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             var check_1 = from obj in dtb.CTGIANGDAYs
                           where obj.MaGiaoVien == ComboBoxName.SelectedValue.ToString() && obj.MaLop == ComboBoxClass.SelectedValue.ToString() && obj.MaMonHoc == ComboBoxSubject.SelectedValue.ToString()
                           select obj;

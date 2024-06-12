@@ -167,6 +167,9 @@
     <Compile Include="PhanCongGiangDay.Designer.cs">
       <DependentUpon>PhanCongGiangDay.cs</DependentUpon>
     </Compile>
+    <Compile Include="QUANLY.cs">
+      <DependentUpon>dataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="QuanLyQuyDinh.cs">
       <SubType>Form</SubType>
     </Compile>

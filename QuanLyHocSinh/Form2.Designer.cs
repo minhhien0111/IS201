@@ -75,6 +75,7 @@
             this.NamHocCbb_nh = new Guna.UI2.WinForms.Guna2ComboBox();
             this.labelName_nh = new System.Windows.Forms.Label();
             this.guna2ImageButton1 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.PanelInputSemester = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel1.SuspendLayout();
             this.guna2TabControlReport.SuspendLayout();
             this.tabPage3.SuspendLayout();
@@ -87,6 +88,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvRatio_nh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNamHoc)).BeginInit();
             this.guna2GradientPanel2.SuspendLayout();
+            this.PanelInputSemester.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2Panel1
@@ -195,9 +197,7 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.PanelInfo);
-            this.tabPage3.Controls.Add(this.labelName);
-            this.tabPage3.Controls.Add(this.dgvHocKy);
+            this.tabPage3.Controls.Add(this.PanelInputSemester);
             this.tabPage3.Controls.Add(this.LabelNameReportGridview1);
             this.tabPage3.Controls.Add(this.guna2GradientPanel1);
             this.tabPage3.Location = new System.Drawing.Point(4, 44);
@@ -218,7 +218,7 @@
             this.PanelInfo.Controls.Add(this.label3);
             this.PanelInfo.Controls.Add(this.LabelClassify);
             this.PanelInfo.Controls.Add(this.TextBoxName);
-            this.PanelInfo.Location = new System.Drawing.Point(948, 158);
+            this.PanelInfo.Location = new System.Drawing.Point(936, 66);
             this.PanelInfo.Name = "PanelInfo";
             this.PanelInfo.Size = new System.Drawing.Size(362, 264);
             this.PanelInfo.TabIndex = 152;
@@ -326,7 +326,7 @@
             // labelName
             // 
             this.labelName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelName.Location = new System.Drawing.Point(227, 97);
+            this.labelName.Location = new System.Drawing.Point(170, 0);
             this.labelName.Name = "labelName";
             this.labelName.Size = new System.Drawing.Size(821, 44);
             this.labelName.TabIndex = 30;
@@ -356,7 +356,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvHocKy.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvHocKy.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvHocKy.Location = new System.Drawing.Point(12, 158);
+            this.dgvHocKy.Location = new System.Drawing.Point(15, 66);
             this.dgvHocKy.Margin = new System.Windows.Forms.Padding(4);
             this.dgvHocKy.Name = "dgvHocKy";
             this.dgvHocKy.ReadOnly = true;
@@ -426,6 +426,7 @@
             this.LopCbb_hk.Name = "LopCbb_hk";
             this.LopCbb_hk.Size = new System.Drawing.Size(193, 36);
             this.LopCbb_hk.TabIndex = 28;
+            this.LopCbb_hk.SelectedValueChanged += new System.EventHandler(this.LopCbb_hk_SelectedValueChanged);
             // 
             // TraCuuButton_hk
             // 
@@ -460,6 +461,7 @@
             this.HocKyCbb.Name = "HocKyCbb";
             this.HocKyCbb.Size = new System.Drawing.Size(148, 36);
             this.HocKyCbb.TabIndex = 2;
+            this.HocKyCbb.SelectedValueChanged += new System.EventHandler(this.HocKyCbb_SelectedValueChanged);
             // 
             // NamHocCbb_hk
             // 
@@ -725,6 +727,16 @@
             this.guna2ImageButton1.TabIndex = 31;
             this.guna2ImageButton1.Click += new System.EventHandler(this.guna2ImageButton1_Click);
             // 
+            // PanelInputSemester
+            // 
+            this.PanelInputSemester.Controls.Add(this.dgvHocKy);
+            this.PanelInputSemester.Controls.Add(this.labelName);
+            this.PanelInputSemester.Controls.Add(this.PanelInfo);
+            this.PanelInputSemester.Location = new System.Drawing.Point(12, 97);
+            this.PanelInputSemester.Name = "PanelInputSemester";
+            this.PanelInputSemester.Size = new System.Drawing.Size(1308, 584);
+            this.PanelInputSemester.TabIndex = 153;
+            // 
             // XepLoaiHanhKiem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -752,6 +764,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvRatio_nh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNamHoc)).EndInit();
             this.guna2GradientPanel2.ResumeLayout(false);
+            this.PanelInputSemester.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -792,5 +805,6 @@
         private System.Windows.Forms.PictureBox PictureBoxSave;
         private Guna.UI2.WinForms.Guna2ComboBox ComboBoxClassify;
         private Guna.UI2.WinForms.Guna2Panel PanelInfo;
+        private Guna.UI2.WinForms.Guna2Panel PanelInputSemester;
     }
 }

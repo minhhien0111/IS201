@@ -46,6 +46,7 @@ namespace QuanLyHocSinh
         public virtual DbSet<CTHK> CTHKs { get; set; }
         public virtual DbSet<HANHKIEM> HANHKIEMs { get; set; }
         public virtual DbSet<CTGIANGDAY> CTGIANGDAYs { get; set; }
+        public virtual DbSet<QUANLY> QUANLies { get; set; }
     
         public virtual int ThemHocKy(string maHocKy, string hocKy, Nullable<double> trongSo)
         {
