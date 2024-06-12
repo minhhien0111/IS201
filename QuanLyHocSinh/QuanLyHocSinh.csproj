@@ -152,31 +152,10 @@
     <Compile Include="HANHKIEM.cs">
       <DependentUpon>dataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="HocKy_NamApDung_Result.cs">
-      <DependentUpon>dataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="KhoiLop_NamApDung_Result.cs">
-      <DependentUpon>dataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="MonHoc_NamApDung_Result.cs">
-      <DependentUpon>dataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="PhanCongGiangDay.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PhanCongGiangDay.Designer.cs">
-      <DependentUpon>PhanCongGiangDay.cs</DependentUpon>
-    </Compile>
-    <Compile Include="QUANLY.cs">
-      <DependentUpon>dataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="QuanLyQuyDinh.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QuanLyQuyDinh.Designer.cs">
-      <DependentUpon>QuanLyQuyDinh.cs</DependentUpon>
-    </Compile>
     <Compile Include="HOCKY.cs">
+      <DependentUpon>dataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HocKy_NamApDung_Result.cs">
       <DependentUpon>dataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="HOCSINH.cs">
@@ -188,11 +167,8 @@
     <Compile Include="KHOI.cs">
       <DependentUpon>dataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="LapDanhSachLop.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="LapDanhSachLop.Designer.cs">
-      <DependentUpon>LapDanhSachLop.cs</DependentUpon>
+    <Compile Include="KhoiLop_NamApDung_Result.cs">
+      <DependentUpon>dataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="LOP.cs">
       <DependentUpon>dataModel.tt</DependentUpon>
@@ -200,17 +176,41 @@
     <Compile Include="MONHOC.cs">
       <DependentUpon>dataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="MonHoc_NamApDung_Result.cs">
+      <DependentUpon>dataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="NAMHOC.cs">
       <DependentUpon>dataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PhanCongGiangDay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhanCongGiangDay.Designer.cs">
+      <DependentUpon>PhanCongGiangDay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PHANQUYEN.cs">
+      <DependentUpon>dataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QUANLY.cs">
+      <DependentUpon>dataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="QuanLyQuyDinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuanLyQuyDinh.Designer.cs">
+      <DependentUpon>QuanLyQuyDinh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LapDanhSachLop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LapDanhSachLop.Designer.cs">
+      <DependentUpon>LapDanhSachLop.cs</DependentUpon>
     </Compile>
     <Compile Include="NhapBangDiemMonHoc.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="NhapBangDiemMonHoc.Designer.cs">
       <DependentUpon>NhapBangDiemMonHoc.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PHANQUYEN.cs">
-      <DependentUpon>dataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="TAIKHOAN.cs">
       <DependentUpon>dataModel.tt</DependentUpon>

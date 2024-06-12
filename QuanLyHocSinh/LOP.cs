@@ -17,9 +17,9 @@ namespace QuanLyHocSinh
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public LOP()
         {
+            this.CTGIANGDAYs = new HashSet<CTGIANGDAY>();
             this.CTLOPs = new HashSet<CTLOP>();
             this.CTLOPGVs = new HashSet<CTLOPGV>();
-            this.CTGIANGDAYs = new HashSet<CTGIANGDAY>();
         }
     
         public string MaLop { get; set; }
@@ -29,12 +29,12 @@ namespace QuanLyHocSinh
         public string MaNamHoc { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CTGIANGDAY> CTGIANGDAYs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CTLOP> CTLOPs { get; set; }
-        public virtual KHOI KHOI { get; set; }
-        public virtual NAMHOC NAMHOC { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CTLOPGV> CTLOPGVs { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CTGIANGDAY> CTGIANGDAYs { get; set; }
+        public virtual KHOI KHOI { get; set; }
+        public virtual NAMHOC NAMHOC { get; set; }
     }
 }

@@ -27,8 +27,13 @@ namespace QuanLyHocSinh
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<CTGIANGDAY> CTGIANGDAYs { get; set; }
         public virtual DbSet<CTLOP> CTLOPs { get; set; }
+        public virtual DbSet<CTLOPGV> CTLOPGVs { get; set; }
+        public virtual DbSet<CTHK> CTHKs { get; set; }
         public virtual DbSet<DIEM> DIEMs { get; set; }
+        public virtual DbSet<GIAOVIEN> GIAOVIENs { get; set; }
+        public virtual DbSet<HANHKIEM> HANHKIEMs { get; set; }
         public virtual DbSet<HOCKY> HOCKies { get; set; }
         public virtual DbSet<HOCSINH> HOCSINHs { get; set; }
         public virtual DbSet<KETQUA_MONHOC_HOCSINH> KETQUA_MONHOC_HOCSINH { get; set; }
@@ -37,16 +42,11 @@ namespace QuanLyHocSinh
         public virtual DbSet<MONHOC> MONHOCs { get; set; }
         public virtual DbSet<NAMHOC> NAMHOCs { get; set; }
         public virtual DbSet<PHANQUYEN> PHANQUYENs { get; set; }
+        public virtual DbSet<QUANLY> QUANLies { get; set; }
         public virtual DbSet<TAIKHOAN> TAIKHOANs { get; set; }
         public virtual DbSet<THAMSO> THAMSOes { get; set; }
         public virtual DbSet<THANHPHAN> THANHPHANs { get; set; }
         public virtual DbSet<XEPLOAI> XEPLOAIs { get; set; }
-        public virtual DbSet<CTLOPGV> CTLOPGVs { get; set; }
-        public virtual DbSet<GIAOVIEN> GIAOVIENs { get; set; }
-        public virtual DbSet<CTHK> CTHKs { get; set; }
-        public virtual DbSet<HANHKIEM> HANHKIEMs { get; set; }
-        public virtual DbSet<CTGIANGDAY> CTGIANGDAYs { get; set; }
-        public virtual DbSet<QUANLY> QUANLies { get; set; }
     
         public virtual int ThemHocKy(string maHocKy, string hocKy, Nullable<double> trongSo)
         {

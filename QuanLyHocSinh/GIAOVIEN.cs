@@ -17,8 +17,8 @@ namespace QuanLyHocSinh
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public GIAOVIEN()
         {
-            this.CTLOPGVs = new HashSet<CTLOPGV>();
             this.CTGIANGDAYs = new HashSet<CTGIANGDAY>();
+            this.CTLOPGVs = new HashSet<CTLOPGV>();
         }
     
         public string MaGiaoVien { get; set; }
@@ -27,8 +27,8 @@ namespace QuanLyHocSinh
         public Nullable<System.DateTime> NgaySinh { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CTLOPGV> CTLOPGVs { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CTGIANGDAY> CTGIANGDAYs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CTLOPGV> CTLOPGVs { get; set; }
     }
 }

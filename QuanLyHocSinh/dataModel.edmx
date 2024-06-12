@@ -10,9 +10,9 @@
             <PropertyRef Name="MaCTGD" />
           </Key>
           <Property Name="MaCTGD" Type="nvarchar" MaxLength="30" Nullable="false" />
-          <Property Name="MaGiaoVien" Type="nvarchar" MaxLength="30" />
-          <Property Name="MaMonHoc" Type="nvarchar" MaxLength="20" />
-          <Property Name="MaLop" Type="nvarchar" MaxLength="20" />
+          <Property Name="MaGiaoVien" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="MaMonHoc" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="MaLop" Type="nvarchar" MaxLength="20" Nullable="false" />
         </EntityType>
         <EntityType Name="CTLOP">
           <Key>
@@ -27,18 +27,18 @@
             <PropertyRef Name="MaCTLGV" />
           </Key>
           <Property Name="MaCTLGV" Type="nvarchar" MaxLength="20" Nullable="false" />
-          <Property Name="MaGVCN" Type="nvarchar" MaxLength="30" />
-          <Property Name="MaLop" Type="nvarchar" MaxLength="20" />
+          <Property Name="MaGVCN" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="MaLop" Type="nvarchar" MaxLength="20" Nullable="false" />
         </EntityType>
         <EntityType Name="CTHK">
           <Key>
             <PropertyRef Name="MaCTHK" />
           </Key>
           <Property Name="MaCTHK" Type="nvarchar" MaxLength="20" Nullable="false" />
-          <Property Name="MaHocSinh" Type="nvarchar" MaxLength="10" />
-          <Property Name="MaNamHoc" Type="nvarchar" MaxLength="20" />
-          <Property Name="MaHocKy" Type="nvarchar" MaxLength="20" />
-          <Property Name="MaHanhKiem" Type="nvarchar" MaxLength="30" />
+          <Property Name="MaHocSinh" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="MaNamHoc" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="MaHocKy" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="MaHanhKiem" Type="nvarchar" MaxLength="30" Nullable="false" />
         </EntityType>
         <EntityType Name="DIEM">
           <Key>
@@ -46,7 +46,7 @@
           </Key>
           <Property Name="MaDiem" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="MaKetQua" Type="nvarchar" MaxLength="20" Nullable="false" />
-          <Property Name="MaThanhPhan" Type="nvarchar" MaxLength="20" />
+          <Property Name="MaThanhPhan" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="Diem" Type="float" />
         </EntityType>
         <EntityType Name="GIAOVIEN">
@@ -111,7 +111,7 @@
           <Property Name="MaHocKy" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="MaMonHoc" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="DiemTB" Type="float" />
-          <Property Name="MaXepLoai" Type="nvarchar" MaxLength="20" />
+          <Property Name="MaXepLoai" Type="nvarchar" MaxLength="20" Nullable="false" />
         </EntityType>
         <EntityType Name="KHOI">
           <Key>
@@ -206,7 +206,7 @@
           <Property Name="NamApDung" Type="nvarchar" MaxLength="20" />
         </EntityType>
         <Association Name="FK__CTGIANGDA__MaGia__55BFB948">
-          <End Role="GIAOVIEN" Type="Self.GIAOVIEN" Multiplicity="0..1" />
+          <End Role="GIAOVIEN" Type="Self.GIAOVIEN" Multiplicity="1" />
           <End Role="CTGIANGDAY" Type="Self.CTGIANGDAY" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="GIAOVIEN">
@@ -218,7 +218,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__CTGIANGDA__MaLop__56B3DD81">
-          <End Role="LOP" Type="Self.LOP" Multiplicity="0..1" />
+          <End Role="LOP" Type="Self.LOP" Multiplicity="1" />
           <End Role="CTGIANGDAY" Type="Self.CTGIANGDAY" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="LOP">
@@ -230,7 +230,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__CTGIANGDA__MaMon__57A801BA">
-          <End Role="MONHOC" Type="Self.MONHOC" Multiplicity="0..1" />
+          <End Role="MONHOC" Type="Self.MONHOC" Multiplicity="1" />
           <End Role="CTGIANGDAY" Type="Self.CTGIANGDAY" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="MONHOC">
@@ -242,7 +242,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__CTLOPGV__MaGVCN__308E3499">
-          <End Role="GIAOVIEN" Type="Self.GIAOVIEN" Multiplicity="0..1" />
+          <End Role="GIAOVIEN" Type="Self.GIAOVIEN" Multiplicity="1" />
           <End Role="CTLOPGV" Type="Self.CTLOPGV" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="GIAOVIEN">
@@ -254,7 +254,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__CTLOPGV__MaLop__318258D2">
-          <End Role="LOP" Type="Self.LOP" Multiplicity="0..1" />
+          <End Role="LOP" Type="Self.LOP" Multiplicity="1" />
           <End Role="CTLOPGV" Type="Self.CTLOPGV" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="LOP">
@@ -266,7 +266,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__CTHK__MaHanhKiem__39237A9A">
-          <End Role="HANHKIEM" Type="Self.HANHKIEM" Multiplicity="0..1" />
+          <End Role="HANHKIEM" Type="Self.HANHKIEM" Multiplicity="1" />
           <End Role="CTHK" Type="Self.CTHK" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="HANHKIEM">
@@ -278,7 +278,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__CTHK__MaHocKy__382F5661">
-          <End Role="HOCKY" Type="Self.HOCKY" Multiplicity="0..1" />
+          <End Role="HOCKY" Type="Self.HOCKY" Multiplicity="1" />
           <End Role="CTHK" Type="Self.CTHK" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="HOCKY">
@@ -290,7 +290,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__CTHK__MaHocSinh__36470DEF">
-          <End Role="HOCSINH" Type="Self.HOCSINH" Multiplicity="0..1" />
+          <End Role="HOCSINH" Type="Self.HOCSINH" Multiplicity="1" />
           <End Role="CTHK" Type="Self.CTHK" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="HOCSINH">
@@ -302,7 +302,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__CTHK__MaNamHoc__373B3228">
-          <End Role="NAMHOC" Type="Self.NAMHOC" Multiplicity="0..1" />
+          <End Role="NAMHOC" Type="Self.NAMHOC" Multiplicity="1" />
           <End Role="CTHK" Type="Self.CTHK" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="NAMHOC">
@@ -350,7 +350,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_diem_tp">
-          <End Role="THANHPHAN" Type="Self.THANHPHAN" Multiplicity="0..1" />
+          <End Role="THANHPHAN" Type="Self.THANHPHAN" Multiplicity="1" />
           <End Role="DIEM" Type="Self.DIEM" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="THANHPHAN">
@@ -410,7 +410,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_kq_xl">
-          <End Role="XEPLOAI" Type="Self.XEPLOAI" Multiplicity="0..1" />
+          <End Role="XEPLOAI" Type="Self.XEPLOAI" Multiplicity="1" />
           <End Role="KETQUA_MONHOC_HOCSINH" Type="Self.KETQUA_MONHOC_HOCSINH" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="XEPLOAI">
@@ -872,8 +872,13 @@
           <FunctionImport Name="XepLoai_NamApDung" ReturnType="Collection(dataModel.XepLoai_NamApDung_Result)">
           <Parameter Name="NamApDung" Mode="In" Type="String" />
           </FunctionImport>
+          <EntitySet Name="CTGIANGDAYs" EntityType="dataModel.CTGIANGDAY" />
           <EntitySet Name="CTLOPs" EntityType="dataModel.CTLOP" />
+          <EntitySet Name="CTLOPGVs" EntityType="dataModel.CTLOPGV" />
+          <EntitySet Name="CTHKs" EntityType="dataModel.CTHK" />
           <EntitySet Name="DIEMs" EntityType="dataModel.DIEM" />
+          <EntitySet Name="GIAOVIENs" EntityType="dataModel.GIAOVIEN" />
+          <EntitySet Name="HANHKIEMs" EntityType="dataModel.HANHKIEM" />
           <EntitySet Name="HOCKies" EntityType="dataModel.HOCKY" />
           <EntitySet Name="HOCSINHs" EntityType="dataModel.HOCSINH" />
           <EntitySet Name="KETQUA_MONHOC_HOCSINH" EntityType="dataModel.KETQUA_MONHOC_HOCSINH" />
@@ -882,10 +887,23 @@
           <EntitySet Name="MONHOCs" EntityType="dataModel.MONHOC" />
           <EntitySet Name="NAMHOCs" EntityType="dataModel.NAMHOC" />
           <EntitySet Name="PHANQUYENs" EntityType="dataModel.PHANQUYEN" />
+          <EntitySet Name="QUANLies" EntityType="dataModel.QUANLY" />
           <EntitySet Name="TAIKHOANs" EntityType="dataModel.TAIKHOAN" />
           <EntitySet Name="THAMSOes" EntityType="dataModel.THAMSO" />
           <EntitySet Name="THANHPHANs" EntityType="dataModel.THANHPHAN" />
           <EntitySet Name="XEPLOAIs" EntityType="dataModel.XEPLOAI" />
+          <AssociationSet Name="FK__CTGIANGDA__MaGia__55BFB948" Association="dataModel.FK__CTGIANGDA__MaGia__55BFB948">
+            <End Role="GIAOVIEN" EntitySet="GIAOVIENs" />
+            <End Role="CTGIANGDAY" EntitySet="CTGIANGDAYs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CTGIANGDA__MaLop__56B3DD81" Association="dataModel.FK__CTGIANGDA__MaLop__56B3DD81">
+            <End Role="LOP" EntitySet="LOPs" />
+            <End Role="CTGIANGDAY" EntitySet="CTGIANGDAYs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CTGIANGDA__MaMon__57A801BA" Association="dataModel.FK__CTGIANGDA__MaMon__57A801BA">
+            <End Role="MONHOC" EntitySet="MONHOCs" />
+            <End Role="CTGIANGDAY" EntitySet="CTGIANGDAYs" />
+          </AssociationSet>
           <AssociationSet Name="fk_ctl_hs" Association="dataModel.fk_ctl_hs">
             <End Role="HOCSINH" EntitySet="HOCSINHs" />
             <End Role="CTLOP" EntitySet="CTLOPs" />
@@ -893,6 +911,30 @@
           <AssociationSet Name="fk_ctl_ml" Association="dataModel.fk_ctl_ml">
             <End Role="LOP" EntitySet="LOPs" />
             <End Role="CTLOP" EntitySet="CTLOPs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CTLOPGV__MaGVCN__308E3499" Association="dataModel.FK__CTLOPGV__MaGVCN__308E3499">
+            <End Role="GIAOVIEN" EntitySet="GIAOVIENs" />
+            <End Role="CTLOPGV" EntitySet="CTLOPGVs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CTLOPGV__MaLop__318258D2" Association="dataModel.FK__CTLOPGV__MaLop__318258D2">
+            <End Role="LOP" EntitySet="LOPs" />
+            <End Role="CTLOPGV" EntitySet="CTLOPGVs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CTHK__MaHanhKiem__39237A9A" Association="dataModel.FK__CTHK__MaHanhKiem__39237A9A">
+            <End Role="HANHKIEM" EntitySet="HANHKIEMs" />
+            <End Role="CTHK" EntitySet="CTHKs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CTHK__MaHocKy__382F5661" Association="dataModel.FK__CTHK__MaHocKy__382F5661">
+            <End Role="HOCKY" EntitySet="HOCKies" />
+            <End Role="CTHK" EntitySet="CTHKs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CTHK__MaHocSinh__36470DEF" Association="dataModel.FK__CTHK__MaHocSinh__36470DEF">
+            <End Role="HOCSINH" EntitySet="HOCSINHs" />
+            <End Role="CTHK" EntitySet="CTHKs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__CTHK__MaNamHoc__373B3228" Association="dataModel.FK__CTHK__MaNamHoc__373B3228">
+            <End Role="NAMHOC" EntitySet="NAMHOCs" />
+            <End Role="CTHK" EntitySet="CTHKs" />
           </AssociationSet>
           <AssociationSet Name="fk_diem_kq" Association="dataModel.fk_diem_kq">
             <End Role="KETQUA_MONHOC_HOCSINH" EntitySet="KETQUA_MONHOC_HOCSINH" />
@@ -905,6 +947,10 @@
           <AssociationSet Name="fk_kq_hk" Association="dataModel.fk_kq_hk">
             <End Role="HOCKY" EntitySet="HOCKies" />
             <End Role="KETQUA_MONHOC_HOCSINH" EntitySet="KETQUA_MONHOC_HOCSINH" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NamApDung_Hocky" Association="dataModel.FK_NamApDung_Hocky">
+            <End Role="NAMHOC" EntitySet="NAMHOCs" />
+            <End Role="HOCKY" EntitySet="HOCKies" />
           </AssociationSet>
           <AssociationSet Name="fk_kq_hs" Association="dataModel.fk_kq_hs">
             <End Role="HOCSINH" EntitySet="HOCSINHs" />
@@ -922,6 +968,10 @@
             <End Role="XEPLOAI" EntitySet="XEPLOAIs" />
             <End Role="KETQUA_MONHOC_HOCSINH" EntitySet="KETQUA_MONHOC_HOCSINH" />
           </AssociationSet>
+          <AssociationSet Name="FK_Khoi" Association="dataModel.FK_Khoi">
+            <End Role="KHOI" EntitySet="KHOIs" />
+            <End Role="MONHOC" EntitySet="MONHOCs" />
+          </AssociationSet>
           <AssociationSet Name="fk_khoi_mnh" Association="dataModel.fk_khoi_mnh">
             <End Role="NAMHOC" EntitySet="NAMHOCs" />
             <End Role="KHOI" EntitySet="KHOIs" />
@@ -933,59 +983,6 @@
           <AssociationSet Name="fk_lop_mnh" Association="dataModel.fk_lop_mnh">
             <End Role="NAMHOC" EntitySet="NAMHOCs" />
             <End Role="LOP" EntitySet="LOPs" />
-          </AssociationSet>
-          <AssociationSet Name="fk_tk_pq" Association="dataModel.fk_tk_pq">
-            <End Role="PHANQUYEN" EntitySet="PHANQUYENs" />
-            <End Role="TAIKHOAN" EntitySet="TAIKHOANs" />
-          </AssociationSet>
-          <EntitySet Name="CTLOPGVs" EntityType="dataModel.CTLOPGV" />
-          <EntitySet Name="GIAOVIENs" EntityType="dataModel.GIAOVIEN" />
-          <AssociationSet Name="FK__CTLOPGV__MaGVCN__308E3499" Association="dataModel.FK__CTLOPGV__MaGVCN__308E3499">
-            <End Role="GIAOVIEN" EntitySet="GIAOVIENs" />
-            <End Role="CTLOPGV" EntitySet="CTLOPGVs" />
-          </AssociationSet>
-          <AssociationSet Name="FK__CTLOPGV__MaLop__318258D2" Association="dataModel.FK__CTLOPGV__MaLop__318258D2">
-            <End Role="LOP" EntitySet="LOPs" />
-            <End Role="CTLOPGV" EntitySet="CTLOPGVs" />
-          </AssociationSet>
-          <EntitySet Name="CTHKs" EntityType="dataModel.CTHK" />
-          <EntitySet Name="HANHKIEMs" EntityType="dataModel.HANHKIEM" />
-          <AssociationSet Name="FK__CTHK__MaHanhKiem__39237A9A" Association="dataModel.FK__CTHK__MaHanhKiem__39237A9A">
-            <End Role="HANHKIEM" EntitySet="HANHKIEMs" />
-            <End Role="CTHK" EntitySet="CTHKs" />
-          </AssociationSet>
-          <AssociationSet Name="FK__CTHK__MaHocKy__382F5661" Association="dataModel.FK__CTHK__MaHocKy__382F5661">
-            <End Role="HOCKY" EntitySet="HOCKies" />
-            <End Role="CTHK" EntitySet="CTHKs" />
-          </AssociationSet>
-          <AssociationSet Name="FK__CTHK__MaHocSinh__36470DEF" Association="dataModel.FK__CTHK__MaHocSinh__36470DEF">
-            <End Role="HOCSINH" EntitySet="HOCSINHs" />
-            <End Role="CTHK" EntitySet="CTHKs" />
-          </AssociationSet>
-          <AssociationSet Name="FK__CTHK__MaNamHoc__373B3228" Association="dataModel.FK__CTHK__MaNamHoc__373B3228">
-            <End Role="NAMHOC" EntitySet="NAMHOCs" />
-            <End Role="CTHK" EntitySet="CTHKs" />
-          </AssociationSet>
-          <EntitySet Name="CTGIANGDAYs" EntityType="dataModel.CTGIANGDAY" />
-          <AssociationSet Name="FK__CTGIANGDA__MaGia__467D75B8" Association="dataModel.FK__CTGIANGDA__MaGia__467D75B8">
-            <End Role="GIAOVIEN" EntitySet="GIAOVIENs" />
-            <End Role="CTGIANGDAY" EntitySet="CTGIANGDAYs" />
-          </AssociationSet>
-          <AssociationSet Name="FK__CTGIANGDA__MaLop__477199F1" Association="dataModel.FK__CTGIANGDA__MaLop__477199F1">
-            <End Role="LOP" EntitySet="LOPs" />
-            <End Role="CTGIANGDAY" EntitySet="CTGIANGDAYs" />
-          </AssociationSet>
-          <AssociationSet Name="FK__CTGIANGDA__MaMon__4865BE2A" Association="dataModel.FK__CTGIANGDA__MaMon__4865BE2A">
-            <End Role="MONHOC" EntitySet="MONHOCs" />
-            <End Role="CTGIANGDAY" EntitySet="CTGIANGDAYs" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Khoi" Association="dataModel.FK_Khoi">
-            <End Role="KHOI" EntitySet="KHOIs" />
-            <End Role="MONHOC" EntitySet="MONHOCs" />
-          </AssociationSet>
-          <AssociationSet Name="FK_NamApDung_Hocky" Association="dataModel.FK_NamApDung_Hocky">
-            <End Role="NAMHOC" EntitySet="NAMHOCs" />
-            <End Role="HOCKY" EntitySet="HOCKies" />
           </AssociationSet>
           <AssociationSet Name="FK_NamApDung" Association="dataModel.FK_NamApDung">
             <End Role="NAMHOC" EntitySet="NAMHOCs" />
@@ -999,7 +996,10 @@
             <End Role="NAMHOC" EntitySet="NAMHOCs" />
             <End Role="XEPLOAI" EntitySet="XEPLOAIs" />
           </AssociationSet>
-          <EntitySet Name="QUANLies" EntityType="dataModel.QUANLY" />
+          <AssociationSet Name="fk_tk_pq" Association="dataModel.fk_tk_pq">
+            <End Role="PHANQUYEN" EntitySet="PHANQUYENs" />
+            <End Role="TAIKHOAN" EntitySet="TAIKHOANs" />
+          </AssociationSet>
           </EntityContainer>
         <ComplexType Name="TongKetMonHocKy_Result">
           <Property Type="String" Name="TenLop" Nullable="true" MaxLength="30" />
@@ -1061,6 +1061,18 @@
           <Property Type="Double" Name="DiemKhongChe" Nullable="true" />
           <Property Type="String" Name="NamApDung" Nullable="true" MaxLength="20" />
         </ComplexType>
+        <EntityType Name="CTGIANGDAY">
+          <Key>
+            <PropertyRef Name="MaCTGD" />
+          </Key>
+          <Property Name="MaCTGD" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="MaGiaoVien" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="MaMonHoc" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MaLop" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="GIAOVIEN" Relationship="dataModel.FK__CTGIANGDA__MaGia__55BFB948" FromRole="CTGIANGDAY" ToRole="GIAOVIEN" />
+          <NavigationProperty Name="LOP" Relationship="dataModel.FK__CTGIANGDA__MaLop__56B3DD81" FromRole="CTGIANGDAY" ToRole="LOP" />
+          <NavigationProperty Name="MONHOC" Relationship="dataModel.FK__CTGIANGDA__MaMon__57A801BA" FromRole="CTGIANGDAY" ToRole="MONHOC" />
+        </EntityType>
         <EntityType Name="CTLOP">
           <Key>
             <PropertyRef Name="MaCTL" />
@@ -1071,16 +1083,61 @@
           <NavigationProperty Name="HOCSINH" Relationship="dataModel.fk_ctl_hs" FromRole="CTLOP" ToRole="HOCSINH" />
           <NavigationProperty Name="LOP" Relationship="dataModel.fk_ctl_ml" FromRole="CTLOP" ToRole="LOP" />
         </EntityType>
+        <EntityType Name="CTLOPGV">
+          <Key>
+            <PropertyRef Name="MaCTLGV" />
+          </Key>
+          <Property Name="MaCTLGV" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MaGVCN" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="MaLop" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="GIAOVIEN" Relationship="dataModel.FK__CTLOPGV__MaGVCN__308E3499" FromRole="CTLOPGV" ToRole="GIAOVIEN" />
+          <NavigationProperty Name="LOP" Relationship="dataModel.FK__CTLOPGV__MaLop__318258D2" FromRole="CTLOPGV" ToRole="LOP" />
+        </EntityType>
+        <EntityType Name="CTHK">
+          <Key>
+            <PropertyRef Name="MaCTHK" />
+          </Key>
+          <Property Name="MaCTHK" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MaHocSinh" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="MaNamHoc" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MaHocKy" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MaHanhKiem" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="HANHKIEM" Relationship="dataModel.FK__CTHK__MaHanhKiem__39237A9A" FromRole="CTHK" ToRole="HANHKIEM" />
+          <NavigationProperty Name="HOCKY" Relationship="dataModel.FK__CTHK__MaHocKy__382F5661" FromRole="CTHK" ToRole="HOCKY" />
+          <NavigationProperty Name="HOCSINH" Relationship="dataModel.FK__CTHK__MaHocSinh__36470DEF" FromRole="CTHK" ToRole="HOCSINH" />
+          <NavigationProperty Name="NAMHOC" Relationship="dataModel.FK__CTHK__MaNamHoc__373B3228" FromRole="CTHK" ToRole="NAMHOC" />
+        </EntityType>
         <EntityType Name="DIEM">
           <Key>
             <PropertyRef Name="MaDiem" />
           </Key>
           <Property Name="MaDiem" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="MaKetQua" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="MaThanhPhan" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MaThanhPhan" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Diem1" Type="Double" />
           <NavigationProperty Name="KETQUA_MONHOC_HOCSINH" Relationship="dataModel.fk_diem_kq" FromRole="DIEM" ToRole="KETQUA_MONHOC_HOCSINH" />
           <NavigationProperty Name="THANHPHAN" Relationship="dataModel.fk_diem_tp" FromRole="DIEM" ToRole="THANHPHAN" />
+        </EntityType>
+        <EntityType Name="GIAOVIEN">
+          <Key>
+            <PropertyRef Name="MaGiaoVien" />
+          </Key>
+          <Property Name="MaGiaoVien" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="HoTen" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="GioiTinh" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="NgaySinh" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="CTGIANGDAYs" Relationship="dataModel.FK__CTGIANGDA__MaGia__55BFB948" FromRole="GIAOVIEN" ToRole="CTGIANGDAY" />
+          <NavigationProperty Name="CTLOPGVs" Relationship="dataModel.FK__CTLOPGV__MaGVCN__308E3499" FromRole="GIAOVIEN" ToRole="CTLOPGV" />
+        </EntityType>
+        <EntityType Name="HANHKIEM">
+          <Key>
+            <PropertyRef Name="MaHanhKiem" />
+          </Key>
+          <Property Name="MaHanhKiem" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="TenHanhKiem" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Diem" Type="Double" />
+          <Property Name="NamApDung" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CTHKs" Relationship="dataModel.FK__CTHK__MaHanhKiem__39237A9A" FromRole="HANHKIEM" ToRole="CTHK" />
         </EntityType>
         <EntityType Name="HOCKY">
           <Key>
@@ -1090,8 +1147,8 @@
           <Property Name="HocKy1" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="TrongSo" Type="Double" />
           <Property Name="NamApDung" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="KETQUA_MONHOC_HOCSINH" Relationship="dataModel.fk_kq_hk" FromRole="HOCKY" ToRole="KETQUA_MONHOC_HOCSINH" />
           <NavigationProperty Name="CTHKs" Relationship="dataModel.FK__CTHK__MaHocKy__382F5661" FromRole="HOCKY" ToRole="CTHK" />
+          <NavigationProperty Name="KETQUA_MONHOC_HOCSINH" Relationship="dataModel.fk_kq_hk" FromRole="HOCKY" ToRole="KETQUA_MONHOC_HOCSINH" />
           <NavigationProperty Name="NAMHOC" Relationship="dataModel.FK_NamApDung_Hocky" FromRole="HOCKY" ToRole="NAMHOC" />
         </EntityType>
         <EntityType Name="HOCSINH">
@@ -1119,8 +1176,8 @@
           <Property Name="SDT_Me" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="NgheNghiep_Me" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="CTLOPs" Relationship="dataModel.fk_ctl_hs" FromRole="HOCSINH" ToRole="CTLOP" />
-          <NavigationProperty Name="KETQUA_MONHOC_HOCSINH" Relationship="dataModel.fk_kq_hs" FromRole="HOCSINH" ToRole="KETQUA_MONHOC_HOCSINH" />
           <NavigationProperty Name="CTHKs" Relationship="dataModel.FK__CTHK__MaHocSinh__36470DEF" FromRole="HOCSINH" ToRole="CTHK" />
+          <NavigationProperty Name="KETQUA_MONHOC_HOCSINH" Relationship="dataModel.fk_kq_hs" FromRole="HOCSINH" ToRole="KETQUA_MONHOC_HOCSINH" />
         </EntityType>
         <EntityType Name="KETQUA_MONHOC_HOCSINH">
           <Key>
@@ -1132,7 +1189,7 @@
           <Property Name="MaHocKy" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="MaMonHoc" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="DiemTB" Type="Double" />
-          <Property Name="MaXepLoai" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MaXepLoai" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="DIEMs" Relationship="dataModel.fk_diem_kq" FromRole="KETQUA_MONHOC_HOCSINH" ToRole="DIEM" />
           <NavigationProperty Name="HOCKY" Relationship="dataModel.fk_kq_hk" FromRole="KETQUA_MONHOC_HOCSINH" ToRole="HOCKY" />
           <NavigationProperty Name="HOCSINH" Relationship="dataModel.fk_kq_hs" FromRole="KETQUA_MONHOC_HOCSINH" ToRole="HOCSINH" />
@@ -1147,9 +1204,9 @@
           <Property Name="MaKhoi" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="TenKhoi" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="MaNamHoc" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="MONHOCs" Relationship="dataModel.FK_Khoi" FromRole="KHOI" ToRole="MONHOC" />
           <NavigationProperty Name="NAMHOC" Relationship="dataModel.fk_khoi_mnh" FromRole="KHOI" ToRole="NAMHOC" />
           <NavigationProperty Name="LOPs" Relationship="dataModel.fk_lop_mk" FromRole="KHOI" ToRole="LOP" />
-          <NavigationProperty Name="MONHOCs" Relationship="dataModel.FK_Khoi" FromRole="KHOI" ToRole="MONHOC" />
         </EntityType>
         <EntityType Name="LOP">
           <Key>
@@ -1160,11 +1217,11 @@
           <Property Name="MaKhoi" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="SiSo" Type="Byte" />
           <Property Name="MaNamHoc" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CTGIANGDAYs" Relationship="dataModel.FK__CTGIANGDA__MaLop__56B3DD81" FromRole="LOP" ToRole="CTGIANGDAY" />
           <NavigationProperty Name="CTLOPs" Relationship="dataModel.fk_ctl_ml" FromRole="LOP" ToRole="CTLOP" />
+          <NavigationProperty Name="CTLOPGVs" Relationship="dataModel.FK__CTLOPGV__MaLop__318258D2" FromRole="LOP" ToRole="CTLOPGV" />
           <NavigationProperty Name="KHOI" Relationship="dataModel.fk_lop_mk" FromRole="LOP" ToRole="KHOI" />
           <NavigationProperty Name="NAMHOC" Relationship="dataModel.fk_lop_mnh" FromRole="LOP" ToRole="NAMHOC" />
-          <NavigationProperty Name="CTLOPGVs" Relationship="dataModel.FK__CTLOPGV__MaLop__318258D2" FromRole="LOP" ToRole="CTLOPGV" />
-          <NavigationProperty Name="CTGIANGDAYs" Relationship="dataModel.FK__CTGIANGDA__MaLop__477199F1" FromRole="LOP" ToRole="CTGIANGDAY" />
         </EntityType>
         <EntityType Name="MONHOC">
           <Key>
@@ -1173,9 +1230,9 @@
           <Property Name="MaMonHoc" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="TenMonHoc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="NamApDung" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="KETQUA_MONHOC_HOCSINH" Relationship="dataModel.fk_kq_mh" FromRole="MONHOC" ToRole="KETQUA_MONHOC_HOCSINH" />
-          <NavigationProperty Name="CTGIANGDAYs" Relationship="dataModel.FK__CTGIANGDA__MaMon__4865BE2A" FromRole="MONHOC" ToRole="CTGIANGDAY" />
           <Property Name="MaKhoi" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CTGIANGDAYs" Relationship="dataModel.FK__CTGIANGDA__MaMon__57A801BA" FromRole="MONHOC" ToRole="CTGIANGDAY" />
+          <NavigationProperty Name="KETQUA_MONHOC_HOCSINH" Relationship="dataModel.fk_kq_mh" FromRole="MONHOC" ToRole="KETQUA_MONHOC_HOCSINH" />
           <NavigationProperty Name="KHOI" Relationship="dataModel.FK_Khoi" FromRole="MONHOC" ToRole="KHOI" />
           <NavigationProperty Name="NAMHOC" Relationship="dataModel.FK_NamApDung" FromRole="MONHOC" ToRole="NAMHOC" />
         </EntityType>
@@ -1185,11 +1242,11 @@
           </Key>
           <Property Name="MaNamHoc" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="NamHoc1" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="CTHKs" Relationship="dataModel.FK__CTHK__MaNamHoc__373B3228" FromRole="NAMHOC" ToRole="CTHK" />
+          <NavigationProperty Name="HOCKies" Relationship="dataModel.FK_NamApDung_Hocky" FromRole="NAMHOC" ToRole="HOCKY" />
           <NavigationProperty Name="KETQUA_MONHOC_HOCSINH" Relationship="dataModel.fk_kq_nh" FromRole="NAMHOC" ToRole="KETQUA_MONHOC_HOCSINH" />
           <NavigationProperty Name="KHOIs" Relationship="dataModel.fk_khoi_mnh" FromRole="NAMHOC" ToRole="KHOI" />
           <NavigationProperty Name="LOPs" Relationship="dataModel.fk_lop_mnh" FromRole="NAMHOC" ToRole="LOP" />
-          <NavigationProperty Name="CTHKs" Relationship="dataModel.FK__CTHK__MaNamHoc__373B3228" FromRole="NAMHOC" ToRole="CTHK" />
-          <NavigationProperty Name="HOCKies" Relationship="dataModel.FK_NamApDung_Hocky" FromRole="NAMHOC" ToRole="HOCKY" />
           <NavigationProperty Name="MONHOCs" Relationship="dataModel.FK_NamApDung" FromRole="NAMHOC" ToRole="MONHOC" />
           <NavigationProperty Name="THANHPHANs" Relationship="dataModel.FK_NamApDung_Thanhphan" FromRole="NAMHOC" ToRole="THANHPHAN" />
           <NavigationProperty Name="XEPLOAIs" Relationship="dataModel.FK_NamApDung_Xeploai" FromRole="NAMHOC" ToRole="XEPLOAI" />
@@ -1201,6 +1258,15 @@
           <Property Name="MaPhanQuyen" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="VaiTro" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="TAIKHOANs" Relationship="dataModel.fk_tk_pq" FromRole="PHANQUYEN" ToRole="TAIKHOAN" />
+        </EntityType>
+        <EntityType Name="QUANLY">
+          <Key>
+            <PropertyRef Name="MaQuanLy" />
+          </Key>
+          <Property Name="MaQuanLy" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="HoTen" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="GioiTinh" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="NgaySinh" Type="DateTime" Precision="0" />
         </EntityType>
         <EntityType Name="TAIKHOAN">
           <Key>
@@ -1249,6 +1315,42 @@
           <NavigationProperty Name="KETQUA_MONHOC_HOCSINH" Relationship="dataModel.fk_kq_xl" FromRole="XEPLOAI" ToRole="KETQUA_MONHOC_HOCSINH" />
           <NavigationProperty Name="NAMHOC" Relationship="dataModel.FK_NamApDung_Xeploai" FromRole="XEPLOAI" ToRole="NAMHOC" />
         </EntityType>
+        <Association Name="FK__CTGIANGDA__MaGia__55BFB948">
+          <End Type="dataModel.GIAOVIEN" Role="GIAOVIEN" Multiplicity="1" />
+          <End Type="dataModel.CTGIANGDAY" Role="CTGIANGDAY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GIAOVIEN">
+              <PropertyRef Name="MaGiaoVien" />
+            </Principal>
+            <Dependent Role="CTGIANGDAY">
+              <PropertyRef Name="MaGiaoVien" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CTGIANGDA__MaLop__56B3DD81">
+          <End Type="dataModel.LOP" Role="LOP" Multiplicity="1" />
+          <End Type="dataModel.CTGIANGDAY" Role="CTGIANGDAY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOP">
+              <PropertyRef Name="MaLop" />
+            </Principal>
+            <Dependent Role="CTGIANGDAY">
+              <PropertyRef Name="MaLop" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CTGIANGDA__MaMon__57A801BA">
+          <End Type="dataModel.MONHOC" Role="MONHOC" Multiplicity="1" />
+          <End Type="dataModel.CTGIANGDAY" Role="CTGIANGDAY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MONHOC">
+              <PropertyRef Name="MaMonHoc" />
+            </Principal>
+            <Dependent Role="CTGIANGDAY">
+              <PropertyRef Name="MaMonHoc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="fk_ctl_hs">
           <End Type="dataModel.HOCSINH" Role="HOCSINH" Multiplicity="1" />
           <End Type="dataModel.CTLOP" Role="CTLOP" Multiplicity="*" />
@@ -1273,6 +1375,78 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__CTLOPGV__MaGVCN__308E3499">
+          <End Type="dataModel.GIAOVIEN" Role="GIAOVIEN" Multiplicity="1" />
+          <End Type="dataModel.CTLOPGV" Role="CTLOPGV" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GIAOVIEN">
+              <PropertyRef Name="MaGiaoVien" />
+            </Principal>
+            <Dependent Role="CTLOPGV">
+              <PropertyRef Name="MaGVCN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CTLOPGV__MaLop__318258D2">
+          <End Type="dataModel.LOP" Role="LOP" Multiplicity="1" />
+          <End Type="dataModel.CTLOPGV" Role="CTLOPGV" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LOP">
+              <PropertyRef Name="MaLop" />
+            </Principal>
+            <Dependent Role="CTLOPGV">
+              <PropertyRef Name="MaLop" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CTHK__MaHanhKiem__39237A9A">
+          <End Type="dataModel.HANHKIEM" Role="HANHKIEM" Multiplicity="1" />
+          <End Type="dataModel.CTHK" Role="CTHK" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HANHKIEM">
+              <PropertyRef Name="MaHanhKiem" />
+            </Principal>
+            <Dependent Role="CTHK">
+              <PropertyRef Name="MaHanhKiem" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CTHK__MaHocKy__382F5661">
+          <End Type="dataModel.HOCKY" Role="HOCKY" Multiplicity="1" />
+          <End Type="dataModel.CTHK" Role="CTHK" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HOCKY">
+              <PropertyRef Name="MaHocKy" />
+            </Principal>
+            <Dependent Role="CTHK">
+              <PropertyRef Name="MaHocKy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CTHK__MaHocSinh__36470DEF">
+          <End Type="dataModel.HOCSINH" Role="HOCSINH" Multiplicity="1" />
+          <End Type="dataModel.CTHK" Role="CTHK" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HOCSINH">
+              <PropertyRef Name="MaHocSinh" />
+            </Principal>
+            <Dependent Role="CTHK">
+              <PropertyRef Name="MaHocSinh" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__CTHK__MaNamHoc__373B3228">
+          <End Type="dataModel.NAMHOC" Role="NAMHOC" Multiplicity="1" />
+          <End Type="dataModel.CTHK" Role="CTHK" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NAMHOC">
+              <PropertyRef Name="MaNamHoc" />
+            </Principal>
+            <Dependent Role="CTHK">
+              <PropertyRef Name="MaNamHoc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="fk_diem_kq">
           <End Type="dataModel.KETQUA_MONHOC_HOCSINH" Role="KETQUA_MONHOC_HOCSINH" Multiplicity="1" />
           <End Type="dataModel.DIEM" Role="DIEM" Multiplicity="*" />
@@ -1286,7 +1460,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_diem_tp">
-          <End Type="dataModel.THANHPHAN" Role="THANHPHAN" Multiplicity="0..1" />
+          <End Type="dataModel.THANHPHAN" Role="THANHPHAN" Multiplicity="1" />
           <End Type="dataModel.DIEM" Role="DIEM" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="THANHPHAN">
@@ -1306,6 +1480,18 @@
             </Principal>
             <Dependent Role="KETQUA_MONHOC_HOCSINH">
               <PropertyRef Name="MaHocKy" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NamApDung_Hocky">
+          <End Type="dataModel.NAMHOC" Role="NAMHOC" Multiplicity="0..1" />
+          <End Type="dataModel.HOCKY" Role="HOCKY" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NAMHOC">
+              <PropertyRef Name="MaNamHoc" />
+            </Principal>
+            <Dependent Role="HOCKY">
+              <PropertyRef Name="NamApDung" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1346,7 +1532,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_kq_xl">
-          <End Type="dataModel.XEPLOAI" Role="XEPLOAI" Multiplicity="0..1" />
+          <End Type="dataModel.XEPLOAI" Role="XEPLOAI" Multiplicity="1" />
           <End Type="dataModel.KETQUA_MONHOC_HOCSINH" Role="KETQUA_MONHOC_HOCSINH" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="XEPLOAI">
@@ -1354,6 +1540,18 @@
             </Principal>
             <Dependent Role="KETQUA_MONHOC_HOCSINH">
               <PropertyRef Name="MaXepLoai" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Khoi">
+          <End Type="dataModel.KHOI" Role="KHOI" Multiplicity="0..1" />
+          <End Type="dataModel.MONHOC" Role="MONHOC" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KHOI">
+              <PropertyRef Name="MaKhoi" />
+            </Principal>
+            <Dependent Role="MONHOC">
+              <PropertyRef Name="MaKhoi" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1393,207 +1591,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="fk_tk_pq">
-          <End Type="dataModel.PHANQUYEN" Role="PHANQUYEN" Multiplicity="1" />
-          <End Type="dataModel.TAIKHOAN" Role="TAIKHOAN" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="PHANQUYEN">
-              <PropertyRef Name="MaPhanQuyen" />
-            </Principal>
-            <Dependent Role="TAIKHOAN">
-              <PropertyRef Name="MaPhanQuyen" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityType Name="CTLOPGV">
-          <Key>
-            <PropertyRef Name="MaCTLGV" />
-          </Key>
-          <Property Name="MaCTLGV" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="MaGVCN" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="MaLop" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="GIAOVIEN" Relationship="dataModel.FK__CTLOPGV__MaGVCN__308E3499" FromRole="CTLOPGV" ToRole="GIAOVIEN" />
-          <NavigationProperty Name="LOP" Relationship="dataModel.FK__CTLOPGV__MaLop__318258D2" FromRole="CTLOPGV" ToRole="LOP" />
-        </EntityType>
-        <EntityType Name="GIAOVIEN">
-          <Key>
-            <PropertyRef Name="MaGiaoVien" />
-          </Key>
-          <Property Name="MaGiaoVien" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="HoTen" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="GioiTinh" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
-          <Property Name="NgaySinh" Type="DateTime" Precision="0" />
-          <NavigationProperty Name="CTLOPGVs" Relationship="dataModel.FK__CTLOPGV__MaGVCN__308E3499" FromRole="GIAOVIEN" ToRole="CTLOPGV" />
-          <NavigationProperty Name="CTGIANGDAYs" Relationship="dataModel.FK__CTGIANGDA__MaGia__467D75B8" FromRole="GIAOVIEN" ToRole="CTGIANGDAY" />
-        </EntityType>
-        <Association Name="FK__CTLOPGV__MaGVCN__308E3499">
-          <End Type="dataModel.GIAOVIEN" Role="GIAOVIEN" Multiplicity="0..1" />
-          <End Type="dataModel.CTLOPGV" Role="CTLOPGV" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="GIAOVIEN">
-              <PropertyRef Name="MaGiaoVien" />
-            </Principal>
-            <Dependent Role="CTLOPGV">
-              <PropertyRef Name="MaGVCN" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__CTLOPGV__MaLop__318258D2">
-          <End Type="dataModel.LOP" Role="LOP" Multiplicity="0..1" />
-          <End Type="dataModel.CTLOPGV" Role="CTLOPGV" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="LOP">
-              <PropertyRef Name="MaLop" />
-            </Principal>
-            <Dependent Role="CTLOPGV">
-              <PropertyRef Name="MaLop" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityType Name="CTHK">
-          <Key>
-            <PropertyRef Name="MaCTHK" />
-          </Key>
-          <Property Name="MaCTHK" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="MaHocSinh" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-          <Property Name="MaNamHoc" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="MaHocKy" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="MaHanhKiem" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="HANHKIEM" Relationship="dataModel.FK__CTHK__MaHanhKiem__39237A9A" FromRole="CTHK" ToRole="HANHKIEM" />
-          <NavigationProperty Name="HOCKY" Relationship="dataModel.FK__CTHK__MaHocKy__382F5661" FromRole="CTHK" ToRole="HOCKY" />
-          <NavigationProperty Name="HOCSINH" Relationship="dataModel.FK__CTHK__MaHocSinh__36470DEF" FromRole="CTHK" ToRole="HOCSINH" />
-          <NavigationProperty Name="NAMHOC" Relationship="dataModel.FK__CTHK__MaNamHoc__373B3228" FromRole="CTHK" ToRole="NAMHOC" />
-        </EntityType>
-        <EntityType Name="HANHKIEM">
-          <Key>
-            <PropertyRef Name="MaHanhKiem" />
-          </Key>
-          <Property Name="MaHanhKiem" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="TenHanhKiem" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="Diem" Type="Double" />
-          <Property Name="NamApDung" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="CTHKs" Relationship="dataModel.FK__CTHK__MaHanhKiem__39237A9A" FromRole="HANHKIEM" ToRole="CTHK" />
-        </EntityType>
-        <Association Name="FK__CTHK__MaHanhKiem__39237A9A">
-          <End Type="dataModel.HANHKIEM" Role="HANHKIEM" Multiplicity="0..1" />
-          <End Type="dataModel.CTHK" Role="CTHK" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="HANHKIEM">
-              <PropertyRef Name="MaHanhKiem" />
-            </Principal>
-            <Dependent Role="CTHK">
-              <PropertyRef Name="MaHanhKiem" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__CTHK__MaHocKy__382F5661">
-          <End Type="dataModel.HOCKY" Role="HOCKY" Multiplicity="0..1" />
-          <End Type="dataModel.CTHK" Role="CTHK" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="HOCKY">
-              <PropertyRef Name="MaHocKy" />
-            </Principal>
-            <Dependent Role="CTHK">
-              <PropertyRef Name="MaHocKy" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__CTHK__MaHocSinh__36470DEF">
-          <End Type="dataModel.HOCSINH" Role="HOCSINH" Multiplicity="0..1" />
-          <End Type="dataModel.CTHK" Role="CTHK" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="HOCSINH">
-              <PropertyRef Name="MaHocSinh" />
-            </Principal>
-            <Dependent Role="CTHK">
-              <PropertyRef Name="MaHocSinh" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__CTHK__MaNamHoc__373B3228">
-          <End Type="dataModel.NAMHOC" Role="NAMHOC" Multiplicity="0..1" />
-          <End Type="dataModel.CTHK" Role="CTHK" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="NAMHOC">
-              <PropertyRef Name="MaNamHoc" />
-            </Principal>
-            <Dependent Role="CTHK">
-              <PropertyRef Name="MaNamHoc" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityType Name="CTGIANGDAY">
-          <Key>
-            <PropertyRef Name="MaCTGD" />
-          </Key>
-          <Property Name="MaCTGD" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="MaGiaoVien" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="MaMonHoc" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="MaLop" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="GIAOVIEN" Relationship="dataModel.FK__CTGIANGDA__MaGia__467D75B8" FromRole="CTGIANGDAY" ToRole="GIAOVIEN" />
-          <NavigationProperty Name="LOP" Relationship="dataModel.FK__CTGIANGDA__MaLop__477199F1" FromRole="CTGIANGDAY" ToRole="LOP" />
-          <NavigationProperty Name="MONHOC" Relationship="dataModel.FK__CTGIANGDA__MaMon__4865BE2A" FromRole="CTGIANGDAY" ToRole="MONHOC" />
-        </EntityType>
-        <Association Name="FK__CTGIANGDA__MaGia__467D75B8">
-          <End Type="dataModel.GIAOVIEN" Role="GIAOVIEN" Multiplicity="0..1" />
-          <End Type="dataModel.CTGIANGDAY" Role="CTGIANGDAY" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="GIAOVIEN">
-              <PropertyRef Name="MaGiaoVien" />
-            </Principal>
-            <Dependent Role="CTGIANGDAY">
-              <PropertyRef Name="MaGiaoVien" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__CTGIANGDA__MaLop__477199F1">
-          <End Type="dataModel.LOP" Role="LOP" Multiplicity="0..1" />
-          <End Type="dataModel.CTGIANGDAY" Role="CTGIANGDAY" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="LOP">
-              <PropertyRef Name="MaLop" />
-            </Principal>
-            <Dependent Role="CTGIANGDAY">
-              <PropertyRef Name="MaLop" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__CTGIANGDA__MaMon__4865BE2A">
-          <End Type="dataModel.MONHOC" Role="MONHOC" Multiplicity="0..1" />
-          <End Type="dataModel.CTGIANGDAY" Role="CTGIANGDAY" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="MONHOC">
-              <PropertyRef Name="MaMonHoc" />
-            </Principal>
-            <Dependent Role="CTGIANGDAY">
-              <PropertyRef Name="MaMonHoc" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Khoi">
-          <End Type="dataModel.KHOI" Role="KHOI" Multiplicity="0..1" />
-          <End Type="dataModel.MONHOC" Role="MONHOC" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="KHOI">
-              <PropertyRef Name="MaKhoi" />
-            </Principal>
-            <Dependent Role="MONHOC">
-              <PropertyRef Name="MaKhoi" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_NamApDung_Hocky">
-          <End Type="dataModel.NAMHOC" Role="NAMHOC" Multiplicity="0..1" />
-          <End Type="dataModel.HOCKY" Role="HOCKY" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="NAMHOC">
-              <PropertyRef Name="MaNamHoc" />
-            </Principal>
-            <Dependent Role="HOCKY">
-              <PropertyRef Name="NamApDung" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_NamApDung">
           <End Type="dataModel.NAMHOC" Role="NAMHOC" Multiplicity="0..1" />
           <End Type="dataModel.MONHOC" Role="MONHOC" Multiplicity="*" />
@@ -1630,15 +1627,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityType Name="QUANLY">
-          <Key>
-            <PropertyRef Name="MaQuanLy" />
-          </Key>
-          <Property Name="MaQuanLy" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="HoTen" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="GioiTinh" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
-          <Property Name="NgaySinh" Type="DateTime" Precision="0" />
-        </EntityType>
+        <Association Name="fk_tk_pq">
+          <End Type="dataModel.PHANQUYEN" Role="PHANQUYEN" Multiplicity="1" />
+          <End Type="dataModel.TAIKHOAN" Role="TAIKHOAN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PHANQUYEN">
+              <PropertyRef Name="MaPhanQuyen" />
+            </Principal>
+            <Dependent Role="TAIKHOAN">
+              <PropertyRef Name="MaPhanQuyen" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1745,12 +1745,42 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <EntitySetMapping Name="CTGIANGDAYs">
+            <EntityTypeMapping TypeName="dataModel.CTGIANGDAY">
+              <MappingFragment StoreEntitySet="CTGIANGDAY">
+                <ScalarProperty Name="MaLop" ColumnName="MaLop" />
+                <ScalarProperty Name="MaMonHoc" ColumnName="MaMonHoc" />
+                <ScalarProperty Name="MaGiaoVien" ColumnName="MaGiaoVien" />
+                <ScalarProperty Name="MaCTGD" ColumnName="MaCTGD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="CTLOPs">
             <EntityTypeMapping TypeName="dataModel.CTLOP">
               <MappingFragment StoreEntitySet="CTLOP">
                 <ScalarProperty Name="MaLop" ColumnName="MaLop" />
                 <ScalarProperty Name="MaHocSinh" ColumnName="MaHocSinh" />
                 <ScalarProperty Name="MaCTL" ColumnName="MaCTL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CTLOPGVs">
+            <EntityTypeMapping TypeName="dataModel.CTLOPGV">
+              <MappingFragment StoreEntitySet="CTLOPGV">
+                <ScalarProperty Name="MaLop" ColumnName="MaLop" />
+                <ScalarProperty Name="MaGVCN" ColumnName="MaGVCN" />
+                <ScalarProperty Name="MaCTLGV" ColumnName="MaCTLGV" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CTHKs">
+            <EntityTypeMapping TypeName="dataModel.CTHK">
+              <MappingFragment StoreEntitySet="CTHK">
+                <ScalarProperty Name="MaHanhKiem" ColumnName="MaHanhKiem" />
+                <ScalarProperty Name="MaHocKy" ColumnName="MaHocKy" />
+                <ScalarProperty Name="MaNamHoc" ColumnName="MaNamHoc" />
+                <ScalarProperty Name="MaHocSinh" ColumnName="MaHocSinh" />
+                <ScalarProperty Name="MaCTHK" ColumnName="MaCTHK" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1761,6 +1791,26 @@
                 <ScalarProperty Name="MaThanhPhan" ColumnName="MaThanhPhan" />
                 <ScalarProperty Name="MaKetQua" ColumnName="MaKetQua" />
                 <ScalarProperty Name="MaDiem" ColumnName="MaDiem" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GIAOVIENs">
+            <EntityTypeMapping TypeName="dataModel.GIAOVIEN">
+              <MappingFragment StoreEntitySet="GIAOVIEN">
+                <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+                <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+                <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+                <ScalarProperty Name="MaGiaoVien" ColumnName="MaGiaoVien" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HANHKIEMs">
+            <EntityTypeMapping TypeName="dataModel.HANHKIEM">
+              <MappingFragment StoreEntitySet="HANHKIEM">
+                <ScalarProperty Name="NamApDung" ColumnName="NamApDung" />
+                <ScalarProperty Name="Diem" ColumnName="Diem" />
+                <ScalarProperty Name="TenHanhKiem" ColumnName="TenHanhKiem" />
+                <ScalarProperty Name="MaHanhKiem" ColumnName="MaHanhKiem" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -1859,6 +1909,16 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="QUANLies">
+            <EntityTypeMapping TypeName="dataModel.QUANLY">
+              <MappingFragment StoreEntitySet="QUANLY">
+                <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+                <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
+                <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+                <ScalarProperty Name="MaQuanLy" ColumnName="MaQuanLy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="TAIKHOANs">
             <EntityTypeMapping TypeName="dataModel.TAIKHOAN">
               <MappingFragment StoreEntitySet="TAIKHOAN">
@@ -1902,66 +1962,6 @@
                 <ScalarProperty Name="DiemToiThieu" ColumnName="DiemToiThieu" />
                 <ScalarProperty Name="TenXepLoai" ColumnName="TenXepLoai" />
                 <ScalarProperty Name="MaXepLoai" ColumnName="MaXepLoai" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="CTLOPGVs">
-            <EntityTypeMapping TypeName="dataModel.CTLOPGV">
-              <MappingFragment StoreEntitySet="CTLOPGV">
-                <ScalarProperty Name="MaLop" ColumnName="MaLop" />
-                <ScalarProperty Name="MaGVCN" ColumnName="MaGVCN" />
-                <ScalarProperty Name="MaCTLGV" ColumnName="MaCTLGV" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="GIAOVIENs">
-            <EntityTypeMapping TypeName="dataModel.GIAOVIEN">
-              <MappingFragment StoreEntitySet="GIAOVIEN">
-                <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
-                <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
-                <ScalarProperty Name="HoTen" ColumnName="HoTen" />
-                <ScalarProperty Name="MaGiaoVien" ColumnName="MaGiaoVien" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="CTHKs">
-            <EntityTypeMapping TypeName="dataModel.CTHK">
-              <MappingFragment StoreEntitySet="CTHK">
-                <ScalarProperty Name="MaHanhKiem" ColumnName="MaHanhKiem" />
-                <ScalarProperty Name="MaHocKy" ColumnName="MaHocKy" />
-                <ScalarProperty Name="MaNamHoc" ColumnName="MaNamHoc" />
-                <ScalarProperty Name="MaHocSinh" ColumnName="MaHocSinh" />
-                <ScalarProperty Name="MaCTHK" ColumnName="MaCTHK" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="HANHKIEMs">
-            <EntityTypeMapping TypeName="dataModel.HANHKIEM">
-              <MappingFragment StoreEntitySet="HANHKIEM">
-                <ScalarProperty Name="NamApDung" ColumnName="NamApDung" />
-                <ScalarProperty Name="Diem" ColumnName="Diem" />
-                <ScalarProperty Name="TenHanhKiem" ColumnName="TenHanhKiem" />
-                <ScalarProperty Name="MaHanhKiem" ColumnName="MaHanhKiem" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="CTGIANGDAYs">
-            <EntityTypeMapping TypeName="dataModel.CTGIANGDAY">
-              <MappingFragment StoreEntitySet="CTGIANGDAY">
-                <ScalarProperty Name="MaLop" ColumnName="MaLop" />
-                <ScalarProperty Name="MaMonHoc" ColumnName="MaMonHoc" />
-                <ScalarProperty Name="MaGiaoVien" ColumnName="MaGiaoVien" />
-                <ScalarProperty Name="MaCTGD" ColumnName="MaCTGD" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="QUANLies">
-            <EntityTypeMapping TypeName="dataModel.QUANLY">
-              <MappingFragment StoreEntitySet="QUANLY">
-                <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
-                <ScalarProperty Name="GioiTinh" ColumnName="GioiTinh" />
-                <ScalarProperty Name="HoTen" ColumnName="HoTen" />
-                <ScalarProperty Name="MaQuanLy" ColumnName="MaQuanLy" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

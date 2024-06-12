@@ -59,12 +59,16 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.PanelDsQuydinh = new Guna.UI2.WinForms.Guna2Panel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.SaveAge_button = new Guna.UI2.WinForms.Guna2Button();
+            this.SaveClassSize_button = new Guna.UI2.WinForms.Guna2Button();
             this.label33 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
+            this.EditLop_button = new Guna.UI2.WinForms.Guna2Button();
             this.label25 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -105,7 +109,6 @@
             this.maxDiemtextbox = new Guna.UI2.WinForms.Guna2TextBox();
             this.DeleteLop_button = new Guna.UI2.WinForms.Guna2Button();
             this.label17 = new System.Windows.Forms.Label();
-            this.EditLop_button = new Guna.UI2.WinForms.Guna2Button();
             this.minDiemtextbox = new Guna.UI2.WinForms.Guna2TextBox();
             this.AddLop_button = new Guna.UI2.WinForms.Guna2Button();
             this.AddXeploai_button = new Guna.UI2.WinForms.Guna2Button();
@@ -127,9 +130,6 @@
             this.AddNamhoc_button = new Guna.UI2.WinForms.Guna2Button();
             this.label26 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.SaveAge_button = new Guna.UI2.WinForms.Guna2Button();
-            this.SaveClassSize_button = new Guna.UI2.WinForms.Guna2Button();
-            this.label11 = new System.Windows.Forms.Label();
             this.guna2Panel1.SuspendLayout();
             this.PanelDsQuydinh.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDiemthanhphan)).BeginInit();
@@ -430,6 +430,56 @@
             this.PanelDsQuydinh.Size = new System.Drawing.Size(1039, 1578);
             this.PanelDsQuydinh.TabIndex = 93;
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.White;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.Black;
+            this.label11.Location = new System.Drawing.Point(64, 729);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(922, 23);
+            this.label11.TabIndex = 99;
+            this.label11.Text = "*Lưu ý: Nếu tổng trọng số < 1, trọng số điểm thành phần đầu tiên sẽ được cộng thê" +
+    "m để tổng trọng số = 1 sau khi kết thúc.";
+            // 
+            // SaveAge_button
+            // 
+            this.SaveAge_button.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.SaveAge_button.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.SaveAge_button.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.SaveAge_button.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.SaveAge_button.FillColor = System.Drawing.Color.White;
+            this.SaveAge_button.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.SaveAge_button.ForeColor = System.Drawing.Color.White;
+            this.SaveAge_button.Image = ((System.Drawing.Image)(resources.GetObject("SaveAge_button.Image")));
+            this.SaveAge_button.ImageSize = new System.Drawing.Size(40, 40);
+            this.SaveAge_button.Location = new System.Drawing.Point(966, 80);
+            this.SaveAge_button.Margin = new System.Windows.Forms.Padding(4);
+            this.SaveAge_button.Name = "SaveAge_button";
+            this.SaveAge_button.Size = new System.Drawing.Size(69, 54);
+            this.SaveAge_button.TabIndex = 99;
+            this.SaveAge_button.Click += new System.EventHandler(this.SaveAge_button_Click);
+            // 
+            // SaveClassSize_button
+            // 
+            this.SaveClassSize_button.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.SaveClassSize_button.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.SaveClassSize_button.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.SaveClassSize_button.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.SaveClassSize_button.FillColor = System.Drawing.Color.White;
+            this.SaveClassSize_button.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.SaveClassSize_button.ForeColor = System.Drawing.Color.White;
+            this.SaveClassSize_button.Image = ((System.Drawing.Image)(resources.GetObject("SaveClassSize_button.Image")));
+            this.SaveClassSize_button.ImageSize = new System.Drawing.Size(40, 40);
+            this.SaveClassSize_button.Location = new System.Drawing.Point(678, 178);
+            this.SaveClassSize_button.Margin = new System.Windows.Forms.Padding(4);
+            this.SaveClassSize_button.Name = "SaveClassSize_button";
+            this.SaveClassSize_button.Size = new System.Drawing.Size(69, 54);
+            this.SaveClassSize_button.TabIndex = 100;
+            this.SaveClassSize_button.Click += new System.EventHandler(this.SaveClassSize_button_Click);
+            // 
             // label33
             // 
             this.label33.AutoSize = true;
@@ -507,6 +557,24 @@
             this.label28.Size = new System.Drawing.Size(315, 23);
             this.label28.TabIndex = 98;
             this.label28.Text = "*Trọng số phải nằm trong khoảng 0.1->1";
+            // 
+            // EditLop_button
+            // 
+            this.EditLop_button.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.EditLop_button.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.EditLop_button.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.EditLop_button.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.EditLop_button.FillColor = System.Drawing.Color.White;
+            this.EditLop_button.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.EditLop_button.ForeColor = System.Drawing.Color.White;
+            this.EditLop_button.Image = ((System.Drawing.Image)(resources.GetObject("EditLop_button.Image")));
+            this.EditLop_button.ImageSize = new System.Drawing.Size(40, 40);
+            this.EditLop_button.Location = new System.Drawing.Point(965, 331);
+            this.EditLop_button.Margin = new System.Windows.Forms.Padding(4);
+            this.EditLop_button.Name = "EditLop_button";
+            this.EditLop_button.Size = new System.Drawing.Size(69, 54);
+            this.EditLop_button.TabIndex = 56;
+            this.EditLop_button.Click += new System.EventHandler(this.EditLop_button_Click);
             // 
             // label25
             // 
@@ -1251,24 +1319,6 @@
             this.label17.TabIndex = 77;
             this.label17.Text = "Điểm tối thiểu";
             // 
-            // EditLop_button
-            // 
-            this.EditLop_button.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.EditLop_button.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.EditLop_button.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.EditLop_button.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.EditLop_button.FillColor = System.Drawing.Color.White;
-            this.EditLop_button.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.EditLop_button.ForeColor = System.Drawing.Color.White;
-            this.EditLop_button.Image = ((System.Drawing.Image)(resources.GetObject("EditLop_button.Image")));
-            this.EditLop_button.ImageSize = new System.Drawing.Size(40, 40);
-            this.EditLop_button.Location = new System.Drawing.Point(965, 331);
-            this.EditLop_button.Margin = new System.Windows.Forms.Padding(4);
-            this.EditLop_button.Name = "EditLop_button";
-            this.EditLop_button.Size = new System.Drawing.Size(69, 54);
-            this.EditLop_button.TabIndex = 56;
-            this.EditLop_button.Click += new System.EventHandler(this.EditLop_button_Click);
-            // 
             // minDiemtextbox
             // 
             this.minDiemtextbox.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -1654,56 +1704,6 @@
             this.label8.Size = new System.Drawing.Size(159, 25);
             this.label8.TabIndex = 98;
             this.label8.Text = "Quản lý quy định";
-            // 
-            // SaveAge_button
-            // 
-            this.SaveAge_button.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.SaveAge_button.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.SaveAge_button.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.SaveAge_button.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.SaveAge_button.FillColor = System.Drawing.Color.White;
-            this.SaveAge_button.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.SaveAge_button.ForeColor = System.Drawing.Color.White;
-            this.SaveAge_button.Image = ((System.Drawing.Image)(resources.GetObject("SaveAge_button.Image")));
-            this.SaveAge_button.ImageSize = new System.Drawing.Size(40, 40);
-            this.SaveAge_button.Location = new System.Drawing.Point(966, 80);
-            this.SaveAge_button.Margin = new System.Windows.Forms.Padding(4);
-            this.SaveAge_button.Name = "SaveAge_button";
-            this.SaveAge_button.Size = new System.Drawing.Size(69, 54);
-            this.SaveAge_button.TabIndex = 99;
-            this.SaveAge_button.Click += new System.EventHandler(this.SaveAge_button_Click);
-            // 
-            // SaveClassSize_button
-            // 
-            this.SaveClassSize_button.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.SaveClassSize_button.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.SaveClassSize_button.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.SaveClassSize_button.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.SaveClassSize_button.FillColor = System.Drawing.Color.White;
-            this.SaveClassSize_button.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.SaveClassSize_button.ForeColor = System.Drawing.Color.White;
-            this.SaveClassSize_button.Image = ((System.Drawing.Image)(resources.GetObject("SaveClassSize_button.Image")));
-            this.SaveClassSize_button.ImageSize = new System.Drawing.Size(40, 40);
-            this.SaveClassSize_button.Location = new System.Drawing.Point(678, 178);
-            this.SaveClassSize_button.Margin = new System.Windows.Forms.Padding(4);
-            this.SaveClassSize_button.Name = "SaveClassSize_button";
-            this.SaveClassSize_button.Size = new System.Drawing.Size(69, 54);
-            this.SaveClassSize_button.TabIndex = 100;
-            this.SaveClassSize_button.Click += new System.EventHandler(this.SaveClassSize_button_Click);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.White;
-            this.label11.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(64, 729);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(922, 23);
-            this.label11.TabIndex = 99;
-            this.label11.Text = "*Lưu ý: Nếu tổng trọng số < 1, trọng số điểm thành phần đầu tiên sẽ được cộng thê" +
-    "m để tổng trọng số = 1 sau khi kết thúc.";
             // 
             // QuanLyQuyDinh
             // 

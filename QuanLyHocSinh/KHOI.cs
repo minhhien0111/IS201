@@ -17,18 +17,18 @@ namespace QuanLyHocSinh
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public KHOI()
         {
-            this.LOPs = new HashSet<LOP>();
             this.MONHOCs = new HashSet<MONHOC>();
+            this.LOPs = new HashSet<LOP>();
         }
     
         public string MaKhoi { get; set; }
         public string TenKhoi { get; set; }
         public string MaNamHoc { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<MONHOC> MONHOCs { get; set; }
         public virtual NAMHOC NAMHOC { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<LOP> LOPs { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<MONHOC> MONHOCs { get; set; }
     }
 }
