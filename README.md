@@ -18,6 +18,7 @@
   + Visual Studio
   + Microsoft SQL Server 
 - Cài đặt cấu hình:
+  + Cơ sở dữ liệu ở trong thư mục QuanLyHocSinh (QUANLYHOCSINH.mdf, QUANLYHOCSINH.ldf)
   + Attach QUANLYHOCSINH.mdf, QUANLYHOCSINH.ldf vào server SQL đang sử dụng
   + App.config -> ConnectionString: name="dataEntities", data source= name SQL Server
   + dataModel.edmx -> Update Model from DataBase -> NewConnection -> Connect to SQL Server
