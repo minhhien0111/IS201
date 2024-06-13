@@ -4,12 +4,16 @@
   </a>
 </p>
 
-# Nhập môn công nghệ phần mềm - IS201.O21
-## Nhóm 1
+# Phân tích thiết kế hệ thống thông tin - IS201.O21
+## Nhóm 24
 | ID | Họ tên | Email |
 |------:|------------|----------|
 |21520229|Tăng Minh Hiển|21520229@gm.uit.edu.vn|
-## Phần mềm Quản lí học sinh
+|21520765|Bùi Anh Duy|21520765@gm.uit.edu.vn|
+|22520637|Lê Mai Quốc Khánh|22520637@gm.uit.edu.vn|
+|22521224|Phan Thị Bích Quyên|22521224@gm.uit.edu.vn|
+## Phần mềm Quản lí điểm học sinh
+### Cách cài đặt phần mềm
 - Yêu cầu phần mềm:
   + Visual Studio
   + Microsoft SQL Server 
