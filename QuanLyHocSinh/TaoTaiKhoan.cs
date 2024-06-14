@@ -63,6 +63,12 @@ namespace QuanLyHocSinh
                 {
                     HoTen = check_hs.First().HoTen;
                     NgaySinh = check_hs.First().NgaySinh ?? DateTime.Now;
+                    if (check_hs.First().HoTen == null)
+                    {
+                        check = false;
+                        MessageBox.Show("Học sinh không tồn tại", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }    
                     if (check_hs.Count == 0)
                     {
                         check = false;

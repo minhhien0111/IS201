@@ -288,6 +288,13 @@ namespace QuanLyHocSinh
                 if (choose == DialogResult.OK)
                 {
                     // Delete Student
+                    string temp_matk = "HS" + this.tbStudentID.Text;
+                    var check_tk = db.TAIKHOANs.Where(x => x.MaTaiKhoan == temp_matk).Select(r => r).ToList();
+                    if (check_tk.Count() > 0)
+                    {
+                        TAIKHOAN temp_tk = check_tk.First();
+                        db.TAIKHOANs.Remove(temp_tk);
+                    }
                     HOCSINH hs = new HOCSINH();
                     hs.MaHocSinh = this.tbStudentID.Text;
                     db.HOCSINHs.AddOrUpdate(hs);
