@@ -35,6 +35,7 @@ namespace QuanLyHocSinh
                 this.MenuItemAddStudent.Visible = true;
                 this.MenuQuanLyQuyDinh.Visible = true;
                 this.ToolStripMenuItemAccount.Visible = true;
+                this.MenuItemFinalReport.Visible = true;
             }
             else if (Account.VaiTro == "Học sinh")
             {

@@ -233,6 +233,7 @@ namespace QuanLyHocSinh
                     new_item.TenLop = tenlop;
                     new_item.MaKhoi = makhoi.MaKhoi;
                     new_item.MaNamHoc = MaNamHoc_moi;
+                    new_item.SiSo = 0;
                     dtb.LOPs.Add(new_item);
                     dtb.SaveChanges();
                     MessageBox.Show("Cập nhật danh sách lớp thành công!");
@@ -313,9 +314,13 @@ namespace QuanLyHocSinh
             foreach (var i in dtb.MonHoc_NamApDung(MaNamHoc))
             {
                 MONHOC mh = new MONHOC();
+                string tenmh = i.TenMonHoc;
+                string[] words = tenmh.Split(' ');
+                var makhoi = dtb.KhoiLop_NamApDung(MaNamHoc_moi).Where(r => r.TenKhoi == words[words.Length - 1]).FirstOrDefault();
                 mh.MaMonHoc = subMaNamHoc + i.MaMonHoc;
                 mh.TenMonHoc = i.TenMonHoc;
                 mh.NamApDung = MaNamHoc;
+                mh.MaKhoi = makhoi.MaKhoi;
                 list.Add(mh);
             }
             return list;
@@ -357,9 +362,9 @@ namespace QuanLyHocSinh
             { 
                 for (int i = 0; i < words.Length - 1; i++ )
                     mamh = mamh + words[i].Substring(0, 1).ToUpper();
-                mamh = subMaNamHoc + mamh + words[words.Length - 1];
+                mamh = subMaNamHoc + mamh + words[words.Length - 1] + RandomString(3);
             }
-            else if (words.Length == 2) mamh = subMaNamHoc + words[0].Substring(0, 2) + words[words.Length - 1];
+            else if (words.Length == 2) mamh = subMaNamHoc + words[0].Substring(0, 2) + words[words.Length - 1] + RandomString(3);
             var check_ = dtb.MONHOCs.Where(p => p.NamApDung == MaNamHoc);
             if (check_.Count() == 0)
             {

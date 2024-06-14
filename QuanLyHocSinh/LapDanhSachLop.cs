@@ -70,7 +70,7 @@ namespace QuanLyHocSinh
             cbSchoolYear.DisplayMember = "NamHoc1";
             cbSchoolYear.ValueMember = "MaNamHoc"; 
             cbSchoolYear.SelectedValue = list[0].MaNamHoc;
-            cbSchoolYear.Enabled = false;
+            //cbSchoolYear.Enabled = false;
         }
 
         private void CapNhatDanhSachKhoi(dataEntities db)
@@ -354,6 +354,24 @@ namespace QuanLyHocSinh
         {
             dataEntities db = new dataEntities();
             CapNhatDanhSachKhoi(db);
+            List<NAMHOC> list = (from obj in db.NAMHOCs.AsEnumerable()
+                                 orderby obj.MaNamHoc descending
+                                 select obj).ToList();
+            iNamHoc = list.Count();
+            if (cbSchoolYear.SelectedValue.ToString() != list[0].MaNamHoc)
+            {
+                btnSaveGV.Visible = false;
+                btnDeleteGVCN.Visible = false;
+                btnAddStdToClass.Visible = false;
+                btnDelStdOutClass.Visible = false;
+            }
+            else
+            {
+                btnSaveGV.Visible = true;
+                btnDeleteGVCN.Visible = true;
+                btnAddStdToClass.Visible = true;
+                btnDelStdOutClass.Visible = true;
+            }
         }
 
         private void cbGrade_SelectedIndexChanged(object sender, EventArgs e)

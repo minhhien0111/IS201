@@ -89,7 +89,7 @@ namespace QuanLyHocSinh
             this.menuStrip1.Location = new System.Drawing.Point(0, 208);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1290, 50);
+            this.menuStrip1.Size = new System.Drawing.Size(1495, 50);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -253,7 +253,7 @@ namespace QuanLyHocSinh
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(1290, 53);
+            this.guna2Panel1.Size = new System.Drawing.Size(1496, 53);
             this.guna2Panel1.TabIndex = 17;
             this.guna2Panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.guna2Panel1_MouseDown);
             // 
@@ -265,7 +265,7 @@ namespace QuanLyHocSinh
             this.guna2ImageButtonClose1.ImageOffset = new System.Drawing.Point(0, 0);
             this.guna2ImageButtonClose1.ImageRotate = 0F;
             this.guna2ImageButtonClose1.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2ImageButtonClose1.Location = new System.Drawing.Point(1240, 6);
+            this.guna2ImageButtonClose1.Location = new System.Drawing.Point(1449, 6);
             this.guna2ImageButtonClose1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2ImageButtonClose1.Name = "guna2ImageButtonClose1";
             this.guna2ImageButtonClose1.PressedState.ImageSize = new System.Drawing.Size(64, 64);
@@ -282,7 +282,7 @@ namespace QuanLyHocSinh
             this.guna2ImageButtonMinimize1.ImageOffset = new System.Drawing.Point(0, 0);
             this.guna2ImageButtonMinimize1.ImageRotate = 0F;
             this.guna2ImageButtonMinimize1.ImageSize = new System.Drawing.Size(30, 30);
-            this.guna2ImageButtonMinimize1.Location = new System.Drawing.Point(1194, 6);
+            this.guna2ImageButtonMinimize1.Location = new System.Drawing.Point(1403, 6);
             this.guna2ImageButtonMinimize1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2ImageButtonMinimize1.Name = "guna2ImageButtonMinimize1";
             this.guna2ImageButtonMinimize1.PressedState.ImageSize = new System.Drawing.Size(64, 64);
@@ -353,7 +353,7 @@ namespace QuanLyHocSinh
             this.guna2Panel2.Controls.Add(this.monthCalendar1);
             this.guna2Panel2.CustomBorderColor = System.Drawing.SystemColors.HotTrack;
             this.guna2Panel2.CustomBorderThickness = new System.Windows.Forms.Padding(5, 3, 5, 5);
-            this.guna2Panel2.Location = new System.Drawing.Point(26, 348);
+            this.guna2Panel2.Location = new System.Drawing.Point(87, 357);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(370, 289);
             this.guna2Panel2.TabIndex = 20;
@@ -367,7 +367,7 @@ namespace QuanLyHocSinh
             this.guna2Panel3.Controls.Add(this.guna2DataGridView);
             this.guna2Panel3.CustomBorderColor = System.Drawing.SystemColors.HotTrack;
             this.guna2Panel3.CustomBorderThickness = new System.Windows.Forms.Padding(5, 3, 5, 5);
-            this.guna2Panel3.Location = new System.Drawing.Point(433, 348);
+            this.guna2Panel3.Location = new System.Drawing.Point(536, 357);
             this.guna2Panel3.Name = "guna2Panel3";
             this.guna2Panel3.Size = new System.Drawing.Size(847, 405);
             this.guna2Panel3.TabIndex = 21;
@@ -441,7 +441,7 @@ namespace QuanLyHocSinh
             this.guna2ImageButtonUser.ImageOffset = new System.Drawing.Point(0, 0);
             this.guna2ImageButtonUser.ImageRotate = 0F;
             this.guna2ImageButtonUser.ImageSize = new System.Drawing.Size(60, 60);
-            this.guna2ImageButtonUser.Location = new System.Drawing.Point(1207, 264);
+            this.guna2ImageButtonUser.Location = new System.Drawing.Point(1403, 264);
             this.guna2ImageButtonUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2ImageButtonUser.Name = "guna2ImageButtonUser";
             this.guna2ImageButtonUser.PressedState.ImageSize = new System.Drawing.Size(64, 64);
@@ -463,7 +463,7 @@ namespace QuanLyHocSinh
             this.guna2TextBoxUser.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2TextBoxUser.ForeColor = System.Drawing.Color.Black;
             this.guna2TextBoxUser.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBoxUser.Location = new System.Drawing.Point(926, 275);
+            this.guna2TextBoxUser.Location = new System.Drawing.Point(1109, 275);
             this.guna2TextBoxUser.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.guna2TextBoxUser.Name = "guna2TextBoxUser";
             this.guna2TextBoxUser.PasswordChar = '\0';
@@ -481,7 +481,7 @@ namespace QuanLyHocSinh
             this.Background.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Background.Location = new System.Drawing.Point(0, 56);
             this.Background.Name = "Background";
-            this.Background.Size = new System.Drawing.Size(1290, 149);
+            this.Background.Size = new System.Drawing.Size(1495, 149);
             this.Background.TabIndex = 24;
             // 
             // TrangChu
@@ -489,7 +489,7 @@ namespace QuanLyHocSinh
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1290, 783);
+            this.ClientSize = new System.Drawing.Size(1496, 783);
             this.Controls.Add(this.Background);
             this.Controls.Add(this.guna2TextBoxUser);
             this.Controls.Add(this.guna2ImageButtonUser);

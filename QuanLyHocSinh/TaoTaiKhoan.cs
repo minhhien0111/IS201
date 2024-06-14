@@ -92,6 +92,11 @@ namespace QuanLyHocSinh
                         var account = new TAIKHOAN();
                         account.HoTen = HoTen;
                         CultureInfo provider = CultureInfo.InvariantCulture;
+                        if (guna2TextBox3.Text.ToString().Length >= 60 || guna2TextBox4.Text.Length >= 60)
+                        {
+                            MessageBox.Show("Tên đăng nhập và mật khẩu phải dưới 60 kí tự", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }    
                         /*account.NgaySinh = DateTime.ParseExact(guna2TextBox2.Text, "dd/MM/yyyy", provider);*/
                         account.NgaySinh = NgaySinh;
                         account.MaPhanQuyen = guna2ComboBox1.SelectedValue.ToString();
@@ -109,7 +114,7 @@ namespace QuanLyHocSinh
                     }
                     catch
                     {
-                        MessageBox.Show("Mời nhập đúng định dạng ngày sinh!");
+                        MessageBox.Show("Học sinh/Giáo viên này đã có tài khoản");
                     }
                 }
             }
